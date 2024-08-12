@@ -34,7 +34,7 @@ public class readexcel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
@@ -56,10 +56,13 @@ public class readexcel : MonoBehaviour
 
             //Debug.Log("dialogueID = " + dialogue);
             //Debug.Log("characterID = " + Charaname);
-            Debug.Log("Counts = " + count);
+             Debug.Log("datalength = " + data.Length);
+            
 
             count ++;
+            count ++;
 
+            Debug.Log("Counts = " + count);
 
       
     }
@@ -83,26 +86,32 @@ public class readexcel : MonoBehaviour
             Dialogue.text = data[dialogue++];
             Dialogue.text = data[dialogue++];
             Dialogue.text = data[dialogue++];
+            Dialogue.text = data[dialogue++];
 
             //Debug.Log("dialogueID = " + dialogue);
-            Debug.Log("Count = " + count);
+            
             
                i++;
 
-            
+            count++;
+            count ++;
+
+
+            Debug.Log("Count = " + count);
             
               
             
            }
-           
-           if ( count == data.Length)
+
+           else if ( count == data.Length)
             {
                 Debug.Log("Finished");
                 Debug.Log("Count = " + count);
+
+
             }
 
-            
-           else 
+            else
 
                 {
 
@@ -115,12 +124,23 @@ public class readexcel : MonoBehaviour
                     //Debug.Log("NextChara = " + Charaname);
                    
                     //Debug.Log("dialogueID = " + dialogue);
+
+                    count ++;
+                    count ++;
                     Debug.Log("count = " + count);
 
 
-                    count ++;
+                    
 
                 }
+
+           
+           
+            
+           
+
+                
+
 
             
 
