@@ -1,0 +1,54 @@
+{
+    "name": "PlayerSwipe",
+    "maps": [
+        {
+            "name": "UI",
+            "id": "7dca1355-b38f-456a-88ce-648d9b80eb1c",
+            "actions": [
+                {
+                    "name": "Touch",
+                    "type": "Button",
+                    "id": "fc3c2a75-9243-4a80-a719-8c93edc0c280",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                },
+                {
+                    "name": "TouchPosition",
+                    "type": "Value",
+                    "id": "41456b44-33db-440f-96bb-f1288d4b57c7",
+                    "expectedControlType": "Vector2",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": true
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "31f58932-8fcc-42e8-bacd-3a1cbfef0e53",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Touch",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "a7355114-00d0-46c3-a408-81bfe335ae7b",
+                    "path": "<Mouse>/position",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TouchPosition",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
