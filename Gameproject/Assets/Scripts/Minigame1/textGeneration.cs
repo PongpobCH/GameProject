@@ -6,13 +6,17 @@ public class textGeneration : MonoBehaviour
 {
     public GameObject uiPrefab; // Assign your UI prefab in the inspector
     public RectTransform canvasRectTransform; // Assign the Canvas' RectTransform
-    public float spawnInterval = 2f; // Time between spawns
+    [SerializeField]
+    private float spawnInterval = 2f; // Time between spawns
     public float growDuration = 2f; // Time it takes for the UI element to reach full size
     public float fadeDuration = 1f; // Time it takes for the UI element to fade away
     public Vector2 scaleRange = new Vector2(0.5f, 2f); // Min and Max scale
 
+    miniGame1_Controller gm;
+
     private void Start()
     {
+        gm = this.GetComponent<miniGame1_Controller>();
         StartCoroutine(SpawnRoutine());
     }
 
@@ -20,7 +24,7 @@ public class textGeneration : MonoBehaviour
     {
         while (true)
         {
-            SpawnPrefab();
+            if (!gm.getGameEndStatus()) { SpawnPrefab(); }
             yield return new WaitForSeconds(spawnInterval);
         }
     }
@@ -78,5 +82,10 @@ public class textGeneration : MonoBehaviour
 
         // Destroy the UI element after fading
         Destroy(instance);
+    }
+
+    public void setSpawmInterval(float timer)
+    {
+       spawnInterval = timer;
     }
 }

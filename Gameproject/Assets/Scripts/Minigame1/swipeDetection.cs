@@ -1,41 +1,43 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class swipeDetection : MonoBehaviour
 {
-    textGeneration textGen;
     Vector3 CurrentPosition;
     [SerializeField]
     float increasingRate;
     [SerializeField]
     float percentage = 0;
 
+    miniGame1_Controller gm;
+
     void Start()
     {
+        gm = this.GetComponent<miniGame1_Controller>();
         CurrentPosition = Input.mousePosition;
-        textGen = this.GetComponent<textGeneration>();
     }
     void Update()
     {
-        if (Input.GetMouseButton(0) && CurrentPosition!=Input.mousePosition)
+        if (!gm.getGameEndStatus())
         {
             addToPercentage();
+            CurrentPosition = Input.mousePosition;
         }
-        CurrentPosition = Input.mousePosition;
     }
 
     void addToPercentage()
     {
-        percentage += increasingRate;
-
-        if(percentage < 0) percentage = 0;
+        if (Input.GetMouseButton(0) && CurrentPosition != Input.mousePosition)
+        {
+            percentage += increasingRate;
+        }
     }
 
-    void toggleMinigameEnding()
+    public float getPercentage()
     {
-
+        return percentage;
     }
 
 }
