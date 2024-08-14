@@ -34,18 +34,6 @@ public class readexcel : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
-
-    public void Search()
-    {
-
         string[] data = textAssetdata.text.Split(new string[]{"," , "\n"},System.StringSplitOptions.None);
 
         
@@ -63,6 +51,18 @@ public class readexcel : MonoBehaviour
             count ++;
 
             Debug.Log("Counts = " + count);
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+
+    }
+
+    public void Search()
+    {
+
+       
 
       
     }
@@ -87,24 +87,19 @@ public class readexcel : MonoBehaviour
             Dialogue.text = data[dialogue++];
             Dialogue.text = data[dialogue++];
             Dialogue.text = data[dialogue++];
-
-            //Debug.Log("dialogueID = " + dialogue);
-            
-            
+  
                i++;
 
             count++;
-            count ++;
+            count++;
 
-
-            Debug.Log("Count = " + count);
-            
-              
+            //Debug.Log("Count = " + count);          
             
            }
 
            else if ( count == data.Length)
             {
+                
                 Debug.Log("Finished");
                 Debug.Log("Count = " + count);
 
@@ -115,22 +110,15 @@ public class readexcel : MonoBehaviour
 
                 {
 
-                    
                     Name.text = data[Charaname++];
                     Name.text = data[Charaname++];
 
                     Dialogue.text = data[dialogue++];
-                    Dialogue.text = data[dialogue++];
-                    //Debug.Log("NextChara = " + Charaname);
-                   
-                    //Debug.Log("dialogueID = " + dialogue);
+                    Dialogue.text = data[dialogue++];                 
 
                     count ++;
                     count ++;
                     Debug.Log("count = " + count);
-
-
-                    
 
                 }
 
