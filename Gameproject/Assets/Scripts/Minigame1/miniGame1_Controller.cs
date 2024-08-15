@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class miniGame1_Controller : MonoBehaviour
@@ -9,6 +10,11 @@ public class miniGame1_Controller : MonoBehaviour
     private bool isGameEnd = true;
     textGeneration textGen;
     swipeDetection swipeDect;
+    backgroundColorChange bg;
+
+    public SpriteRenderer playerSprite;
+    public Sprite[] playerSpriteList;
+
     public GameObject Tutorial_UI;
     
     void Start()
@@ -17,6 +23,7 @@ public class miniGame1_Controller : MonoBehaviour
 
         textGen = this.GetComponent<textGeneration>();
         swipeDect = this.GetComponent<swipeDetection>();
+        bg = this.GetComponent<backgroundColorChange>();    
         Tutorial_UI.SetActive(true);
     }
     void Update()
@@ -27,12 +34,21 @@ public class miniGame1_Controller : MonoBehaviour
 
     void checkPercentage(float percentage)
     {
-        if (percentage >= 100) { Debug.Log("ร้อยแล้วววว"); setGameEndStatus(true); }
+        setPlayerSprite(percentage);
+        bg.setColorPercentage(percentage);
+        if (percentage >= 100) {  setGameEndStatus(true); StartCoroutine(TriggerMinigameEndTimer()); }
         else if (percentage >= 80) { textGen.setSpawmInterval(2.5f); }
         else if (percentage >= 60) { textGen.setSpawmInterval(2f); }
         else if (percentage >= 40) { textGen.setSpawmInterval(1.5f); }
         else if (percentage >= 20) { textGen.setSpawmInterval(1f); }
         else { textGen.setSpawmInterval(0.5f); }
+    }
+
+    void setPlayerSprite(float percentage)
+    {
+        if (percentage >= 90) { playerSprite.sprite = playerSpriteList[2]; }
+        else if (percentage >= 50) { playerSprite.sprite = playerSpriteList[1]; }
+        else { playerSprite.sprite = playerSpriteList[0]; }
     }
 
     public bool getGameEndStatus()
@@ -49,5 +65,16 @@ public class miniGame1_Controller : MonoBehaviour
     {
         Tutorial_UI.SetActive(false);
         setGameEndStatus(false);
+    }
+
+    IEnumerator TriggerMinigameEndTimer()
+    {
+        yield return new WaitForSeconds(3f); 
+        triggerMinigameEnd();
+    }
+    void triggerMinigameEnd()
+    {
+        Debug.Log("ร้อยแล้วววว");
+        // do something after minigame end here
     }
 }
