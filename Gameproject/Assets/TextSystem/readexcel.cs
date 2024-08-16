@@ -1,157 +1,82 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
-using UnityEditor.ShaderGraph.Internal;
-using System.Data.Common;
-using System.Runtime.InteropServices;
-using UnityEngine.Rendering;
-using System;
-using System.Threading;
+using UnityEngine.UIElements;
 
 public class readexcel : MonoBehaviour
 {
-
-    public TextAsset textAssetdata; 
-
-
-    private string Text;
+    public TextAsset textAssetdata;
 
     public TextMeshProUGUI Dialogue;
     public TextMeshProUGUI Name;
+    public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
 
-    private int dialogue = 0;
+    private int row = 0; // ตำแหน่งของแถวปัจจุบัน
+    private int columnName = 0; // คอลัมน์ที่เก็บชื่อ
+    private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
+    private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
 
-    private int Charaname = 0;
-
-    private int i = 0;
-
-    private int count = 0;
-
-    
-    
-    // Start is called before the first frame update
     void Start()
     {
-       
     }
 
-    // Update is called once per frame
     void Update()
     {
-
     }
 
     public void Search()
     {
+        string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
-        string[] data = textAssetdata.text.Split(new string[]{"," , "\n"},System.StringSplitOptions.None);
+        // แสดงข้อความและชื่อ
+        Name.text = data[row * 3 + columnName];
+        Dialogue.text = data[row * 3 + columnDialogue];
 
-        
-            
-               Dialogue.text = data[dialogue+1];
+        // โหลดและแสดง sprite
+        LoadAndDisplaySprite(data[row * 3 + columnSprite]);
 
-               Name.text = data[Charaname];
-
-            //Debug.Log("dialogueID = " + dialogue);
-            //Debug.Log("characterID = " + Charaname);
-             Debug.Log("datalength = " + data.Length);
-            
-
-            count ++;
-            count ++;
-
-            Debug.Log("Counts = " + count);
-
-      
+        row++;
     }
 
     public void DisplaynextText()
-
-
     {
-       
-            string[] data = textAssetdata.text.Split(new string[]{"," , "\n"},System.StringSplitOptions.None);
+        string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
+        if (row >= data.Length / 3)
+        {
+            Debug.Log("Finished");
+            return;
+        }
 
-           if (i == 0)
-           {
+        // แสดงชื่อและข้อความ
+        Name.text = data[row * 3 + columnName];
+        Dialogue.text = data[row * 3 + columnDialogue];
 
+        // โหลดและแสดง sprite
+        LoadAndDisplaySprite(data[row * 3 + columnSprite]);
 
-            Name.text = data[Charaname++];
-            Name.text = data[Charaname++];
-            Name.text = data[Charaname++];
+        row++;
+    }
 
-            Dialogue.text = data[dialogue++];
-            Dialogue.text = data[dialogue++];
-            Dialogue.text = data[dialogue++];
-            Dialogue.text = data[dialogue++];
+    private void LoadAndDisplaySprite(string spriteName)
+    {
+        spriteName = spriteName.Remove(spriteName.Length - 1);
+        string folderPath = "Sprites/Characters/";
 
-            //Debug.Log("dialogueID = " + dialogue);
-            
-            
-               i++;
+        // โหลด Sprite จากโฟลเดอร์ที่ระบุ
+        Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+        Debug.Log(spriteName.Length);
 
-            count++;
-            count ++;
-
-
-            Debug.Log("Count = " + count);
-            
-              
-            
-           }
-
-           else if ( count == data.Length)
-            {
-                Debug.Log("Finished");
-                Debug.Log("Count = " + count);
-
-
-            }
-
-            else
-
-                {
-
-                    
-                    Name.text = data[Charaname++];
-                    Name.text = data[Charaname++];
-
-                    Dialogue.text = data[dialogue++];
-                    Dialogue.text = data[dialogue++];
-                    //Debug.Log("NextChara = " + Charaname);
-                   
-                    //Debug.Log("dialogueID = " + dialogue);
-
-                    count ++;
-                    count ++;
-                    Debug.Log("count = " + count);
-
-
-                    
-
-                }
-
-           
-           
-            
-           
-
-                
-
-
-            
-
-        
-           
-
-            
-
-            
-            
-            
-
+        // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+        if (sprite != null)
+        {
+            CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
+        }
+        else
+        {
+            Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+        }
     }
 }
