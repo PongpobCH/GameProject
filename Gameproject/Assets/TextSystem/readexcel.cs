@@ -20,6 +20,8 @@ public class readexcel : MonoBehaviour
 
     void Start()
     {
+
+        
     }
 
     void Update()

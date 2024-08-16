@@ -12,7 +12,7 @@ TagManager:
   - 
   - Water
   - UI
-  - 
+  - Background
   - 
   - 
   - 
@@ -42,12 +42,12 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: BG
-    uniqueID: 2631274049
-    locked: 0
   - name: Logo_Buttons
     uniqueID: 3065976093
     locked: 0
   - name: Buttons
     uniqueID: 2945473967
+    locked: 0
+  - name: BG
+    uniqueID: 2631274049
     locked: 0
