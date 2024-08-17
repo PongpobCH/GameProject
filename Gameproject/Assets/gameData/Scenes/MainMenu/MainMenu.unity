@@ -447,7 +447,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 226818868}
         m_TargetAssemblyTypeName: LevelLoader, Assembly-CSharp
-        m_MethodName: LoadScene1
+        m_MethodName: LoadScene
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -642,7 +642,7 @@ SortingGroup:
   m_GameObject: {fileID: 1086792599}
   m_Enabled: 1
   m_SortingLayerID: -1663693247
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_SortAtRoot: 0
 --- !u!114 &1086792602
@@ -843,7 +843,7 @@ SortingGroup:
   m_GameObject: {fileID: 1209731560}
   m_Enabled: 1
   m_SortingLayerID: -1663693247
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_SortAtRoot: 0
 --- !u!114 &1209731563
@@ -976,7 +976,7 @@ SortingGroup:
   m_GameObject: {fileID: 1488831446}
   m_Enabled: 1
   m_SortingLayerID: -1663693247
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_SortAtRoot: 0
 --- !u!114 &1488831449
@@ -1119,7 +1119,7 @@ SortingGroup:
   m_GameObject: {fileID: 1851517680}
   m_Enabled: 1
   m_SortingLayerID: -1663693247
-  m_SortingLayer: 3
+  m_SortingLayer: 1
   m_SortingOrder: 2
   m_SortAtRoot: 0
 --- !u!114 &1851517683
