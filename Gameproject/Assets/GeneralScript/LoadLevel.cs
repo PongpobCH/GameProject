@@ -8,18 +8,18 @@ public class LevelLoader : MonoBehaviour
     
     public Animator transition;
 
-    public float transitiontime =1f; 
+    public float transitiontime =1f;
 
     // Update is called once per frame
-    void Update()
-    {
-        
 
-    }
-
-    public void LoadScene1()
+    public void LoadScene()
     {
         StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1 ));
+    }
+
+    public void TestLoad()
+    {
+       
     }
 
 
@@ -31,9 +31,17 @@ public class LevelLoader : MonoBehaviour
         yield return new WaitForSeconds(transitiontime);
 
         SceneManager.LoadScene(levelIndex);
-
         
     }
+
+    private void OnTriggerEnter2D(Collider2D collision) 
+    {
+        if(collision.gameObject.CompareTag("Player"))
+        {
+           LoadScene();
+        }
+    }
+
 }
 
 

@@ -4,9 +4,12 @@ using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
 
 public class readexcel : MonoBehaviour
 {
+
+    public LevelLoader script;
     public TextAsset textAssetdata;
 
     public TextMeshProUGUI Dialogue;
@@ -20,6 +23,8 @@ public class readexcel : MonoBehaviour
 
     void Start()
     {
+
+
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
         // แสดงข้อความและชื่อ
@@ -41,8 +46,14 @@ public class readexcel : MonoBehaviour
 
         if (row >= data.Length / 3)
         {
-            Debug.Log("Finished");
+
+            //Debug.Log("Finished");
+
+            script.LoadScene();
+
+
             return;
+
         }
 
         // แสดงชื่อและข้อความ
