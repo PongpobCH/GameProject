@@ -34,9 +34,4 @@ public class Draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
     {
         this.GetComponent<Rigidbody2D>().simulated = false;
     }
-
-    private void Update()
-    {
-        Debug.Log(this.GetComponent<Rigidbody2D>().gravityScale);
-    }
 }

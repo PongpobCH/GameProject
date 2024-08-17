@@ -7,6 +7,12 @@ TagManager:
   - UITarget
   - wrongAnswer
   - correctAnswer
+  - ans1
+  - ans2
+  - ans3
+  - ans4
+  - ans5
+  - ans6
   layers:
   - Default
   - TransparentFX
