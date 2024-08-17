@@ -20,16 +20,6 @@ public class readexcel : MonoBehaviour
 
     void Start()
     {
-
-        
-    }
-
-    void Update()
-    {
-    }
-
-    public void Search()
-    {
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
         // แสดงข้อความและชื่อ
@@ -40,7 +30,10 @@ public class readexcel : MonoBehaviour
         LoadAndDisplaySprite(data[row * 3 + columnSprite]);
 
         row++;
+        Debug.Log("row = " + row);
+
     }
+
 
     public void DisplaynextText()
     {
@@ -60,6 +53,8 @@ public class readexcel : MonoBehaviour
         LoadAndDisplaySprite(data[row * 3 + columnSprite]);
 
         row++;
+        Debug.Log("row = " + row);
+
     }
 
     private void LoadAndDisplaySprite(string spriteName)
@@ -69,7 +64,7 @@ public class readexcel : MonoBehaviour
 
         // โหลด Sprite จากโฟลเดอร์ที่ระบุ
         Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
-        Debug.Log(spriteName.Length);
+        //Debug.Log(spriteName.Length);
 
         // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
         if (sprite != null)
