@@ -531,7 +531,7 @@ SpriteRenderer:
   m_Size: {x: 10, y: 19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &570468449
@@ -600,8 +600,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dialogue go here
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 54607a92bed4a234cb1bbf7383bfe442, type: 2}
+  m_sharedMaterial: {fileID: 2886646827614810994, guid: 54607a92bed4a234cb1bbf7383bfe442, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -761,8 +761,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Name
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 54607a92bed4a234cb1bbf7383bfe442, type: 2}
+  m_sharedMaterial: {fileID: 2886646827614810994, guid: 54607a92bed4a234cb1bbf7383bfe442, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
