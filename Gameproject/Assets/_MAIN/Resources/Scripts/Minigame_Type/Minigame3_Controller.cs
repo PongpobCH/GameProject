@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Minigame3_Controller : MonoBehaviour
 {
@@ -52,20 +53,42 @@ public class Minigame3_Controller : MonoBehaviour
         }
     }
 
+    public RectTransform imageTransform; // Assign the RectTransform of the Image in the Inspector
+    public float popDuration = 1.0f; // Duration of the pop-out effect
+    public float holdDuration = 2.0f; // Duration to hold the image before changing the scene
+    public float targetScale = 1.5f; // Target scale of the image
+    public string sceneToLoad = "NextScene"; // Name of the scene to load
+
+    private Vector3 originalScale;
+    private void Start()
+    {
+        originalScale = imageTransform.localScale;
+        imageTransform.localScale = Vector3.zero; 
+    }
+
     private void OnWin()
     {
-        // Implement the win logic here
-        // For example, you can display a win message, stop the game, or load a new scene.
+        
         Debug.Log("Congratulations! You've won the game!");
+        StartCoroutine(PopAndChangeScene());
+    }
 
-        // Example: Show a win UI (Assume you have a UI panel for the win screen)
-        // winScreen.SetActive(true);
+    private IEnumerator PopAndChangeScene()
+    {
+        float elapsedTime = 0f;
+        while (elapsedTime < popDuration)
+        {
+            imageTransform.localScale = Vector3.Lerp(Vector3.zero, originalScale, elapsedTime / popDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        imageTransform.localScale = originalScale; // Ensure it reaches the original scale
 
-        // Example: Load a win scene
-        // UnityEngine.SceneManagement.SceneManager.LoadScene("WinScene");
+        // Hold the image at its original scale for a few seconds
+        yield return new WaitForSeconds(holdDuration);
 
-        // Optionally, you can stop the game or freeze player input
-        // Time.timeScale = 0; // This stops the game by freezing time
+        // Change the scene
+        SceneManager.LoadScene(sceneToLoad);
     }
 
     public int GetCorrectDropsCount()

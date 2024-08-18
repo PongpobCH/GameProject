@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Minigame2_Controller : MonoBehaviour
 {
@@ -20,6 +21,13 @@ public class Minigame2_Controller : MonoBehaviour
     public SpriteRenderer playerSprite;
     public Sprite[] playerSpriteList;
 
+    public RectTransform imageTransform; // Assign the RectTransform of the Image in the Inspector
+    public float popDuration = 1.0f; // Duration of the pop-out effect
+    public float holdDuration = 2.0f; // Duration to hold the image before changing the scene
+    public string sceneToLoad = "NextScene"; // Name of the scene to load
+
+    private Vector3 originalScale;
+
     private void Awake()
     {
         // Singleton pattern implementation
@@ -37,6 +45,8 @@ public class Minigame2_Controller : MonoBehaviour
     private void Start()
     {
         bg = GetComponent<backgroundColorChange>();
+        originalScale = imageTransform.localScale; 
+        imageTransform.localScale = Vector3.zero;
     }
 
     private void Update()
@@ -70,12 +80,20 @@ public class Minigame2_Controller : MonoBehaviour
 
     IEnumerator TriggerMinigameEndTimer()
     {
-        yield return new WaitForSeconds(3f);
-        triggerMinigameEnd();
-    }
-    void triggerMinigameEnd()
-    {
-        Debug.Log("ร้อยแล้วววว");
-        // do something after minigame end here
+        // Animate the image growing from scale 0 to its original scale
+        float elapsedTime = 0f;
+        while (elapsedTime < popDuration)
+        {
+            imageTransform.localScale = Vector3.Lerp(Vector3.zero, originalScale, elapsedTime / popDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        imageTransform.localScale = originalScale; // Ensure it reaches the original scale
+
+        // Hold the image at its original scale for a few seconds
+        yield return new WaitForSeconds(holdDuration);
+
+        // Change the scene
+        SceneManager.LoadScene(sceneToLoad);
     }
 }

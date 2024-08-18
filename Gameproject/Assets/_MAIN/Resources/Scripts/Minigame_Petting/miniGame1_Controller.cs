@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
@@ -17,7 +18,14 @@ public class miniGame1_Controller : MonoBehaviour
     public Sprite[] playerSpriteList;
 
     public GameObject Tutorial_UI;
-    
+
+    public RectTransform imageTransform; // Assign the RectTransform of the Image in the Inspector
+    public float popDuration = 1.0f; // Duration of the pop-out effect
+    public float holdDuration = 2.0f; // Duration to hold the image before changing the scene
+    public string sceneToLoad = "NextScene"; // Name of the scene to load
+
+    private Vector3 originalScale;
+
     void Start()
     {
         setGameEndStatus(true);
@@ -26,6 +34,9 @@ public class miniGame1_Controller : MonoBehaviour
         swipeDect = this.GetComponent<swipeDetection>();
         bg = this.GetComponent<backgroundColorChange>();    
         Tutorial_UI.SetActive(true);
+
+        originalScale = imageTransform.localScale; // Store the original scale
+        imageTransform.localScale = Vector3.zero; // Start with the image scale at 0
     }
     void Update()
     {
@@ -70,7 +81,18 @@ public class miniGame1_Controller : MonoBehaviour
 
     IEnumerator TriggerMinigameEndTimer()
     {
-        yield return new WaitForSeconds(3f); 
+        float elapsedTime = 0f;
+        while (elapsedTime < popDuration)
+        {
+            imageTransform.localScale = Vector3.Lerp(Vector3.zero, originalScale, elapsedTime / popDuration);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        imageTransform.localScale = originalScale; // Ensure it reaches the original scale
+
+        // Hold the image at its original scale for a few seconds
+        yield return new WaitForSeconds(holdDuration);
+
         triggerMinigameEnd();
     }
     void triggerMinigameEnd()
