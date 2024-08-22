@@ -8,8 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class readexcel : MonoBehaviour
 {
-
-    public LevelLoader script;
+    public GetValue GetValuescript;
     public TextAsset textAssetdata;
 
     public TextMeshProUGUI Dialogue;
@@ -20,6 +19,8 @@ public class readexcel : MonoBehaviour
     private int columnName = 0; // คอลัมน์ที่เก็บชื่อ
     private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
     private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
+
+    private int loaddata;
 
     void Start()
     {
@@ -37,6 +38,12 @@ public class readexcel : MonoBehaviour
         row++;
         Debug.Log("row = " + row);
 
+        staticdata.valueTokeep = loaddata;
+        Debug.Log("loaddata = " + loaddata);
+
+
+
+
     }
 
 
@@ -49,8 +56,8 @@ public class readexcel : MonoBehaviour
 
             //Debug.Log("Finished");
 
-            script.LoadScene();
-
+            GetValuescript.LoadSceneAndKeepValue();
+            
 
             return;
 
