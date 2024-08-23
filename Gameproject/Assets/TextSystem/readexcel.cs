@@ -5,44 +5,42 @@ using TMPro;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 using UnityEngine.SceneManagement;
+using UnityEditor.Search;
 
 public class readexcel : MonoBehaviour
 {
-    public GetValue GetValuescript;
-    public TextAsset textAssetdata;
-
-    public TextMeshProUGUI Dialogue;
-    public TextMeshProUGUI Name;
+    
+    public TextAsset textAssetdata; 
+    public TextMeshProUGUI Dialogue; //Show dialog Line
+    public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
-
-    private int row = 0; // ตำแหน่งของแถวปัจจุบัน
+    public int testvalue;
+    public int row = 0; // ตำแหน่งของแถวปัจจุบัน
     private int columnName = 0; // คอลัมน์ที่เก็บชื่อ
     private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
     private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
 
-    private int loaddata;
 
     void Start()
     {
+            
+            GameManager2.Instance.IncrementValue();
+            testvalue = GameManager2.Instance.RowData;
+
+            Debug.Log("testvalue = " + GameManager2.Instance.RowData);
+
+            string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+
+            // แสดงข้อความและชื่อ
+            Name.text = data[row * 3 + columnName];
+            Dialogue.text = data[row * 3 + columnDialogue];
+
+            // โหลดและแสดง sprite
+            LoadAndDisplaySprite(data[row * 3 + columnSprite]);
 
 
-        string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
-
-        // แสดงข้อความและชื่อ
-        Name.text = data[row * 3 + columnName];
-        Dialogue.text = data[row * 3 + columnDialogue];
-
-        // โหลดและแสดง sprite
-        LoadAndDisplaySprite(data[row * 3 + columnSprite]);
-
-        row++;
-        Debug.Log("row = " + row);
-
-        staticdata.valueTokeep = loaddata;
-        Debug.Log("loaddata = " + loaddata);
-
-
-
+            row++;
+            Debug.Log("row = " + row);
 
     }
 
@@ -54,9 +52,9 @@ public class readexcel : MonoBehaviour
         if (row >= data.Length / 3)
         {
 
+            
             //Debug.Log("Finished");
 
-            GetValuescript.LoadSceneAndKeepValue();
             
 
             return;

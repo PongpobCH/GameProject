@@ -7,7 +7,7 @@ public class GameManager2 : MonoBehaviour
 {
     public static GameManager2 Instance { get; private set; }
 
-    public int sharedValue = 0;
+    public int RowData = 2;
 
     private void Awake()
     {
@@ -26,17 +26,18 @@ public class GameManager2 : MonoBehaviour
         }
     }
 
-    public void IncrementValueAndLoadScene1()
+    public void IncrementValue()
     {
-        sharedValue++;
-        Debug.Log("Shared value =" + sharedValue);
-        SceneManager.LoadScene("SaveData");
+       
+        RowData++;
+        //Debug.Log("Shared value =" + sharedValue);
+        //SceneManager.LoadScene("SaveData");
     }
 
      public void IncrementValueAndLoadScene2()
     {
-        sharedValue++;
-        Debug.Log("Shared value =" + sharedValue);
-        SceneManager.LoadScene("LoadData");
+        //sharedValue++;
+        //Debug.Log("Shared value =" + sharedValue);
+        //SceneManager.LoadScene("LoadData");
     }
 }

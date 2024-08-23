@@ -278,9 +278,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1895368057}
-        m_TargetAssemblyTypeName: readexcel, Assembly-CSharp
-        m_MethodName: DisplaynextText
+      - m_Target: {fileID: 1895368059}
+        m_TargetAssemblyTypeName: otherscript, Assembly-CSharp
+        m_MethodName: LoadSceneSaveData
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -892,6 +892,7 @@ GameObject:
   - component: {fileID: 1895368058}
   - component: {fileID: 1895368057}
   - component: {fileID: 1895368059}
+  - component: {fileID: 1895368060}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -911,11 +912,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c128f87f48a0f4c86ae062d8b6042c02, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GetValuescript: {fileID: 1895368059}
   textAssetdata: {fileID: 4900000, guid: c766ab3edcc3c41349c9b239956d859e, type: 3}
   Dialogue: {fileID: 731891204}
   Name: {fileID: 929329307}
   CharacterImage: {fileID: 570468447}
+  row: 0
 --- !u!4 &1895368058
 Transform:
   m_ObjectHideFlags: 0
@@ -940,9 +941,22 @@ MonoBehaviour:
   m_GameObject: {fileID: 1895368056}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c44e3f6d381bb481bb96423ab1c37a3b, type: 3}
+  m_Script: {fileID: 11500000, guid: ddcaf2b04e29b46eb9f8816b4af6d49f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1895368060
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1895368056}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 88d700aefd66b4e00abdf27df22269a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  RowData: 4
 --- !u!1 &2075720430
 GameObject:
   m_ObjectHideFlags: 0

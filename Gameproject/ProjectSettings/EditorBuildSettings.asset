@@ -9,18 +9,12 @@ EditorBuildSettings:
     path: Assets/gameData/Scenes/MainMenu/MainMenu.unity
     guid: e3a62f15ab7b0f645a66b518c0a2bc15
   - enabled: 1
-    path: Assets/gameData/Scenes/Scenes/Prologue-AtPark.unity
-    guid: 8c9cfa26abfee488c85f1582747f6a02
-  - enabled: 1
     path: Assets/gameData/Scenes/Dialogue/Dialogue01.unity
     guid: 3c32075b494994ad68d57c2d0b79feee
   - enabled: 1
-    path: Assets/gameData/Scenes/Dialogue/Dialogue02.unity
-    guid: 86791e583546440cf8ae0a80f89b01bc
-  - enabled: 1
-    path: Assets/gameData/Scenes/LoadData.unity
+    path: Assets/gameData/Scenes/ForTesting/TestScene1.unity
     guid: ef8d54338c8e84141844d22d3172292d
   - enabled: 1
-    path: Assets/gameData/Scenes/SaveData.unity
+    path: Assets/gameData/Scenes/ForTesting/SaveData.unity
     guid: 128d39ad1eaa841818b490ec9e1a59c5
   m_configObjects: {}

@@ -15,15 +15,15 @@ public class otherscript : MonoBehaviour
 
     public void LoadSceneSaveData()
     {
-        GameManager2.Instance.IncrementValueAndLoadScene1();
-        //Debug.Log("Shared Value: " + GameManager2.Instance.sharedValue);
-        
-       
+        //readexcel.Instance.DisplaynextText();
+        //Debug.Log("Shared Value: " + readexcel.Instance.row);
+
     }
 
-    public void LoadSceneLoadData()
+    public void BacktoDialog()
     {
-         GameManager2.Instance.IncrementValueAndLoadScene2();
-        //Debug.Log("Shared Value: " + GameManager2.Instance.sharedValue);
+        //eadexcel.Instance.loadbacktoDialog();
+        
+        //Debug.Log("Shared Value: " + readexcel.Instance.row);
     }
 }
