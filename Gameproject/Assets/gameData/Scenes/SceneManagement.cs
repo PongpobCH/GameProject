@@ -3,12 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameManager2 : MonoBehaviour
+public class SceneManagement : MonoBehaviour 
 {
-    public static GameManager2 Instance { get; private set; }
-
-    public int RowData = 0;
-    public int Loadtimes = 0;
+    public static SceneManagement Instance { get; private set; }
 
     private void Awake()
     {
@@ -27,18 +24,8 @@ public class GameManager2 : MonoBehaviour
         }
     }
 
-    public void SavedRow()
+    public void LoadbacktoDialog()
     {
-       
-        RowData++;
-        Debug.Log("RowCount = " + RowData);
-        
+        SceneManager.LoadScene("Dialogue01");
     }
-    public void LoadValueData()
-    {
-        Loadtimes++;
-        
-    }
-
-    
 }
