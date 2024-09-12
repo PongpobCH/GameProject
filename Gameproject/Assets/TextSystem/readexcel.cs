@@ -8,20 +8,23 @@ using UnityEngine.SceneManagement;
 using UnityEditor.Search;
 using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
+using Unity.VisualScripting;
 
-public class readexcel : MonoBehaviour
+public class DialogManager : MonoBehaviour
 {
     
     public TextAsset textAssetdata; 
-    public TextMeshProUGUI Dialogue; //Show dialog Line
+    public TextMeshProUGUI Dialog; //Show dialog Line
     public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
+    public GameObject CharacterImageRed; // Load "Red" Character Sprite
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
     private int columnName = 0; // คอลัมน์ที่เก็บชื่อ
     private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
-    private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
+    private int columnSprite = 3; // คอลัมน์ที่เก็บชื่อ Sprite
+    private int columnScene = 2; //เก็บ Active Scene
 
 
     void Start()
@@ -29,11 +32,6 @@ public class readexcel : MonoBehaviour
 
        
         Loadtimes = GameManager2.Instance.Loadtimes;
-
-        //Debug.Log ("Loadtimes = " + Loadtimes);
-
-
-
 
             if (Loadtimes == 0)
             {
@@ -50,11 +48,11 @@ public class readexcel : MonoBehaviour
                 string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
                 // แสดงข้อความและชื่อ
-                Name.text = data[LoadRow * 3 + columnName];
-                Dialogue.text = data[LoadRow * 3 + columnDialogue];
+                Name.text = data[LoadRow * 4 + columnName];
+                Dialog.text = data[LoadRow * 4 + columnDialogue];
 
                 // โหลดและแสดง sprite
-                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);
+                LoadAndDisplaySprite(data[LoadRow * 4 + columnSprite]);
 
                 
                 GameManager2.Instance.SavedRow();
@@ -76,14 +74,12 @@ public class readexcel : MonoBehaviour
                 Debug.Log("LoadSavedrow = " + GameManager2.Instance.RowData);
 
                 // แสดงข้อความและชื่อ
-                Name.text = data[LoadRow * 3 + columnName];
-                Dialogue.text = data[LoadRow * 3 + columnDialogue];
+                Name.text = data[LoadRow * 4 + columnName];
+                Dialog.text = data[LoadRow * 4 + columnDialogue];
 
                 // โหลดและแสดง sprite
-                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);
+                LoadAndDisplaySprite(data[LoadRow * 4 + columnSprite]);
 
-                
-                //GameManager2.Instance.SavedRow();
 
                
 
@@ -100,7 +96,7 @@ public class readexcel : MonoBehaviour
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
 
-        if (GameManager2.Instance.RowData >= data.Length / 3) //End of Dialog
+        if (GameManager2.Instance.RowData >= data.Length / 4) //End of Dialog
         {
 
             Debug.Log("Finished");
@@ -110,12 +106,24 @@ public class readexcel : MonoBehaviour
 
         }
 
+        if (GameManager2.Instance.RowData == 3) //testload scene 3 
+        {
+
+            Name.gameObject.SetActive(false);
+            Dialog.gameObject.SetActive(false);
+
+            SceneManager.LoadScene("TestScene1");
+
+           
+
+        }
+
         // แสดงชื่อและข้อความ
-        Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
-        Dialogue.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
+        Name.text = data[GameManager2.Instance.RowData * 4 + columnName];
+        Dialog.text = data[GameManager2.Instance.RowData * 4 + columnDialogue];
 
         // โหลดและแสดง sprite
-        LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
+        LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 4 + columnSprite]);
 
         GameManager2.Instance.SavedRow();
         
@@ -125,22 +133,49 @@ public class readexcel : MonoBehaviour
 
     private void LoadAndDisplaySprite(string spriteName)
     {
-        spriteName = spriteName.Remove(spriteName.Length - 1);
+        spriteName = spriteName.Remove(spriteName.Length -1);
         string folderPath = "Sprites/Characters/";
+        string keywordred = "red"; // Load Only Red Keyword
+        string keywordeve = "ava"; // Load Only Eve Keyword
 
-        // โหลด Sprite จากโฟลเดอร์ที่ระบุ
-        Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
-        //Debug.Log(spriteName.Length);
 
-        // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
-        if (sprite != null)
+        if(spriteName.Contains(keywordred))
         {
-            CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
+            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            CharacterImage.gameObject.SetActive(false);
+
+             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {
+                CharacterImageRed.gameObject.SetActive(true);
+                CharacterImageRed.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
         }
-        else
+        
+        if(spriteName.Contains(keywordeve))
         {
-            //Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            CharacterImageRed.gameObject.SetActive(false);
+
+             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {   
+                CharacterImage.gameObject.SetActive(true);
+                CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
         }
+        
+        
+
+       
 
        
     }
