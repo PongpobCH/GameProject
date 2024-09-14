@@ -18,6 +18,7 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
     public GameObject CharacterImageRed; // Load "Red" Character Sprite
+    public GameObject Choicemenu;
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
@@ -30,7 +31,8 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
 
-       
+       Choicemenu.gameObject.SetActive(false);
+
         Loadtimes = GameManager2.Instance.Loadtimes;
 
             if (Loadtimes == 0)
@@ -109,12 +111,11 @@ public class DialogManager : MonoBehaviour
         if (GameManager2.Instance.RowData == 3) //testload scene 3 
         {
 
+            Choicemenu.gameObject.SetActive(true);
             Name.gameObject.SetActive(false);
             Dialog.gameObject.SetActive(false);
 
-            SceneManager.LoadScene("TestScene1");
-
-           
+            
 
         }
 
@@ -172,6 +173,8 @@ public class DialogManager : MonoBehaviour
                 Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
             }
         }
+
+       
         
         
 
