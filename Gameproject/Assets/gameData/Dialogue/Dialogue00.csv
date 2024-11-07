@@ -1,6 +1,10 @@
-Chara1,Line1,Scene1,ava_idle_hmm
-Chara2,Line2,Scene1,red_idle_hmm
-Chara1,Line3,Scene1,ava_idle_hmm
-Chara2,Line4,Scene2,red_idle_hmm
-Chara1,Line5,Scene2,ava_idle_hmm
-Chara2,Line6,Scene2,red_idle_hmm
+Friend 1, นี่นี่ ทำการบ้านวิชาอาจารย์กานต์รึยัง ,Scene1,ava_idle_hmm
+Friend 2,ให้ตายสิ จะสั่งอะไรเยอะนักหนา จารย์เอ็มก็มีงานต้องส่งพรุ่งนี้เหมือนกัน,Scene1,red_idle_hmm
+Friend 1, เฮ้อ รีบกลับบ้านไปทำงานดีกว่า,Scene1,ava_idle_hmm
+Ava,เฮ้อ,Scene2,red_idle_hmm
+Ava,....,Scene2,ava_idle_hmm
+Ava,อ่ะ...เผลอทำตกซะได้,Scene2,red_idle_hmm
+Ava,.....,Scene2,ava_idle_hmm
+Ava,......,Scene2,ava_idle_hmm
+Ava,..........,Scene1,ava_idle_hmm
+

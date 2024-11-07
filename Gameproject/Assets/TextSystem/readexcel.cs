@@ -19,6 +19,7 @@ public class DialogManager : MonoBehaviour
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
     public GameObject CharacterImageRed; // Load "Red" Character Sprite
     public GameObject Choicemenu;
+    public GameObject UserInterface;
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
@@ -32,7 +33,10 @@ public class DialogManager : MonoBehaviour
     void Start()
     {
 
+        
+
        Choicemenu.gameObject.SetActive(false);
+       UserInterface.gameObject.SetActive(false);
 
         Loadtimes = GameManager2.Instance.Loadtimes;
 
