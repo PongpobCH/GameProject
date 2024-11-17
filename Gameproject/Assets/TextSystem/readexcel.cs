@@ -96,29 +96,24 @@ public class DialogManager : MonoBehaviour
     }
 
 
-    public void DisplaynextText()
+    public void DisplaynextText() // Show Next Text
     {
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
 
-        if (GameManager2.Instance.RowData >= data.Length / 4) //End of Dialog
-        {
-
-            Debug.Log("Finished");
-            SceneManager.LoadScene("TestScene1");
-
-            return;
-
-        }
-
         
-
+        if (GameManager2.Instance.RowData >= data.Length / 4) //Dialog จบแล้ว
+        {
+            Debug.Log("End of Dialog");
+            //SceneManager.LoadScene("TestScene1"); 
+            return;
+        }
         if(ischoice == false)
         {
 
-                if (GameManager2.Instance.RowData == 2) //testload scene 3 
+                if (GameManager2.Instance.RowData == 2) // test Choice 
             {
 
                 Choicemenu.gameObject.SetActive(true);
@@ -126,21 +121,18 @@ public class DialogManager : MonoBehaviour
 
             }
 
+
              // แสดงชื่อและข้อความ
                 Name.text = data[GameManager2.Instance.RowData * 4 + columnName];
                 Dialog.text = data[GameManager2.Instance.RowData * 4 + columnDialogue];
 
-                // โหลดและแสดง sprite
+            // โหลดและแสดง sprite
+
                 LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 4 + columnSprite]);
 
                 GameManager2.Instance.SavedRow();
-
+                
         }
-
-        
-        
-
-
     }
 
     private void LoadAndDisplaySprite(string spriteName)
@@ -185,7 +177,7 @@ public class DialogManager : MonoBehaviour
             }
         } 
     }
-    public void Choice1()
+    public void Choice1() //เลือก Choice 1
     {
 
         Debug.Log("Choice 1");
@@ -195,16 +187,18 @@ public class DialogManager : MonoBehaviour
 
 
     }
-    public void Choice2()
+    public void Choice2() //เลือก Choice 2
     {
         Debug.Log("Choice 2");
         Choicemenu.gameObject.SetActive(false);
          ischoice = false;
+         DisplaynextText();
     }
-    public void Choice3()
+    public void Choice3() //เลือก Choice 3
     {
         Debug.Log("Choice 3");
         Choicemenu.gameObject.SetActive(false);
          ischoice = false;
+         DisplaynextText();
     }
 }
