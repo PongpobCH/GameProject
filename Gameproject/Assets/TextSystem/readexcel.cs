@@ -25,52 +25,44 @@ public class DialogManager : MonoBehaviour
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
     private int columnName = 0; // คอลัมน์ที่เก็บชื่อ
     private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
-    private int columnSprite = 3; // คอลัมน์ที่เก็บชื่อ Sprite
-    private int columnScene = 2; //เก็บ Active Scene
+    private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
+    //private int columnScene = 2; //เก็บ Active Scene
     private bool ischoice = false;
 
 
     void Start()
     {
 
-        
-
-       Choicemenu.gameObject.SetActive(false);
-       UserInterface.gameObject.SetActive(false);
+       Choicemenu.gameObject.SetActive(false);      //ไว้ปิดตัว Choice 
+       UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
 
         Loadtimes = GameManager2.Instance.Loadtimes;
 
             if (Loadtimes == 0)
             {
-                Debug.Log("Load 1 times ");
+                //Debug.Log("Load 1 times ");
 
                 GameManager2.Instance.Loadtimes++;
 
                 LoadRow = GameManager2.Instance.RowData;
 
-                Debug.Log("LoadSavedRow = " + GameManager2.Instance.RowData);
-
-                
+                //Debug.Log("LoadSavedRow = " + GameManager2.Instance.RowData);
 
                 string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
                 // แสดงข้อความและชื่อ
-                Name.text = data[LoadRow * 4 + columnName];
-                Dialog.text = data[LoadRow * 4 + columnDialogue];
+                Name.text = data[LoadRow * 3 + columnName];
+                Dialog.text = data[LoadRow * 3 + columnDialogue];
 
                 // โหลดและแสดง sprite
-                LoadAndDisplaySprite(data[LoadRow * 4 + columnSprite]);
-
-                
+                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);                
                 GameManager2.Instance.SavedRow();
-
 
             }
            else 
            {
 
-
-                Debug.Log("Load 2 or more times ");
+                //Debug.Log("Load 2 or more times "); ไว้ Test debug โหลดครั้งที่ 2 
 
                 GameManager2.Instance.Loadtimes++;
 
@@ -81,20 +73,14 @@ public class DialogManager : MonoBehaviour
                 Debug.Log("LoadSavedrow = " + GameManager2.Instance.RowData);
 
                 // แสดงข้อความและชื่อ
-                Name.text = data[LoadRow * 4 + columnName];
-                Dialog.text = data[LoadRow * 4 + columnDialogue];
+                Name.text = data[LoadRow * 3 + columnName];
+                Dialog.text = data[LoadRow * 3 + columnDialogue];
 
                 // โหลดและแสดง sprite
-                LoadAndDisplaySprite(data[LoadRow * 4 + columnSprite]);
-
-
-               
+                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);
 
            }
-            
-
     }
-
 
     public void DisplaynextText() // Show Next Text
     {
@@ -104,35 +90,48 @@ public class DialogManager : MonoBehaviour
         //LoadRow = GameManager2.Instance.RowData;
 
         
-        if (GameManager2.Instance.RowData >= data.Length / 4) //Dialog จบแล้ว
+        if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
             //SceneManager.LoadScene("TestScene1"); 
             return;
         }
+
         if(ischoice == false)
         {
 
                 if (GameManager2.Instance.RowData == 2) // test Choice 
             {
-
+                Debug.Log("Activate Choice");
                 Choicemenu.gameObject.SetActive(true);
                 ischoice = true;
 
             }
 
 
-             // แสดงชื่อและข้อความ
-                Name.text = data[GameManager2.Instance.RowData * 4 + columnName];
-                Dialog.text = data[GameManager2.Instance.RowData * 4 + columnDialogue];
 
-            // โหลดและแสดง sprite
+           
 
-                LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 4 + columnSprite]);
+        }
+
+        
+
+         // แสดงชื่อและข้อความ
+                Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
+                Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
+
+             // โหลดและแสดง sprite
+
+                LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
 
                 GameManager2.Instance.SavedRow();
-                
-        }
+
+        
+        
+             
+        
+
+               
     }
 
     private void LoadAndDisplaySprite(string spriteName)
@@ -182,7 +181,9 @@ public class DialogManager : MonoBehaviour
 
         Debug.Log("Choice 1");
         Choicemenu.gameObject.SetActive(false);
-        ischoice = false;
+        ischoice = true;
+        Debug.Log(ischoice);
+        
         DisplaynextText();
 
 
@@ -191,14 +192,18 @@ public class DialogManager : MonoBehaviour
     {
         Debug.Log("Choice 2");
         Choicemenu.gameObject.SetActive(false);
-         ischoice = false;
+         ischoice = true;
+         Debug.Log(ischoice);
+         
          DisplaynextText();
     }
     public void Choice3() //เลือก Choice 3
     {
         Debug.Log("Choice 3");
         Choicemenu.gameObject.SetActive(false);
-         ischoice = false;
+         ischoice = true;
+         Debug.Log(ischoice);
+        
          DisplaynextText();
     }
 }

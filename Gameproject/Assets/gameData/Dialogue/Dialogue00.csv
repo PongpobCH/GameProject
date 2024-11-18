@@ -1,10 +1,10 @@
-Friend 1, นี่นี่ ทำการบ้านวิชาอาจารย์กานต์รึยัง ,Scene1,ava_idle_hmm,
-Friend 2,ให้ตายสิ จะสั่งอะไรเยอะนักหนา จารย์เอ็มก็มีงานต้องส่งพรุ่งนี้เหมือนกัน,Scene1,red_idle_hmm
-Friend 1, เฮ้อ รีบกลับบ้านไปทำงานดีกว่า,Scene1,ava_idle_hmm
-Ava,เฮ้อ,Scene2,red_idle_hmm
-Ava,....,Scene2,ava_idle_hmm
-Ava,อ่ะ...เผลอทำตกซะได้,Scene2,red_idle_hmm
-Ava,.....,Scene2,ava_idle_hmm
-Ava,......,Scene2,ava_idle_hmm
-Ava,..........,Scene1,ava_idle_hmm
+Friend 1, นี่นี่ทำการบ้านวิชาอาจารย์กานต์รึยัง ,Ava_armcross_eyeclose
+Friend 2,ให้ตายสิจะสั่งอะไรเยอะนักหนา จารย์เอ็มก็มีงานต้องส่งพรุ่งนี้เหมือนกัน,red_idle_hmm
+Friend 1, เฮ้อ รีบกลับบ้านไปทำงานดีกว่า,ava_idle_hmm
+Ava,เฮ้อ,red_idle_hmm
+Ava,....,ava_idle_hmm
+Ava,อ่ะ...เผลอทำตกซะได้,ava_idle_hmm
+Ava,.....,ava_idle_hmm
+Ava,......,ava_idle_hmm
+Ava,..........,ava_idle_hmm
 
