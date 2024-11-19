@@ -1,10 +1,8 @@
 Friend 1, นี่นี่ทำการบ้านวิชาอาจารย์กานต์รึยัง ,Ava_armcross_eyeclose
 Friend 2,ให้ตายสิจะสั่งอะไรเยอะนักหนา จารย์เอ็มก็มีงานต้องส่งพรุ่งนี้เหมือนกัน,red_idle_hmm
 Friend 1, เฮ้อ รีบกลับบ้านไปทำงานดีกว่า,ava_idle_hmm
-Ava,เฮ้อ,red_idle_hmm
-Ava,....,ava_idle_hmm
-Ava,อ่ะ...เผลอทำตกซะได้,ava_idle_hmm
-Ava,.....,ava_idle_hmm
-Ava,......,ava_idle_hmm
-Ava,..........,ava_idle_hmm
-
+Ava,เฮ้อ,UC
+Ava,....,UC
+Ava,อ่ะ...เผลอทำตกซะได้,UC
+Ava,.....,UC
+Ava, End of Dialog, UC,

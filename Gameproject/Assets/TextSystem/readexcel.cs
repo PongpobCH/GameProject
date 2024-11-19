@@ -18,6 +18,7 @@ public class DialogManager : MonoBehaviour
     public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
     public GameObject CharacterImageRed; // Load "Red" Character Sprite
+    public GameObject CharacterImageUC;
     public GameObject Choicemenu;
     public GameObject UserInterface;
     public int Loadtimes;
@@ -93,30 +94,14 @@ public class DialogManager : MonoBehaviour
         if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
+            UserInterface.gameObject.SetActive(false);
             //SceneManager.LoadScene("TestScene1"); 
             return;
+
+            
         }
 
-        if(ischoice == false)
-        {
-
-                if (GameManager2.Instance.RowData == 2) // test Choice 
-            {
-                Debug.Log("Activate Choice");
-                Choicemenu.gameObject.SetActive(true);
-                ischoice = true;
-
-            }
-
-
-
-           
-
-        }
-
-        
-
-         // แสดงชื่อและข้อความ
+             // แสดงชื่อและข้อความ
                 Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
                 Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
 
@@ -125,6 +110,24 @@ public class DialogManager : MonoBehaviour
                 LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
 
                 GameManager2.Instance.SavedRow();
+
+
+        if(ischoice == false)
+        {
+
+                if (GameManager2.Instance.RowData == 200) // test Choice 
+            {
+                Debug.Log("Activate Choice");
+                Choicemenu.gameObject.SetActive(true);
+                ischoice = true;
+
+            }
+
+        }
+
+
+
+            
 
         
         
@@ -136,10 +139,11 @@ public class DialogManager : MonoBehaviour
 
     private void LoadAndDisplaySprite(string spriteName)
     {
-        spriteName = spriteName.Remove(spriteName.Length -1);
+        //spriteName = spriteName.Remove(spriteName.Length-1);
         string folderPath = "Sprites/Characters/";
         string keywordred = "red"; // Load Only Red Keyword
         string keywordeve = "ava"; // Load Only Eve Keyword
+       
 
 
         if(spriteName.Contains(keywordred))
@@ -174,7 +178,13 @@ public class DialogManager : MonoBehaviour
             {
                 Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
             }
+
+            
         } 
+
+       
+
+
     }
     public void Choice1() //เลือก Choice 1
     {
