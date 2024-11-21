@@ -21,6 +21,12 @@ public class DialogManager : MonoBehaviour
     public GameObject CharacterImageUC;
     public GameObject Choicemenu;
     public GameObject UserInterface;
+    public GameObject cutscenes01;
+    public GameObject cutscenes02;
+    public Cutsceneopen scriptcutscene;
+
+    public GameObject cutscenesblackscreen;
+
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
@@ -29,13 +35,15 @@ public class DialogManager : MonoBehaviour
     private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
     //private int columnScene = 2; //เก็บ Active Scene
     private bool ischoice = false;
-
+   
 
     void Start()
     {
 
-       Choicemenu.gameObject.SetActive(false);      //ไว้ปิดตัว Choice 
-       UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
+        cutscenesblackscreen.gameObject.SetActive(false);
+        cutscenes01.gameObject.SetActive(false);    //ไว้ปิด Cutscene
+        Choicemenu.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
+        UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
 
         Loadtimes = GameManager2.Instance.Loadtimes;
 
@@ -125,6 +133,35 @@ public class DialogManager : MonoBehaviour
 
         }
 
+        if(GameManager2.Instance.RowData == 4) // open cutscenes01
+        {
+            cutscenesblackscreen.gameObject.SetActive(true);
+            cutscenes01.gameObject.SetActive(true);
+            scriptcutscene.ActivateCutscene();
+            //scriptcutscene.DeactivateCutscene();
+            //Invoke("EndCutscene01", 10 );
+            //Invoke("EndCutscenebackground", 3);
+
+        }
+
+     
+
+       
+        if(GameManager2.Instance.RowData == 7)
+
+        {
+            cutscenesblackscreen.gameObject.SetActive(true);
+            cutscenes02.gameObject.SetActive(true);
+            scriptcutscene.ActivateCutscene();
+            Invoke("EndCutscene02", 3 );
+            Invoke("EndCutscenebackground", 3);
+            
+
+
+        }
+
+
+
 
 
             
@@ -135,6 +172,19 @@ public class DialogManager : MonoBehaviour
         
 
                
+    }
+
+    private void EndCutscenebackground()
+    {
+        cutscenesblackscreen.gameObject.SetActive(false);
+    }
+
+    private void EndCutscene01()
+    {
+        
+        
+        cutscenes01.gameObject.SetActive(false);
+        
     }
 
     private void LoadAndDisplaySprite(string spriteName)
