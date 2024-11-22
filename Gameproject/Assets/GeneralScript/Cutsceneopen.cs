@@ -34,6 +34,7 @@ public class Cutsceneopen : MonoBehaviour
         yield return new WaitForSeconds(transitiontime+3f);
         Debug.Log("CutSceneEnded");
         DeactivateCutscene();
+        //
         
         
         
