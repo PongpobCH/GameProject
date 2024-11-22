@@ -21,11 +21,12 @@ public class DialogManager : MonoBehaviour
     public GameObject CharacterImageUC;
     public GameObject Choicemenu;
     public GameObject UserInterface;
-    public GameObject cutscenes01;
-    public GameObject cutscenes02;
-    public Cutsceneopen scriptcutscene;
+    //public GameObject cutscenes01;
+    
 
     public GameObject cutscenesblackscreen;
+    public blackscreen scriptcutscene;
+    public CutsceneManager scriptcutsceneManager;
 
     public int Loadtimes;
     public int LoadRow;
@@ -41,7 +42,8 @@ public class DialogManager : MonoBehaviour
     {
 
         cutscenesblackscreen.gameObject.SetActive(false);
-        cutscenes01.gameObject.SetActive(false);    //ไว้ปิด Cutscene
+        //cutscenes01.gameObject.SetActive(false);    //ไว้ปิด Cutscene01
+        
         Choicemenu.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
         UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
 
@@ -89,6 +91,11 @@ public class DialogManager : MonoBehaviour
                 LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);
 
            }
+
+           scriptcutsceneManager.CheckRow();
+           
+            
+           
     }
 
     public void DisplaynextText() // Show Next Text
@@ -136,56 +143,39 @@ public class DialogManager : MonoBehaviour
         if(GameManager2.Instance.RowData == 4) // open cutscenes01
         {
             cutscenesblackscreen.gameObject.SetActive(true);
-            cutscenes01.gameObject.SetActive(true);
+           
+            scriptcutsceneManager.Playcutscene01();
             scriptcutscene.ActivateCutscene();
-            //scriptcutscene.DeactivateCutscene();
-            //Invoke("EndCutscene01", 10 );
-            //Invoke("EndCutscenebackground", 3);
+            
+            
+            Invoke("EndCutscenebackground", 3);
 
         }
 
-     
+        if(GameManager2.Instance.RowData == 7) // open cutscenes01
+        {
+
+             cutscenesblackscreen.gameObject.SetActive(true);
+           
+            scriptcutsceneManager.Playcutscene02();
+            
+            Invoke("EndCutscenebackground", 3);
+
+
+
+        }
 
        
-        if(GameManager2.Instance.RowData == 7)
-
-        {
-            cutscenesblackscreen.gameObject.SetActive(true);
-            cutscenes02.gameObject.SetActive(true);
-            scriptcutscene.ActivateCutscene();
-            Invoke("EndCutscene02", 3 );
-            Invoke("EndCutscenebackground", 3);
-            
-
-
-        }
-
-
-
-
-
-            
-
-        
-        
-             
-        
-
                
     }
 
     private void EndCutscenebackground()
     {
+        
         cutscenesblackscreen.gameObject.SetActive(false);
     }
 
-    private void EndCutscene01()
-    {
-        
-        
-        cutscenes01.gameObject.SetActive(false);
-        
-    }
+    
 
     private void LoadAndDisplaySprite(string spriteName)
     {

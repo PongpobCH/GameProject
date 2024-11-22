@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Cutsceneopen : MonoBehaviour
+public class blackscreen : MonoBehaviour
 {
 
 
@@ -29,10 +29,10 @@ public class Cutsceneopen : MonoBehaviour
 
     {
         
-        Debug.Log("start Cutscene");
+        //Debug.Log("start Cutscene");
         transition.SetTrigger("Start");
-        yield return new WaitForSeconds(transitiontime+3f);
-        Debug.Log("CutSceneEnded");
+        yield return new WaitForSeconds(transitiontime);
+        //Debug.Log("CutSceneEnded");
         DeactivateCutscene();
         //
         
@@ -41,9 +41,9 @@ public class Cutsceneopen : MonoBehaviour
     }
     private IEnumerator EndCutscene()
     {
-        Debug.Log("CutSceneEnded");
+        //Debug.Log("CutSceneEnded");
          transition.SetTrigger("End");
-         yield return new WaitForSeconds(transitiontime+3f);
+         yield return new WaitForSeconds(transitiontime);
 
     }
 
