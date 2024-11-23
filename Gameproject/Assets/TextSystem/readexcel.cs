@@ -21,7 +21,7 @@ public class DialogManager : MonoBehaviour
     public GameObject CharacterImageUC;
     public GameObject Choicemenu;
     public GameObject UserInterface;
-    //public GameObject cutscenes01;
+    
     
 
     public GameObject cutscenesblackscreen;
@@ -148,26 +148,67 @@ public class DialogManager : MonoBehaviour
             scriptcutscene.ActivateCutscene();
             
             
-            Invoke("EndCutscenebackground", 3);
+            Invoke("EndCutscenebackground", 5);
 
         }
 
-        if(GameManager2.Instance.RowData == 7) // open cutscenes01
+        if(GameManager2.Instance.RowData == 7) // open cutscenes02
         {
 
              cutscenesblackscreen.gameObject.SetActive(true);
            
             scriptcutsceneManager.Playcutscene02();
             
-            Invoke("EndCutscenebackground", 3);
+            
+           
+            Invoke("Cutscene02section2" ,5);
+
+        }  
+       if(GameManager2.Instance.RowData == 8) // open cutscenes05
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene05();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 12) // open cutscenes06
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene06();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 13) // open cutscenes06
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene07();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
 
 
-
-        }
-
-       
+            
                
     }
+
+    private void Cutscene02section2()
+    {
+        scriptcutsceneManager.Playcutscene03();
+        Invoke("Cutscene02section3" , 5);
+
+    }
+    private void Cutscene02section3()
+    {
+        scriptcutsceneManager.Playcutscene04();
+        scriptcutscene.ActivateCutscene();
+        Invoke("EndCutscenebackground", 5);
+    }
+    
+    
+    
 
     private void EndCutscenebackground()
     {

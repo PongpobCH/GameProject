@@ -31,7 +31,7 @@ public class blackscreen : MonoBehaviour
         
         //Debug.Log("start Cutscene");
         transition.SetTrigger("Start");
-        yield return new WaitForSeconds(transitiontime);
+        yield return new WaitForSeconds(transitiontime+3);
         //Debug.Log("CutSceneEnded");
         DeactivateCutscene();
         //
