@@ -180,7 +180,7 @@ public class DialogManager : MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
-        if(GameManager2.Instance.RowData == 13) // open cutscenes06
+        if(GameManager2.Instance.RowData == 13) // open cutscenes07
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene07();
@@ -188,6 +188,264 @@ public class DialogManager : MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
+
+       if(GameManager2.Instance.RowData == 20) // open cutscenes08
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene08();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 22) // open cutscenes08
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene09();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 27) // open cutscenes10
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene10();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 28) // open cutscenes11
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene11();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 30) // open cutscenes12
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene12();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+     if(GameManager2.Instance.RowData == 33) // open cutscenes13
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene13();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 61) // open cutscenes14
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene14();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 89) // open cutscenes15
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene14();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 96) // open cutscenes16
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene16();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 103) // open cutscenes17
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene17();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 114) // open cutscenes18
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene18();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 115) // open cutscenes19
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene19();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 132) // open cutscenes20
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene20();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 133) // open cutscenes21
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene21();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 170) // open cutscenes22
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene22();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 181) // open cutscenes23
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene23();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 189) // open cutscenes24
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene24();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 224) // open cutscenes25
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene25();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 225) // open cutscenes26
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene26();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 237) // open cutscenes27
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene27();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 238) // open cutscenes28
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene28();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 258) // open cutscenes29
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene29();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 259) // open cutscenes30
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene30();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 274) // open cutscenes31
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene31();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 281) // open cutscenes32
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene32();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 285) // open cutscenes33
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene33();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 326) // open cutscenes34
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene34();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       
+
+
+
+
+
+
+
+
+       
+
+
+
+       
+
+
+
+
 
 
             
