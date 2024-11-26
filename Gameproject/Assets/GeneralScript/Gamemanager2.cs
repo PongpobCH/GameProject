@@ -31,7 +31,7 @@ public class GameManager2 : MonoBehaviour
     {
        
         RowData++;
-        //Debug.Log("RowCount = " + RowData);
+        Debug.Log("RowCount = " + RowData);
         
     }
     public void LoadValueData()

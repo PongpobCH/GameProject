@@ -21,6 +21,7 @@ public class DialogManager : MonoBehaviour
     public GameObject CharacterImageUC;
     public GameObject Choicemenu01;
     public GameObject UserInterface;
+    public GameObject ContinueButton;
     
     
 
@@ -110,7 +111,13 @@ public class DialogManager : MonoBehaviour
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
 
-        
+        AvaName.gameObject.SetActive(false);
+        RedName.gameObject.SetActive(false);
+        ChoiceSet01ASelected.gameObject.SetActive(false);
+        ChoiceSet01BSelected.gameObject.SetActive(false);
+        //Dialog.gameObject.SetActive(true);
+
+
         if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
@@ -118,35 +125,48 @@ public class DialogManager : MonoBehaviour
             //SceneManager.LoadScene("TestScene1"); 
             return;
 
-            
         }
 
-             // แสดงชื่อและข้อความ
-                Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
-                Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
-
-             // โหลดและแสดง sprite
-
-                LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
-
-                GameManager2.Instance.SavedRow();
-
         
-
-
         if(ischoice == false)
         {
 
-                if (GameManager2.Instance.RowData == 72) // ChoiceSet01
+                if (GameManager2.Instance.RowData == 71) // ChoiceSet01
             {
+
                 //Debug.Log("Activate Choice");
                 Choicemenu01.gameObject.SetActive(true);
                 ischoice = true;
                 Name.gameObject.SetActive(false);
+                ContinueButton.gameObject.SetActive(false);
+
 
             }
 
+            AvaName.gameObject.SetActive(false);
+            RedName.gameObject.SetActive(false);
+            ChoiceSet01ASelected.gameObject.SetActive(false);
+            ChoiceSet01BSelected.gameObject.SetActive(false);
+            Dialog.gameObject.SetActive(true);
+            // แสดงชื่อและข้อความ
+            Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
+            Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
+
+            // โหลดและแสดง sprite
+
+            LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
+
+            GameManager2.Instance.SavedRow();   
+
         }
+
+
+
+           
+
+        
+
+
 
         if(GameManager2.Instance.RowData == 4) // open cutscenes01
         {
@@ -532,10 +552,11 @@ public class DialogManager : MonoBehaviour
 
        
         Choicemenu01.gameObject.SetActive(false);
-        ischoice = true;
+        ischoice = false;
         Dialog.gameObject.SetActive(false);
         SetAvaNameOn();
         Choice01ASelection();
+        ContinueButton.gameObject.SetActive(true);
 
 
     }
@@ -543,10 +564,11 @@ public class DialogManager : MonoBehaviour
     {
        
         Choicemenu01.gameObject.SetActive(false);
-        ischoice = true;
+        ischoice = false;
         Dialog.gameObject.SetActive(false);
         SetRedNameOn();
         Choice01BSelection();
+        ContinueButton.gameObject.SetActive(true);
 
     }
 }
