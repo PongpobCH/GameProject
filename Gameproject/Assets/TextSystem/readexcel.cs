@@ -19,7 +19,7 @@ public class DialogManager : MonoBehaviour
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
     public GameObject CharacterImageRed; // Load "Red" Character Sprite
     public GameObject CharacterImageUC;
-    public GameObject Choicemenu;
+    public GameObject Choicemenu01;
     public GameObject UserInterface;
     
     
@@ -27,6 +27,10 @@ public class DialogManager : MonoBehaviour
     public GameObject cutscenesblackscreen;
     public blackscreen scriptcutscene;
     public CutsceneManager scriptcutsceneManager;
+    public GameObject ChoiceSet01ASelected;
+    public GameObject ChoiceSet01BSelected;
+    public GameObject AvaName;
+    public GameObject RedName;
 
     public int Loadtimes;
     public int LoadRow;
@@ -40,11 +44,12 @@ public class DialogManager : MonoBehaviour
 
     void Start()
     {
-
+        ChoiceSet01ASelected.gameObject.SetActive(false);
+        ChoiceSet01BSelected.gameObject.SetActive(false);
+        AvaName.gameObject.SetActive(false);
+        RedName.gameObject.SetActive(false);
         cutscenesblackscreen.gameObject.SetActive(false);
-        //cutscenes01.gameObject.SetActive(false);    //ไว้ปิด Cutscene01
-        
-        Choicemenu.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
+        Choicemenu01.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
         UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
 
         Loadtimes = GameManager2.Instance.Loadtimes;
@@ -126,15 +131,18 @@ public class DialogManager : MonoBehaviour
 
                 GameManager2.Instance.SavedRow();
 
+        
+
 
         if(ischoice == false)
         {
 
-                if (GameManager2.Instance.RowData == 200) // test Choice 
+                if (GameManager2.Instance.RowData == 72) // ChoiceSet01
             {
-                Debug.Log("Activate Choice");
-                Choicemenu.gameObject.SetActive(true);
+                //Debug.Log("Activate Choice");
+                Choicemenu01.gameObject.SetActive(true);
                 ischoice = true;
+                Name.gameObject.SetActive(false);
 
             }
 
@@ -427,29 +435,7 @@ public class DialogManager : MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
-
-       
-
-
-
-
-
-
-
-
-       
-
-
-
-       
-
-
-
-
-
-
-            
-               
+           
     }
 
     private void Cutscene02section2()
@@ -464,7 +450,6 @@ public class DialogManager : MonoBehaviour
         scriptcutscene.ActivateCutscene();
         Invoke("EndCutscenebackground", 5);
     }
-    
     
     
 
@@ -525,34 +510,43 @@ public class DialogManager : MonoBehaviour
 
 
     }
-    public void Choice1() //เลือก Choice 1
+    public void SetAvaNameOn ()
+    {
+        AvaName.gameObject.SetActive(true);
+    }
+    public void SetRedNameOn()
+    {
+        RedName.gameObject.SetActive(true);
+    }
+    public void Choice01ASelection()
+    {
+        ChoiceSet01ASelected.gameObject.SetActive(true);
+    }
+    public void Choice01BSelection()
+    {
+        ChoiceSet01BSelected.gameObject.SetActive(true);
+    }
+
+    public void ChoiceSet1A() //เลือก Choice 1
     {
 
-        Debug.Log("Choice 1");
-        Choicemenu.gameObject.SetActive(false);
+       
+        Choicemenu01.gameObject.SetActive(false);
         ischoice = true;
-        Debug.Log(ischoice);
-        
-        DisplaynextText();
+        Dialog.gameObject.SetActive(false);
+        SetAvaNameOn();
+        Choice01ASelection();
 
 
     }
-    public void Choice2() //เลือก Choice 2
+    public void ChoiceSet1B() //เลือก Choice 2
     {
-        Debug.Log("Choice 2");
-        Choicemenu.gameObject.SetActive(false);
-         ischoice = true;
-         Debug.Log(ischoice);
-         
-         DisplaynextText();
-    }
-    public void Choice3() //เลือก Choice 3
-    {
-        Debug.Log("Choice 3");
-        Choicemenu.gameObject.SetActive(false);
-         ischoice = true;
-         Debug.Log(ischoice);
-        
-         DisplaynextText();
+       
+        Choicemenu01.gameObject.SetActive(false);
+        ischoice = true;
+        Dialog.gameObject.SetActive(false);
+        SetRedNameOn();
+        Choice01BSelection();
+
     }
 }
