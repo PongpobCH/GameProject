@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
-public class CutsceneManager : MonoBehaviour
+public class CutsceneManagerDay01 : MonoBehaviour
 {
     public Animator AnimationForCutscene01;
     public Animator AnimationForCutscene02;

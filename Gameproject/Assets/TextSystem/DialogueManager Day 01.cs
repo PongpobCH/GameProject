@@ -1,0 +1,574 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
+using UnityEngine.UIElements;
+using UnityEngine.SceneManagement;
+using UnityEditor.Search;
+using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
+using Unity.VisualScripting;
+
+public class DialogManagerDay01 : MonoBehaviour
+{
+    
+    public TextAsset textAssetdata; 
+    public TextMeshProUGUI Dialog; //Show dialog Line
+    public TextMeshProUGUI Name; // Show name from dialog 
+    public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
+    public GameObject CharacterImageRed; // Load "Red" Character Sprite
+    public GameObject CharacterImageUC;
+    public GameObject Choicemenu01;
+    public GameObject UserInterface;
+    public GameObject ContinueButton;
+    
+    
+
+    public GameObject cutscenesblackscreen;
+    public blackscreen scriptcutscene;
+    public CutsceneManagerDay01 scriptcutsceneManager;
+    public GameObject ChoiceSet01ASelected;
+    public GameObject ChoiceSet01BSelected;
+    //public GameObject AvaName;
+    //public GameObject RedName;
+
+    public int Loadtimes;
+    public int LoadRow;
+    public int row = 0; // ตำแหน่งของแถวปัจจุบัน
+    private int columnName = 0; // คอลัมน์ที่เก็บชื่อ
+    private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
+    private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
+    //private int columnScene = 2; //เก็บ Active Scene
+    private bool ischoice = false;
+   
+
+    void Start()
+    {
+        ChoiceSet01ASelected.gameObject.SetActive(false);
+        ChoiceSet01BSelected.gameObject.SetActive(false);
+        //AvaName.gameObject.SetActive(false);
+        //RedName.gameObject.SetActive(false);
+        cutscenesblackscreen.gameObject.SetActive(false);
+        Choicemenu01.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
+        UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
+
+        Loadtimes = GameManager2.Instance.Loadtimes;
+
+            if (Loadtimes == 0)
+            {
+                //Debug.Log("Load 1 times ");
+
+                GameManager2.Instance.Loadtimes++;
+
+                LoadRow = GameManager2.Instance.RowData;
+
+                //Debug.Log("LoadSavedRow = " + GameManager2.Instance.RowData);
+
+                string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+
+                // แสดงข้อความและชื่อ
+                Name.text = data[LoadRow * 3 + columnName];
+                Dialog.text = data[LoadRow * 3 + columnDialogue];
+
+                // โหลดและแสดง sprite
+                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);                
+                GameManager2.Instance.SavedRow();
+
+            }
+           else 
+           {
+
+                //Debug.Log("Load 2 or more times "); ไว้ Test debug โหลดครั้งที่ 2 
+
+                GameManager2.Instance.Loadtimes++;
+
+                LoadRow = GameManager2.Instance.RowData - 1;
+                
+                string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+                
+                Debug.Log("LoadSavedrow = " + GameManager2.Instance.RowData);
+
+                // แสดงข้อความและชื่อ
+                Name.text = data[LoadRow * 3 + columnName];
+                Dialog.text = data[LoadRow * 3 + columnDialogue];
+
+                // โหลดและแสดง sprite
+                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);
+
+           }
+
+           scriptcutsceneManager.CheckRow();
+           
+            
+           
+    }
+
+    public void DisplaynextText() // Show Next Text
+    {
+        string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+
+        //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
+        //LoadRow = GameManager2.Instance.RowData;
+
+       //AvaName.gameObject.SetActive(false);
+        //RedName.gameObject.SetActive(false);
+        ChoiceSet01ASelected.gameObject.SetActive(false);
+        ChoiceSet01BSelected.gameObject.SetActive(false);
+        //Dialog.gameObject.SetActive(true);
+
+
+        if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
+        {
+            Debug.Log("End of Dialog");
+            UserInterface.gameObject.SetActive(false);
+            //SceneManager.LoadScene("TestScene1"); 
+            return;
+
+        }
+
+        
+        if(ischoice == false)
+        {
+
+                if (GameManager2.Instance.RowData == 71) // ChoiceSet01
+            {
+
+                //Debug.Log("Activate Choice");
+                Choicemenu01.gameObject.SetActive(true);
+                ischoice = true;
+                Name.gameObject.SetActive(false);
+                ContinueButton.gameObject.SetActive(false);
+
+
+            }
+
+            //AvaName.gameObject.SetActive(false);
+            //RedName.gameObject.SetActive(false);
+            ChoiceSet01ASelected.gameObject.SetActive(false);
+            ChoiceSet01BSelected.gameObject.SetActive(false);
+            Dialog.gameObject.SetActive(true);
+            // แสดงชื่อและข้อความ
+            Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
+            Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
+
+            // โหลดและแสดง sprite
+
+            LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
+
+            GameManager2.Instance.SavedRow();   
+
+        }
+
+
+
+           
+
+        
+
+
+
+        if(GameManager2.Instance.RowData == 4) // open cutscenes01
+        {
+            cutscenesblackscreen.gameObject.SetActive(true);
+           
+            scriptcutsceneManager.Playcutscene01();
+            scriptcutscene.ActivateCutscene();
+            
+            
+            Invoke("EndCutscenebackground", 5);
+
+        }
+
+        if(GameManager2.Instance.RowData == 7) // open cutscenes02
+        {
+
+             cutscenesblackscreen.gameObject.SetActive(true);
+           
+            scriptcutsceneManager.Playcutscene02();
+            
+            
+           
+            Invoke("Cutscene02section2" ,5);
+
+        }  
+       if(GameManager2.Instance.RowData == 8) // open cutscenes05
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene05();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 12) // open cutscenes06
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene06();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 13) // open cutscenes07
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene07();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 20) // open cutscenes08
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene08();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 22) // open cutscenes08
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene09();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 27) // open cutscenes10
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene10();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 28) // open cutscenes11
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene11();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 30) // open cutscenes12
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene12();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+     if(GameManager2.Instance.RowData == 33) // open cutscenes13
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene13();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 61) // open cutscenes14
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene14();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 89) // open cutscenes15
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene14();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 96) // open cutscenes16
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene16();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 103) // open cutscenes17
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene17();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 114) // open cutscenes18
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene18();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 115) // open cutscenes19
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene19();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 132) // open cutscenes20
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene20();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 133) // open cutscenes21
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene21();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 170) // open cutscenes22
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene22();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 181) // open cutscenes23
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene23();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 189) // open cutscenes24
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene24();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 224) // open cutscenes25
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene25();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 225) // open cutscenes26
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene26();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+        if(GameManager2.Instance.RowData == 237) // open cutscenes27
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene27();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 238) // open cutscenes28
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene28();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 258) // open cutscenes29
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene29();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 259) // open cutscenes30
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene30();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 274) // open cutscenes31
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene31();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 281) // open cutscenes32
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene32();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 285) // open cutscenes33
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene33();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 326) // open cutscenes34
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene34();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+           
+    }
+
+    private void Cutscene02section2()
+    {
+        scriptcutsceneManager.Playcutscene03();
+        Invoke("Cutscene02section3" , 5);
+
+    }
+    private void Cutscene02section3()
+    {
+        scriptcutsceneManager.Playcutscene04();
+        scriptcutscene.ActivateCutscene();
+        Invoke("EndCutscenebackground", 5);
+    }
+    
+    
+
+    private void EndCutscenebackground()
+    {
+        
+        cutscenesblackscreen.gameObject.SetActive(false);
+    }
+
+    
+
+    private void LoadAndDisplaySprite(string spriteName)
+    {
+        //spriteName = spriteName.Remove(spriteName.Length-1);
+        string folderPath = "Sprites/Characters/";
+        string keywordred = "red"; // Load Only Red Keyword
+        string keywordeve = "ava"; // Load Only Eve Keyword
+       
+
+
+        if(spriteName.Contains(keywordred))
+        {
+            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            CharacterImage.gameObject.SetActive(false);
+
+             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {
+                CharacterImageRed.gameObject.SetActive(true);
+                CharacterImageRed.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
+        }
+        
+        if(spriteName.Contains(keywordeve))
+        {
+            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            CharacterImageRed.gameObject.SetActive(false);
+
+             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {   
+                CharacterImage.gameObject.SetActive(true);
+                CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
+
+            
+        } 
+
+       
+
+
+    }
+    public void SetAvaNameOn ()
+    {
+        //AvaName.gameObject.SetActive(true);
+    }
+    public void SetRedNameOn()
+    {
+        //RedName.gameObject.SetActive(true);
+    }
+    public void Choice01ASelection()
+    {
+        ChoiceSet01ASelected.gameObject.SetActive(true);
+    }
+    public void Choice01BSelection()
+    {
+        ChoiceSet01BSelected.gameObject.SetActive(true);
+    }
+
+    public void ChoiceSet1A() //เลือก Choice 1
+    {
+
+       
+        Choicemenu01.gameObject.SetActive(false);
+        ischoice = false;
+        Dialog.gameObject.SetActive(false);
+        SetAvaNameOn();
+        Choice01ASelection();
+        ContinueButton.gameObject.SetActive(true);
+
+
+    }
+    public void ChoiceSet1B() //เลือก Choice 2
+    {
+       
+        Choicemenu01.gameObject.SetActive(false);
+        ischoice = false;
+        Dialog.gameObject.SetActive(false);
+        SetRedNameOn();
+        Choice01BSelection();
+        ContinueButton.gameObject.SetActive(true);
+
+    }
+}
