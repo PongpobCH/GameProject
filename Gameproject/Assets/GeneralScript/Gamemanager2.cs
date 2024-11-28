@@ -34,7 +34,7 @@ public class GameManager2 : MonoBehaviour
         Debug.Log("RowCount = " + RowData);
         
     }
-    public void LoadValueData()
+    public void IncrementLoadtimes()
     {
         Loadtimes++;
         

@@ -10,27 +10,27 @@ public class LevelLoader : MonoBehaviour
 
     public float transitiontime =1f;
 
+    public GameManager2 gamesavedvaluescript;
+
     // Update is called once per frame
 
-    public void LoadScene()
+    public void LoadtoPrologue() 
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1 ));
+        //Debug.Log("Hit");
+        StartCoroutine(LoadPrologue());
+        gamesavedvaluescript.IncrementLoadtimes();
+
     }
 
-    public void TestLoad()
+
+    IEnumerator LoadPrologue ()
     {
-       
-    }
-
-
-
-    IEnumerator LoadLevel (int levelIndex)
-    {
+        Debug.Log("Loadscene");
         transition.SetTrigger("Start");
 
         yield return new WaitForSeconds(transitiontime);
 
-        SceneManager.LoadScene(levelIndex);
+        SceneManager.LoadScene("Prologue");
         
     }
 
@@ -38,7 +38,8 @@ public class LevelLoader : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("Player"))
         {
-           LoadScene();
+           //LoadPrologue();
+           LoadtoPrologue();
         }
     }
 

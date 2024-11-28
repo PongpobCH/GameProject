@@ -12,7 +12,9 @@ using Unity.VisualScripting;
 
 public class DialogManagerPrologue: MonoBehaviour
 {
-    
+    public blackscreen scriptcutscene;
+    public CutsceneManagerPrologue scriptcutsceneManager;
+    public ChangeScene scenescript;
     public TextAsset textAssetdata; 
     public TextMeshProUGUI Dialog; //Show dialog Line
     public TextMeshProUGUI Name; // Show name from dialog 
@@ -22,12 +24,8 @@ public class DialogManagerPrologue: MonoBehaviour
     public GameObject Choicemenu01;
     public GameObject UserInterface;
     public GameObject ContinueButton;
-    
-    
-
     public GameObject cutscenesblackscreen;
-    public blackscreen scriptcutscene;
-    public CutsceneManagerPrologue scriptcutsceneManager;
+   
     public GameObject ChoiceSet01ASelected;
     public GameObject ChoiceSet01BSelected;
     public GameObject AvaName;
@@ -160,15 +158,7 @@ public class DialogManagerPrologue: MonoBehaviour
 
         }
 
-
-
-           
-
-        
-
-
-
-        if(GameManager2.Instance.RowData == 4) // open cutscenes01
+        if(GameManager2.Instance.RowData == 5) // open cutscenes01
         {
             cutscenesblackscreen.gameObject.SetActive(true);
            
@@ -180,7 +170,13 @@ public class DialogManagerPrologue: MonoBehaviour
 
         }
 
-        if(GameManager2.Instance.RowData == 7) // open cutscenes02
+        if(GameManager2.Instance.RowData == 6) // Load into Park
+        {
+            
+            Invoke("LoadParkScene", 3);
+        } 
+
+        if(GameManager2.Instance.RowData == 8) // open cutscenes02
         {
 
              cutscenesblackscreen.gameObject.SetActive(true);
@@ -192,7 +188,7 @@ public class DialogManagerPrologue: MonoBehaviour
             Invoke("Cutscene02section2" ,5);
 
         }  
-       if(GameManager2.Instance.RowData == 8) // open cutscenes05
+       if(GameManager2.Instance.RowData == 9) // open cutscenes05
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene05();
@@ -208,6 +204,11 @@ public class DialogManagerPrologue: MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
+    }
+
+    private void LoadParkScene()
+    {
+         scenescript.LoadScenePark();
     }
         
 
@@ -245,6 +246,7 @@ public class DialogManagerPrologue: MonoBehaviour
         string folderPath = "Sprites/Characters/";
         string keywordred = "red"; // Load Only Red Keyword
         string keywordeve = "ava"; // Load Only Eve Keyword
+        string keywordextra = "extra"; // Load Only Friend Keyword
        
 
 
@@ -273,6 +275,26 @@ public class DialogManagerPrologue: MonoBehaviour
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
             if (sprite != null)
             {   
+                CharacterImage.gameObject.SetActive(true);
+                CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
+
+            
+        }
+
+        if(spriteName.Contains(keywordextra))
+        {
+            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            CharacterImageRed.gameObject.SetActive(false);
+
+             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {   
+                Debug.Log("Showing Friend Sprite");
                 CharacterImage.gameObject.SetActive(true);
                 CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
             }

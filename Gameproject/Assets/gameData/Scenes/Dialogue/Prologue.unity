@@ -521,7 +521,7 @@ GameObject:
   - component: {fileID: 297773650}
   - component: {fileID: 297773651}
   m_Layer: 0
-  m_Name: BG
+  m_Name: ParkBG
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -536,8 +536,8 @@ Transform:
   m_GameObject: {fileID: 297773649}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.5999756, z: 0}
-  m_LocalScale: {x: 1.6005063, y: 1.2403923, z: 1.6005063}
+  m_LocalPosition: {x: -0.09, y: -0.5999756, z: -0.0000000018627}
+  m_LocalScale: {x: 0.7453521, y: 0.7453521, z: 0.7453521}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2024520857}
@@ -583,15 +583,15 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 21300000, guid: 7e2d0ca28fd9d3a4f916110923165c51, type: 3}
   m_Color: {r: 0.2830189, g: 0.2830189, b: 0.2830189, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.8, y: 9.6}
+  m_Size: {x: 24.808058, y: 13.469999}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!224 &305634233 stripped
@@ -1148,8 +1148,9 @@ GameObject:
   m_Component:
   - component: {fileID: 521411232}
   - component: {fileID: 521411231}
+  - component: {fileID: 521411233}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: GameManager2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1184,6 +1185,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &521411233
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 521411230}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b3f2fed5b4c504bfda46e8d643e73bf1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &566484698 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5431203966025685182, guid: 493637cbbcc9b45409782d041f5aa6f6, type: 3}
@@ -1247,15 +1260,15 @@ SpriteRenderer:
   m_SortingLayerID: -1628960059
   m_SortingLayer: 4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 7359befc967de2548b526e5729437d0c, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 12.8, y: 9.6}
+  m_Size: {x: 10, y: 19}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &570468449
@@ -1268,7 +1281,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -6.9746704, y: -0.6436157, z: -0.0068385187}
-  m_LocalScale: {x: -0.4, y: 0.4, z: 0.4}
+  m_LocalScale: {x: -0.53788, y: 0.53788, z: 0.53788}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2024520857}
@@ -2282,6 +2295,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114171388149593726, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: gamesavedvaluescript
+      value: 
+      objectReference: {fileID: 521411231}
     - target: {fileID: 1162455809089445234, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
       propertyPath: m_Color.b
       value: 0
@@ -2701,6 +2718,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fbe440a52fed488486decdb9c4cb2cc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scriptcutscene: {fileID: 1537339143}
+  scriptcutsceneManager: {fileID: 605043968}
+  scenescript: {fileID: 521411233}
   textAssetdata: {fileID: 4900000, guid: 772354b74aff648528c6eb627a4017db, type: 3}
   Dialog: {fileID: 731891204}
   Name: {fileID: 929329307}
@@ -2711,8 +2731,6 @@ MonoBehaviour:
   UserInterface: {fileID: 2075720430}
   ContinueButton: {fileID: 349092656}
   cutscenesblackscreen: {fileID: 1537339141}
-  scriptcutscene: {fileID: 1537339143}
-  scriptcutsceneManager: {fileID: 605043968}
   ChoiceSet01ASelected: {fileID: 566484698}
   ChoiceSet01BSelected: {fileID: 1846301551}
   AvaName: {fileID: 1789553762}

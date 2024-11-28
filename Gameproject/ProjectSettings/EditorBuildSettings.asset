@@ -12,9 +12,9 @@ EditorBuildSettings:
     path: Assets/gameData/Scenes/Dialogue/Day1.unity
     guid: 3c32075b494994ad68d57c2d0b79feee
   - enabled: 1
-    path: Assets/gameData/Scenes/ForTesting/TestScene1.unity
-    guid: ef8d54338c8e84141844d22d3172292d
+    path: Assets/gameData/Scenes/Dialogue/Prologue.unity
+    guid: e77526871fbe8453282893bcc5cf2471
   - enabled: 1
-    path: Assets/gameData/Scenes/ForTesting/TestScene2.unity
-    guid: 128d39ad1eaa841818b490ec9e1a59c5
+    path: Assets/gameData/Scenes/Scenes/Park.unity
+    guid: c032f1378d9c6499196280a6bd73fc02
   m_configObjects: {}
