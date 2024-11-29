@@ -6,14 +6,21 @@ public class pickupitem : MonoBehaviour
 {
 
     public bool ispickup;
+
+    public EntityChecker entityCheckerscript;
+    public ParkSceneManager parkSceneManagerscript;
     
     
     public void pickup()
     {
+
         if (!ispickup)
         {
             ispickup = true;
+            entityCheckerscript.collectreddiary(); 
             Debug.Log("Pick up an item");
+
+            parkSceneManagerscript.cutin1();
             
             Destroy(gameObject);
             

@@ -25,6 +25,8 @@ public class DialogManagerPrologue: MonoBehaviour
     public GameObject UserInterface;
     public GameObject ContinueButton;
     public GameObject cutscenesblackscreen;
+    public GameObject EvaRoomBackground;
+    public GameObject Parkbackground;
    
     public GameObject ChoiceSet01ASelected;
     public GameObject ChoiceSet01BSelected;
@@ -50,6 +52,10 @@ public class DialogManagerPrologue: MonoBehaviour
         cutscenesblackscreen.gameObject.SetActive(false);
         Choicemenu01.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
         UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
+
+        
+        Parkbackground.SetActive(true);
+        EvaRoomBackground.SetActive(false);
 
         Loadtimes = GameManager2.Instance.Loadtimes;
 
@@ -82,6 +88,10 @@ public class DialogManagerPrologue: MonoBehaviour
                 GameManager2.Instance.Loadtimes++;
 
                 LoadRow = GameManager2.Instance.RowData - 1;
+
+                Parkbackground.SetActive(false);
+
+                EvaRoomBackground.SetActive(true);
                 
                 string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
                 
@@ -158,6 +168,8 @@ public class DialogManagerPrologue: MonoBehaviour
 
         }
 
+
+
         if(GameManager2.Instance.RowData == 5) // open cutscenes01
         {
             cutscenesblackscreen.gameObject.SetActive(true);
@@ -176,10 +188,13 @@ public class DialogManagerPrologue: MonoBehaviour
             Invoke("LoadParkScene", 3);
         } 
 
-        if(GameManager2.Instance.RowData == 8) // open cutscenes02
+        
+        
+        
+        if(GameManager2.Instance.RowData == 7) // open cutscenes02
         {
 
-             cutscenesblackscreen.gameObject.SetActive(true);
+            cutscenesblackscreen.gameObject.SetActive(true);
            
             scriptcutsceneManager.Playcutscene02();
             
@@ -204,6 +219,8 @@ public class DialogManagerPrologue: MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
+
+       
     }
 
     private void LoadParkScene()

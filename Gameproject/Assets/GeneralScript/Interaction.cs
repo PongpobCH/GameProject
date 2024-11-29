@@ -9,13 +9,8 @@ public class Interaction : MonoBehaviour
     public bool isInrange;
     public KeyCode interactkey;
     public UnityEvent interaction;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
+    
+    public EntityChecker entityCheckerscript;
     void Update()
     {
         if(isInrange)

@@ -9,8 +9,10 @@ public class LevelLoader : MonoBehaviour
     public Animator transition;
 
     public float transitiontime =1f;
+    public bool isRedDiaryCollected = false;
 
     public GameManager2 gamesavedvaluescript;
+    public EntityChecker EntityCheckerscript;
 
     // Update is called once per frame
 
@@ -39,7 +41,13 @@ public class LevelLoader : MonoBehaviour
         if(collision.gameObject.CompareTag("Player"))
         {
            //LoadPrologue();
-           LoadtoPrologue();
+           if(EntityCheckerscript.isRedDiaryCollected == true)
+           {
+                 LoadtoPrologue();
+           }
+           
+           Debug.Log("No red Diary");
+          
         }
     }
 
