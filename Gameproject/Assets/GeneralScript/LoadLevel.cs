@@ -36,6 +36,28 @@ public class LevelLoader : MonoBehaviour
         
     }
 
+    public void LoadtoEvaroom() 
+    {
+        //Debug.Log("Hit");
+        StartCoroutine(LoadtoEvaRoom());
+        gamesavedvaluescript.IncrementLoadtimes();
+
+    }
+
+
+    IEnumerator LoadtoEvaRoom ()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Prologue");
+        
+    }
+
+   
+
     private void OnTriggerEnter2D(Collider2D collision) 
     {
         if(collision.gameObject.CompareTag("Player"))

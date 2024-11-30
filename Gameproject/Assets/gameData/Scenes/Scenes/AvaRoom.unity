@@ -836,7 +836,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 305634234}
   transitiontime: 1
+  isRedDiaryCollected: 0
   gamesavedvaluescript: {fileID: 2121764631}
+  EntityCheckerscript: {fileID: 0}
 --- !u!1001 &1629895835
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -900,7 +902,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8891368529276513540, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1739878124}
   m_SourcePrefab: {fileID: 100100000, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
 --- !u!1 &1730184461
 GameObject:
@@ -1008,6 +1013,24 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1739878122 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8891368529276513540, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+  m_PrefabInstance: {fileID: 1629895835}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1739878124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1739878122}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b0220271b531642d08e1b3d7e9b15184, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameManager2script: {fileID: 2121764631}
 --- !u!1 &1895368056
 GameObject:
   m_ObjectHideFlags: 0
@@ -1055,7 +1078,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   transition: {fileID: 305634234}
   transitiontime: 1
+  isRedDiaryCollected: 0
   gamesavedvaluescript: {fileID: 2121764631}
+  EntityCheckerscript: {fileID: 0}
 --- !u!114 &1895368062
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1085,6 +1110,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  entityCheckerscript: {fileID: 0}
 --- !u!1 &1918760793
 GameObject:
   m_ObjectHideFlags: 0
@@ -1284,6 +1310,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RowData: 0
   Loadtimes: 0
+  LoadAvaroomtimes: 0
 --- !u!4 &2121764632
 Transform:
   m_ObjectHideFlags: 0

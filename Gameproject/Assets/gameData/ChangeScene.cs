@@ -9,4 +9,7 @@ public class ChangeScene : MonoBehaviour
     {
         SceneManager.LoadScene("Park");
     }
+    public void LoadAvaRoom(){
+        SceneManager.LoadScene("AvaRoom");
+    }
 }

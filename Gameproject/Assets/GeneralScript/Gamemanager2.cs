@@ -9,6 +9,7 @@ public class GameManager2 : MonoBehaviour
 
     public int RowData = 0;
     public int Loadtimes = 0;
+    public int LoadAvaroomtimes = 0;
 
     private void Awake()
     {
@@ -23,7 +24,7 @@ public class GameManager2 : MonoBehaviour
         else
         {
             // If an instance already exists, destroy this object
-            //Destroy(gameObject);
+            Destroy(gameObject);
         }
     }
 
@@ -38,6 +39,10 @@ public class GameManager2 : MonoBehaviour
     {
         Loadtimes++;
         
+    }
+    public void IncrementLoadAvaRoomtimes()
+    {
+        LoadAvaroomtimes++;
     }
 
     

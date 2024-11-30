@@ -64,6 +64,7 @@ public class DialogManagerPrologue: MonoBehaviour
                 //Debug.Log("Load 1 times ");
 
                 GameManager2.Instance.Loadtimes++;
+                GameManager2.Instance.LoadAvaroomtimes++;
 
                 LoadRow = GameManager2.Instance.RowData;
 
@@ -130,7 +131,7 @@ public class DialogManagerPrologue: MonoBehaviour
         {
             Debug.Log("End of Dialog");
             UserInterface.gameObject.SetActive(false);
-            //SceneManager.LoadScene("TestScene1"); 
+            SceneManager.LoadScene("Day1"); 
             return;
 
         }
@@ -186,6 +187,7 @@ public class DialogManagerPrologue: MonoBehaviour
         {
             
             Invoke("LoadParkScene", 3);
+
         } 
 
         
@@ -202,6 +204,9 @@ public class DialogManagerPrologue: MonoBehaviour
            
             Invoke("Cutscene02section2" ,5);
 
+        }
+        if(GameManager2.Instance.RowData == 8 ){
+            scenescript.LoadAvaRoom();
         }  
        if(GameManager2.Instance.RowData == 9) // open cutscenes05
        {
@@ -220,7 +225,7 @@ public class DialogManagerPrologue: MonoBehaviour
 
        }
 
-       
+
     }
 
     private void LoadParkScene()

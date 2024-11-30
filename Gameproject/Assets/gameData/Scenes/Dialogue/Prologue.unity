@@ -1254,6 +1254,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   RowData: 0
   Loadtimes: 0
+  LoadAvaroomtimes: 0
 --- !u!4 &521411232
 Transform:
   m_ObjectHideFlags: 0
