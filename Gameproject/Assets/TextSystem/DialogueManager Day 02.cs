@@ -10,29 +10,30 @@ using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 
-public class DialogManagerPrologue: MonoBehaviour
+public class DialogManagerDay02 : MonoBehaviour
 {
-    public blackscreen scriptcutscene;
-    public CutsceneManagerPrologue scriptcutsceneManager;
-    public ChangeScene scenescript;
+    
     public TextAsset textAssetdata; 
+    public ChangeScene scenescript;
+    public LevelLoader loadlevelscript;
+    public choicemanager choicemanagerscript;
     public TextMeshProUGUI Dialog; //Show dialog Line
     public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
     public GameObject CharacterImageRed; // Load "Red" Character Sprite
-    public GameObject CharacterImageUC;
-    public GameObject Choicemenu01;
     public GameObject UserInterface;
     public GameObject ContinueButton;
+    public GameObject ParkBG;
+    public GameObject EvaRoom;
+    public GameObject Classroom;
+    //public GameObject BlackBG;
+    public GameObject BG;
     public GameObject cutscenesblackscreen;
-    public GameObject EvaRoomBackground;
-    public GameObject Parkbackground;
-   
-    public GameObject ChoiceSet01ASelected;
-    public GameObject ChoiceSet01BSelected;
-    public GameObject AvaName;
-    public GameObject RedName;
-
+    public GameObject dialogUI;
+    public GameObject AnswerSet;
+    public blackscreen scriptcutscene;
+    //public blackscreen blackbg;
+    public CutsceneManagerDay02 scriptcutsceneManager;
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
@@ -40,22 +41,13 @@ public class DialogManagerPrologue: MonoBehaviour
     private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
     private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
     //private int columnScene = 2; //เก็บ Active Scene
-    private bool ischoice = false;
    
 
     void Start()
     {
-        ChoiceSet01ASelected.gameObject.SetActive(false);
-        ChoiceSet01BSelected.gameObject.SetActive(false);
-        AvaName.gameObject.SetActive(false);
-        RedName.gameObject.SetActive(false);
+        //BlackBG.SetActive(false);
         cutscenesblackscreen.gameObject.SetActive(false);
-        Choicemenu01.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
         UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
-
-        
-        Parkbackground.SetActive(true);
-        EvaRoomBackground.SetActive(false);
 
         Loadtimes = GameManager2.Instance.Loadtimes;
 
@@ -64,9 +56,9 @@ public class DialogManagerPrologue: MonoBehaviour
                 //Debug.Log("Load 1 times ");
 
                 GameManager2.Instance.Loadtimes++;
-                //GameManager2.Instance.LoadAvaroomtimes++;
 
                 LoadRow = GameManager2.Instance.RowData;
+                //Debug.Log("LoadRow" + LoadRow);
 
                 //Debug.Log("LoadSavedRow = " + GameManager2.Instance.RowData);
 
@@ -77,7 +69,8 @@ public class DialogManagerPrologue: MonoBehaviour
                 Dialog.text = data[LoadRow * 3 + columnDialogue];
 
                 // โหลดและแสดง sprite
-                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);                
+                LoadAndDisplaySprite(data[LoadRow * 3 + columnSprite]);      
+
                 GameManager2.Instance.SavedRow();
 
             }
@@ -89,10 +82,6 @@ public class DialogManagerPrologue: MonoBehaviour
                 GameManager2.Instance.Loadtimes++;
 
                 LoadRow = GameManager2.Instance.RowData - 1;
-
-                Parkbackground.SetActive(false);
-
-                EvaRoomBackground.SetActive(true);
                 
                 string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
                 
@@ -117,46 +106,31 @@ public class DialogManagerPrologue: MonoBehaviour
     {
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
+        choicemanagerscript.checkforchoice();
+        choicemanagerscript.checkforchoice02();
+
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
-
-        AvaName.gameObject.SetActive(false);
-        RedName.gameObject.SetActive(false);
-        ChoiceSet01ASelected.gameObject.SetActive(false);
-        ChoiceSet01BSelected.gameObject.SetActive(false);
-        //Dialog.gameObject.SetActive(true);
 
 
         if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
             UserInterface.gameObject.SetActive(false);
-            SceneManager.LoadScene("Day1"); 
+            //loadlevelscript.loadday3();
             return;
 
         }
 
-        
-        if(ischoice == false)
-        {
-
-                if (GameManager2.Instance.RowData == 71) // ChoiceSet01
-            {
-
-                //Debug.Log("Activate Choice");
-                Choicemenu01.gameObject.SetActive(true);
-                ischoice = true;
-                Name.gameObject.SetActive(false);
-                ContinueButton.gameObject.SetActive(false);
-
-
-            }
-
-            AvaName.gameObject.SetActive(false);
-            RedName.gameObject.SetActive(false);
-            ChoiceSet01ASelected.gameObject.SetActive(false);
-            ChoiceSet01BSelected.gameObject.SetActive(false);
+            dialogUI.SetActive(true);
             Dialog.gameObject.SetActive(true);
+            Debug.Log("Next Dialog");
+
+            if(GameManager2.Instance.RowData == 150)
+            {
+               AnswerSet.SetActive(false);
+            }
+            
             // แสดงชื่อและข้อความ
             Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
             Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
@@ -167,48 +141,59 @@ public class DialogManagerPrologue: MonoBehaviour
 
             GameManager2.Instance.SavedRow();   
 
-        }
 
 
+        if(GameManager2.Instance.RowData == 96) // open cutscenes16
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene01();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
 
-        if(GameManager2.Instance.RowData == 5) // open cutscenes01
-        {
-            cutscenesblackscreen.gameObject.SetActive(true);
-           
-            scriptcutsceneManager.Playcutscene01();
-            scriptcutscene.ActivateCutscene();
-            
-            
-            Invoke("EndCutscenebackground", 5);
+       }
 
-        }
+       if(GameManager2.Instance.RowData == 103) // open cutscenes17
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene02();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
 
-        if(GameManager2.Instance.RowData == 6) // Load into Park
-        {
-            
-            Invoke("LoadParkScene", 3);
+       }
 
-        } 
+       if(GameManager2.Instance.RowData == 114) // open cutscenes18
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene03();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
 
-        
-        
-        
-        if(GameManager2.Instance.RowData == 7) // open cutscenes02
-        {
+       }
 
-            cutscenesblackscreen.gameObject.SetActive(true);
-           
-            scriptcutsceneManager.Playcutscene02();
-            
-            
-           
-            Invoke("Cutscene02section2" ,5);
+       
 
-        }
-        if(GameManager2.Instance.RowData == 8 ){
-            scenescript.LoadAvaRoom();
-        }  
-       if(GameManager2.Instance.RowData == 9) // open cutscenes05
+       if(GameManager2.Instance.RowData == 115) // open cutscenes19
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene04();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 125) // Change to ClassRoom
+      {
+            Changescenetoclassroom();
+
+      }
+
+      if(GameManager2.Instance.RowData == 132) // Change to ClassRoom
+      {
+            changescenetoAvaroom();
+
+      }
+
+       if(GameManager2.Instance.RowData == 132) // open cutscenes20
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene05();
@@ -216,7 +201,8 @@ public class DialogManagerPrologue: MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
-        if(GameManager2.Instance.RowData == 12) // open cutscenes06
+
+        if(GameManager2.Instance.RowData == 133) // open cutscenes21
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene06();
@@ -225,39 +211,78 @@ public class DialogManagerPrologue: MonoBehaviour
 
        }
 
+     if(GameManager2.Instance.RowData == 170) // open cutscenes13
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene07();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+    if(GameManager2.Instance.RowData == 165){
+
+        loadlevelscript.loadminigamesymtom();
 
     }
 
-    private void LoadParkScene()
-    {
-         scenescript.LoadScenePark();
-    }
-        
+      
+      if(GameManager2.Instance.RowData == 58)
+      {
+         changescenetoblack();
+         Invoke("EndCutscenebackground", 5);
+         Invoke("closeclassroom", 3 ); 
+      } 
+      if(GameManager2.Instance.RowData == 60)
+      {
+         changescenetoblack();
+         Invoke("EndCutscenebackground", 5);
+         Invoke("changescenetoAvaroom", 3);
+
+      }
+
+        if(GameManager2.Instance.RowData == 61) // open cutscenes14
+       {
+         scenescript.LoadAvaRoom();
+       }
 
        
-
-       
-       
-
-    private void Cutscene02section2()
+    }
+    private void Changescnenetopark () 
     {
-        scriptcutsceneManager.Playcutscene03();
-        Invoke("Cutscene02section3" , 5);
+       ParkBG.SetActive(true);
+       EvaRoom.SetActive(false);
+    }
+    private void Changescenetoclassroom()
+    {
+         ParkBG.SetActive(false);
+         EvaRoom.SetActive(false);
+         Classroom.SetActive(true);
+    }
+    private void changescenetoblack(){
+
+         //BlackBG.SetActive(true);
+         //blackbg.ActivateCutscene();
 
     }
-    private void Cutscene02section3()
-    {
-        scriptcutsceneManager.Playcutscene04();
-        scriptcutscene.ActivateCutscene();
-        Invoke("EndCutscenebackground", 5);
+    private void closeclassroom(){
+
+         Classroom.SetActive(false);
+         BG.SetActive(true);
     }
-    
+    private void changescenetoAvaroom()
+    {
+         BG.SetActive(false);
+         EvaRoom.SetActive(true);
+         Classroom.SetActive(false);
+    }
     
 
     private void EndCutscenebackground()
     {
         
         cutscenesblackscreen.gameObject.SetActive(false);
+        //BlackBG.gameObject.SetActive(false);
     }
 
     
@@ -267,8 +292,7 @@ public class DialogManagerPrologue: MonoBehaviour
         //spriteName = spriteName.Remove(spriteName.Length-1);
         string folderPath = "Sprites/Characters/";
         string keywordred = "red"; // Load Only Red Keyword
-        string keywordeve = "ava"; // Load Only Eve Keyword
-        string keywordextra = "extra"; // Load Only Friend Keyword
+        string keywordava = "ava"; // Load Only Ava Keyword
        
 
 
@@ -289,7 +313,7 @@ public class DialogManagerPrologue: MonoBehaviour
             }
         }
         
-        if(spriteName.Contains(keywordeve))
+        if(spriteName.Contains(keywordava))
         {
             Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
             CharacterImageRed.gameObject.SetActive(false);
@@ -297,26 +321,6 @@ public class DialogManagerPrologue: MonoBehaviour
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
             if (sprite != null)
             {   
-                CharacterImage.gameObject.SetActive(true);
-                CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
-            }
-            else
-            {
-                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
-            }
-
-            
-        }
-
-        if(spriteName.Contains(keywordextra))
-        {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
-            CharacterImageRed.gameObject.SetActive(false);
-
-             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
-            if (sprite != null)
-            {   
-                Debug.Log("Showing Friend Sprite");
                 CharacterImage.gameObject.SetActive(true);
                 CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
             }
@@ -332,45 +336,5 @@ public class DialogManagerPrologue: MonoBehaviour
 
 
     }
-    public void SetAvaNameOn ()
-    {
-        AvaName.gameObject.SetActive(true);
-    }
-    public void SetRedNameOn()
-    {
-        RedName.gameObject.SetActive(true);
-    }
-    public void Choice01ASelection()
-    {
-        ChoiceSet01ASelected.gameObject.SetActive(true);
-    }
-    public void Choice01BSelection()
-    {
-        ChoiceSet01BSelected.gameObject.SetActive(true);
-    }
-
-    public void ChoiceSet1A() //เลือก Choice 1
-    {
-
-       
-        Choicemenu01.gameObject.SetActive(false);
-        ischoice = false;
-        Dialog.gameObject.SetActive(false);
-        SetAvaNameOn();
-        Choice01ASelection();
-        ContinueButton.gameObject.SetActive(true);
-
-
-    }
-    public void ChoiceSet1B() //เลือก Choice 2
-    {
-       
-        Choicemenu01.gameObject.SetActive(false);
-        ischoice = false;
-        Dialog.gameObject.SetActive(false);
-        SetRedNameOn();
-        Choice01BSelection();
-        ContinueButton.gameObject.SetActive(true);
-
-    }
+    
 }

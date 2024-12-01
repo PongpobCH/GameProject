@@ -12,7 +12,7 @@ public class miniGame1_Controller : MonoBehaviour
     textGeneration textGen;
     swipeDetection swipeDect;
     backgroundColorChange bg;
-    public LevelLoader script;
+    public LevelLoader levelscript;
 
     public SpriteRenderer playerSprite;
     public Sprite[] playerSpriteList;
@@ -98,7 +98,7 @@ public class miniGame1_Controller : MonoBehaviour
     void triggerMinigameEnd()
     {
         Debug.Log("ร้อยแล้วววว");
-        //script.LoadScene();
+        levelscript.LoadDay1();
 
         // do something after minigame end here
     }

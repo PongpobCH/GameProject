@@ -92,3 +92,86 @@ Ava, ......,ava_handhold_anxious
 Red, ...,red_idle_smile
 Red, ถ้าไม่ปิดก๊อกน้ำให้สนิท ซักวันนึง น้ำหยดเล็กๆ ก็จะสะสมจนท่วมห้องได้นะ,red_handup_hmm
 Red, อย่าคิดว่ามันเป็นเรื่องเล็กเลยนะคะ,red_handup_smile
+Ava, .... , red_handup_smile
+Red, เล่นไวโอลินให้ฟังหน่อยสิคะ,red_fingerup_hmm
+Ava, ....!!!! ,ava_idle_surpise
+Ava, ......,ava_handhold_anxious
+Red, ...,red_idle_smile
+Red, ถ้าไม่ปิดก๊อกน้ำให้สนิท ซักวันนึง น้ำหยดเล็กๆ ก็จะสะสมจนท่วมห้องได้นะ,red_handup_hmm
+Red, อย่าคิดว่ามันเป็นเรื่องเล็กเลยนะคะ,red_handup_smile
+Ava, ...... ,red_idle_hmm
+Ava, ....เฮ้อ..,ava_idle_frown
+Ava, ......,ava_idle_frown
+Red, .....,red_idle_hmm
+Ava,.....,ava_idle_frown
+Ava, เรด.. , ava_armcross_hmm
+Red, คะ?เอวา?, red_think_huh
+Ava, .....,ava_armcross_hmm
+Ava, ไม่มีอะไร,ava_idle_hmm
+Red, ..., red_idle_smile
+Red, เมื่อวานคุณไม่ได้นอนทั้งคืนเลยนะคะ,red_handup_hmm
+Red, ไหวรึเปล่าเอ่ย?,red_handup_hmm
+Ava, .....ฉันไม่เป็นไร,ava_idle_surpise
+Ava,.....นี่ค่ะ,ava_idle_hmm
+กระเป๋า, หือ ,extra_shadow
+กระเป๋า, เธอ! นี่มันยังให้ไม่ครบนะ เธอจะโกงฉันเหรอ!,extra_shadow
+Ava, .....!!!!! , ava_idle_surpise
+Ava, ต..แต่ ,ava_idle_surpise
+กระเป๋า, อย่ามาเถียง ก็ลองนับดูสิ!,extra_shadow
+กระเป๋า, เนี่ย ก็เห็นอยู่ว่ามันไม่คร.....!!! ,extra_shadow
+กระเป๋า, .... ,extra_shadow
+กระเป๋า , ..อ้อ ครบแล้ว.. (เดินออกไป) , extra_shadow
+Ava, ...... , ava_idle_surpise
+Ava, ..... , ava_handhold_anxious
+Friend, เอวาๆๆๆๆ เธอได้ทำการบ้านวิชาของจารย์ยืนรึยัง! ,extra_female
+Ava, ...อาจารย์ยืน..? ,ava_idle_surpise
+Friend,  ใช่แล้ว! รายงานยี่สิบหน้าที่ต้องส่งบ่ายนี้น่ะ! โอ้ยย ใครมันจะไปทำทั้นนน ,extra_female
+Ava, เอวา: ..ยี่สิบหน้า? ,ava_idle_surpise
+Friend, นี่อย่าบอกนะว่าเธอลืมน่ะ!! ไปไป โดดคาบเช้าไปใช้คอมที่ห้องสมุดเลย ไม่งั้นไม่ทันแน่! ,extra_female
+Friend, ถ้าเธอไม่เข้าใจตรงไหนรีบบอกฉันนะ เร็วเข้า! ,extra_female
+Ava, ...!!!! ,ava_idle_surpise
+Ava,..... ,ava_idle_frown
+Mom, งานประกวดไวโอลินวันเสาร์นี้น่ะ จะพลาดไม่ได้เด็ดขาดเลยนะ,extra_shadow
+Mom,ลูกเตรียมพร้อมรึยัง ไม่ได้โดดซ้อมใช่ไหม?,extra_shadow
+Ava,.......,ava_idle_frown
+Ava,..........,ava_armcross_hmm
+Ava,  เออ!! ก็รู้แล้วล่ะน่าว่ามันต้องซ้อมทุกวันน่ะ!!!!!! ,ava_scold_eyeclose
+Red, ..เ..ว...,red_idle_hmm
+Ava, ..... ,ava_armcross_hmm
+Red, ...เอ...า...,red_idle_hmm
+Ava, ..........,ava_armcross_hmm
+Red, คุณเอวาคะ ได้ยินฉันไหม,red_idle_hmm
+Ava, !!!!!....เ.รด!?,ava_idle_surpise
+Red,บอกฉันสิว่าตอนนี้คุณรู้สึกยังไง,red_handup_hmm
+Ava,..........,ava_idle_surpise
+Ava,ฉันกลัว,ava_handhold_eyeclose
+Ava,ฉันกังวล,ava_handhold_eyeclose
+Ava,..ฉันกลัว...กลัวว่าจะทำทุกอย่างไม่ได้....,ava_think_anxious
+Ava,...อื้อ..ฉัน..กังวลมากเลย..,ava_think_anxious
+Ava,หัวใจของฉันมัน..เต้นแรงมาก,ava_armcross_eyeclose
+Red,เมื่อคืนเธอก็ไม่ได้นอนด้วยสินะคะ,red_fingerup_hmm
+Ava, ..อื้อ,ava_handhold_eyeclose
+Ava,..แล้วก็ ฉัน..ฉันทำงานไม่ได้เลย....,ava_armcross_eyeclose
+Ava,เหมือนกับ..หัวฉันมันคิดอะไรไม่ออก..,ava_armcross_eyeclose
+Red, เมื่อกี้ตอนที่คุณได้รับข้อความ คุณโมโหขึ้นมาด้วยใช่ไหมล่ะคะ?,red_fingerup_hmm 
+Ava,!!!!!,ava_idle_surpise
+Ava,..ฉัน..โมโหเหรอ,ava_idle_surpise 
+Red,ใช่ค่ะ อยู่ๆ คุณก็ตะโกนขึ้นมาเสียงดังเลย,red_handup_hmm
+Ava,........,ava_idle_surpise  
+Ava,...ฉันก็คงจะแค่แพนิคไปเองล่ะมั้ง..,ava_armcross_eyeclose
+Red,ใช้คำว่า ‘แพนิค’ ก็ไม่ถูกไปซะหมดหรอกนะคะ,red_idle_smile 
+Ava,....???? หมายความว่ายังไง,ava_scold_hmm
+Red,ความวิตกกังวลน่ะ มันมีประเภทของมันนะคะ ,red_think_huh
+Red,ในหกอย่างนี้ Generalized Anxiety Disorders (GAD) เป็นประเภทที่พบได้เยอะที่สุด,red_think_normal
+Red,ฉันคิดว่าคุณเข้าข่ายประเภทนี้มากกว่าจะเป็นแพนิคค่ะ,red_think_normal 
+Red,แต่ฉันก็ยืนยันให้คุณไม่ได้หรอก เพราะฉันไม่ใช่ผู้เชี่ยวชาญเฉพาะทางอย่างเช่นคุณหมอหรือนักจิตวิทยา,red_idle_smile
+Ava,.......,ava_armcross_hmm
+Red,รายงานคุณเสร็จแล้วนี่คะ,red_think_normal
+Ava,เอ๊ะ,ava_idle_surpise
+Ava,..ต..ตอนไหนกัน,ava_idle_surpise
+Red, ... ,red_idle_smile
+Red, เสร็จไปเรื่องนึงแล้ว~ ,red_fingerup_smile
+Red, ยินดีด้วยนะคะ! ,red_fingerup_smile
+Ava,......,ava_think_anxious
+Ava,.....,ava_think_anxious
+Ava, ....อื้อ.. ,ava_idle_smile

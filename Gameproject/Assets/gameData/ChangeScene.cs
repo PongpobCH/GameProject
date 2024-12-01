@@ -12,4 +12,9 @@ public class ChangeScene : MonoBehaviour
     public void LoadAvaRoom(){
         SceneManager.LoadScene("AvaRoom");
     }
+    public void Loadbacktoday1(){
+
+        SceneManager.LoadScene("Day1");
+
+    }
 }

@@ -1413,7 +1413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isGameEnd: 0
-  script: {fileID: 411578529}
+  levelscript: {fileID: 411578529}
   playerSprite: {fileID: 1562722611}
   playerSpriteList:
   - {fileID: 21300000, guid: 74e28e1892f76a7498acecc7087f5d9d, type: 3}

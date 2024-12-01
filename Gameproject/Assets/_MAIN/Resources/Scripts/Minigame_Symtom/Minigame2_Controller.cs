@@ -24,7 +24,8 @@ public class Minigame2_Controller : MonoBehaviour
     public RectTransform imageTransform; // Assign the RectTransform of the Image in the Inspector
     public float popDuration = 1.0f; // Duration of the pop-out effect
     public float holdDuration = 2.0f; // Duration to hold the image before changing the scene
-    public string sceneToLoad = "NextScene"; // Name of the scene to load
+    //public string sceneToLoad = "NextScene"; // Name of the scene to load
+    public LevelLoader levelLoaderscript;
 
     private Vector3 originalScale;
 
@@ -34,12 +35,12 @@ public class Minigame2_Controller : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject); // Optional: Prevent this object from being destroyed when loading a new scene
+            //DontDestroyOnLoad(gameObject); // Optional: Prevent this object from being destroyed when loading a new scene
         }
-        else
-        {
-            Destroy(gameObject); // Destroy any duplicate instances
-        }
+        //else
+        //{
+            //Destroy(gameObject); // Destroy any duplicate instances
+       // }
     }
 
     private void Start()
@@ -94,6 +95,8 @@ public class Minigame2_Controller : MonoBehaviour
         yield return new WaitForSeconds(holdDuration);
 
         // Change the scene
-        SceneManager.LoadScene(sceneToLoad);
+       GameManager2.Instance.RowData = 165;
+       levelLoaderscript.loadday2();
+
     }
 }

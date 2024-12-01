@@ -15,13 +15,12 @@ public class DialogManagerDay01 : MonoBehaviour
     
     public TextAsset textAssetdata; 
     public ChangeScene scenescript;
+    public LevelLoader loadlevelscript;
+    public choicemanager choicemanagerscript;
     public TextMeshProUGUI Dialog; //Show dialog Line
     public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
     public GameObject CharacterImageRed; // Load "Red" Character Sprite
-
-    //public GameObject CharacterImageUC;
-    public GameObject Choicemenu01;
     public GameObject UserInterface;
     public GameObject ContinueButton;
     public GameObject ParkBG;
@@ -30,17 +29,11 @@ public class DialogManagerDay01 : MonoBehaviour
     public GameObject BlackBG;
     public GameObject BG;
     public GameObject cutscenesblackscreen;
+    public GameObject dialogUI;
+    public GameObject AnswerSet;
     public blackscreen scriptcutscene;
     public blackscreen blackbg;
     public CutsceneManagerDay01 scriptcutsceneManager;
-    
-
-    //public GameObject ChoiceSet01ASelected;
-    //public GameObject ChoiceSet01BSelected;
-
-    //public GameObject AvaName;
-    //public GameObject RedName;
-
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
@@ -48,19 +41,12 @@ public class DialogManagerDay01 : MonoBehaviour
     private int columnDialogue = 1; // คอลัมน์ที่เก็บข้อความ
     private int columnSprite = 2; // คอลัมน์ที่เก็บชื่อ Sprite
     //private int columnScene = 2; //เก็บ Active Scene
-    private bool ischoice = false;
    
 
     void Start()
     {
-        
-        //ChoiceSet01ASelected.gameObject.SetActive(false);
-        //ChoiceSet01BSelected.gameObject.SetActive(false);
-        //AvaName.gameObject.SetActive(false);
-        //RedName.gameObject.SetActive(false);
         BlackBG.SetActive(false);
         cutscenesblackscreen.gameObject.SetActive(false);
-        Choicemenu01.gameObject.SetActive(false);     //ไว้ปิดตัว Choice 
         UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
 
         Loadtimes = GameManager2.Instance.Loadtimes;
@@ -120,46 +106,29 @@ public class DialogManagerDay01 : MonoBehaviour
     {
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
+        choicemanagerscript.checkforchoice();
+        choicemanagerscript.checkforchoice02();
+
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
-
-       //AvaName.gameObject.SetActive(false);
-        //RedName.gameObject.SetActive(false);
-        //ChoiceSet01ASelected.gameObject.SetActive(false);
-        //ChoiceSet01BSelected.gameObject.SetActive(false);
-        //Dialog.gameObject.SetActive(true);
 
 
         if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
-            UserInterface.gameObject.SetActive(false);
-            
+            //UserInterface.gameObject.SetActive(false);
+            loadlevelscript.loadday2();
             return;
 
         }
 
-        
-        if(ischoice == false)
-        {
-
-                if (GameManager2.Instance.RowData == 71) // ChoiceSet01
-            {
-
-                //Debug.Log("Activate Choice");
-                Choicemenu01.gameObject.SetActive(true);
-                ischoice = true;
-                Name.gameObject.SetActive(false);
-                ContinueButton.gameObject.SetActive(false);
-
-
-            }
-
-            //AvaName.gameObject.SetActive(false);
-            //RedName.gameObject.SetActive(false);
-            //ChoiceSet01ASelected.gameObject.SetActive(false);
-            //ChoiceSet01BSelected.gameObject.SetActive(false);
+            dialogUI.SetActive(true);
             Dialog.gameObject.SetActive(true);
+
+            if(GameManager2.Instance.RowData == 72)
+            {
+               AnswerSet.SetActive(false);
+            } 
             // แสดงชื่อและข้อความ
             Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
             Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
@@ -170,7 +139,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
             GameManager2.Instance.SavedRow();   
 
-        }
+
 
         if(GameManager2.Instance.RowData == 14) // open cutscenes07
        {
@@ -262,18 +231,12 @@ public class DialogManagerDay01 : MonoBehaviour
         if(GameManager2.Instance.RowData == 61) // open cutscenes14
        {
          scenescript.LoadAvaRoom();
-          //cutscenesblackscreen.gameObject.SetActive(true);
-          //scriptcutsceneManager.Playcutscene14();
-          //scriptcutscene.ActivateCutscene();
-          //Invoke("EndCutscenebackground", 5);
-          
-
        }
 
-       if(GameManager2.Instance.RowData == 89) // open cutscenes15
+       if(GameManager2.Instance.RowData == 90) // open cutscenes15
        {
           cutscenesblackscreen.gameObject.SetActive(true);
-          scriptcutsceneManager.Playcutscene14();
+          scriptcutsceneManager.Playcutscene15();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
 
@@ -366,45 +329,5 @@ public class DialogManagerDay01 : MonoBehaviour
 
 
     }
-    public void SetAvaNameOn ()
-    {
-        //AvaName.gameObject.SetActive(true);
-    }
-    public void SetRedNameOn()
-    {
-        //RedName.gameObject.SetActive(true);
-    }
-    public void Choice01ASelection()
-    {
-        //ChoiceSet01ASelected.gameObject.SetActive(true);
-    }
-    public void Choice01BSelection()
-    {
-        //ChoiceSet01BSelected.gameObject.SetActive(true);
-    }
-
-    public void ChoiceSet1A() //เลือก Choice 1
-    {
-
-       
-        Choicemenu01.gameObject.SetActive(false);
-        ischoice = false;
-        Dialog.gameObject.SetActive(false);
-        SetAvaNameOn();
-        Choice01ASelection();
-        ContinueButton.gameObject.SetActive(true);
-
-
-    }
-    public void ChoiceSet1B() //เลือก Choice 2
-    {
-       
-        Choicemenu01.gameObject.SetActive(false);
-        ischoice = false;
-        Dialog.gameObject.SetActive(false);
-        SetRedNameOn();
-        Choice01BSelection();
-        ContinueButton.gameObject.SetActive(true);
-
-    }
+    
 }

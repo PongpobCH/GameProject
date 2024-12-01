@@ -37,7 +37,6 @@ public class blackscreen : MonoBehaviour
         //
         
         
-        
     }
     private IEnumerator EndCutscene()
     {

@@ -1035,7 +1035,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &454556201
 Transform:
   m_ObjectHideFlags: 0
@@ -2746,7 +2746,7 @@ MonoBehaviour:
   transitiontime: 1
   isRedDiaryCollected: 0
   gamesavedvaluescript: {fileID: 386644521}
-  EntityCheckerscript: {fileID: 0}
+  EntityCheckerscript: {fileID: 1053741595}
 --- !u!1 &1449100440
 GameObject:
   m_ObjectHideFlags: 0
@@ -3645,7 +3645,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 29c7bf0590c79384c841d9ba83994d6a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_FlipX: 0
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 10, y: 19}
@@ -3663,8 +3663,8 @@ Transform:
   m_GameObject: {fileID: 1884554520}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.74, y: 1, z: 1}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -5.74, y: -0.15, z: 1}
+  m_LocalScale: {x: 0.3923159, y: 0.3923159, z: 0.3923159}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

@@ -45,7 +45,7 @@ public class LevelLoader : MonoBehaviour
     }
 
 
-    IEnumerator LoadtoEvaRoom ()
+    IEnumerator LoadtoEvaRoom()
     {
         //Debug.Log("Loadscene");
         transition.SetTrigger("Start");
@@ -55,6 +55,74 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Prologue");
         
     }
+
+    public void LoadDay1()
+    {
+         StartCoroutine(LoadtoDay1());
+    }
+
+    IEnumerator LoadtoDay1()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Day1");
+        
+    }
+
+     public void loadminigamepetting()
+    {
+         StartCoroutine(Loadminigame1());
+    }
+
+    IEnumerator Loadminigame1()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Minigame_Petting");
+        
+    }
+
+    public void loadminigamesymtom()
+    {
+         StartCoroutine(Loadminigame2());
+    }
+
+    IEnumerator Loadminigame2()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Minigame_Symtom");
+        
+    }
+
+    public void loadday2()
+    {
+         StartCoroutine(Loadtoday2());
+    }
+
+    IEnumerator Loadtoday2()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Day2");
+        
+    }
+
+
+
+
 
    
 
