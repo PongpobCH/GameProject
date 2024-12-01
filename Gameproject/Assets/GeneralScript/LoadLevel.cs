@@ -120,6 +120,22 @@ public class LevelLoader : MonoBehaviour
         
     }
 
+    public void loadday3()
+    {
+         StartCoroutine(Loadtoday3());
+    }
+
+    IEnumerator Loadtoday3()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Day3");
+        
+    }
+
 
 
 

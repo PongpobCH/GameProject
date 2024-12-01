@@ -8,6 +8,7 @@ using UnityEngine;
 public class choicemanagerday3 : MonoBehaviour
 {
    
+    public LevelLoader loadlevelscript;
     public GameObject choiceUI01;
     public GameObject choice2;
     public GameObject choice2set1;
@@ -15,6 +16,7 @@ public class choicemanagerday3 : MonoBehaviour
     public GameObject choiceB;
     public GameObject choiceC;
     public GameObject choiceC3;
+    public GameObject choicereseting;
 
     public GameObject AnswerSet1;
     public GameObject AnswerSet2;
@@ -32,6 +34,9 @@ public class choicemanagerday3 : MonoBehaviour
     public GameObject AnswerC2;
     public GameObject AnswerC3;
     public GameObject AnswerB01;
+    public GameObject AnswerCF1;
+    public GameObject AnswerFB1;
+    public GameObject AnswerFC;
 
     public GameObject DialogUI;
     public GameObject ContinueButton;
@@ -95,7 +100,7 @@ public class choicemanagerday3 : MonoBehaviour
             }
             if (isselectC == true ){
 
-                choiceC.SetActive(true);
+                choiceC3.SetActive(true);
                 ContinueButton.SetActive(false);
                 return;
             }
@@ -128,7 +133,8 @@ public class choicemanagerday3 : MonoBehaviour
             }
 
             if (isselectC == true ){
-                //AnswerC1.SetActive(false);
+                AnswerCF1.SetActive(false);
+                DialogUI.SetActive (true);
             }
                 closeanswerset2();
                 DialogUI.SetActive(true);
@@ -136,14 +142,14 @@ public class choicemanagerday3 : MonoBehaviour
        if (GameManager2.Instance.RowData == 202){
 
             if (isselectbag == true ){
-                GameManager2.Instance.RowData = 203;
-                DialogUI.SetActive(true);
+                AnswerFB1.SetActive(true);
+                DialogUI.SetActive(false);
                 return;
         }
          if (isselectC == true ){
 
-                GameManager2.Instance.RowData = 203;
-                DialogUI.SetActive(true);
+                AnswerFC.SetActive(true);
+                DialogUI.SetActive(false);
                 return;
 
            }
@@ -154,11 +160,22 @@ public class choicemanagerday3 : MonoBehaviour
 
             if (isselectbag == true ){
                 AnswerB01.SetActive(false);
+                AnswerFB1.SetActive(false);
                 DialogUI.SetActive(true);
             return;
        }
+            if(isselectC == true ){
+                AnswerFC.SetActive(false);
+                DialogUI.SetActive(true);
+                return;
+
+            }
             AnswerA111.SetActive(false);
             DialogUI.SetActive(true);
+       }
+       if(GameManager2.Instance.RowData == 210){
+            choicereseting.SetActive(true);
+            ContinueButton.SetActive(false);
        }
 
     }
@@ -314,18 +331,15 @@ public class choicemanagerday3 : MonoBehaviour
         
     }
 
+    public void AnswerCF(){
 
+        choiceC3.SetActive(false);
+        AnswerCF1.SetActive(true);
+        DialogUI.SetActive(false);
+        ContinueButton.SetActive(true);
+
+    }
     
-
-
-
-
-
-
-
-
-
-
 
     public void closeanswerset1(){
         AnswerSet1.SetActive(false);
@@ -339,6 +353,20 @@ public class choicemanagerday3 : MonoBehaviour
 
    public void closeanswersetC(){
         AnswerSetC.SetActive(false);
+   }
+
+   public void choiceresetingstart(){
+
+        GameManager2.Instance.RowData = 191;
+        isselectbag = false;
+        isselectC = false;
+       loadlevelscript.loadday3();
+
+   }
+   public void choiceresetingend(){
+        choicereseting.SetActive(false);
+        ContinueButton.SetActive(true);
+        DialogUI.SetActive(true);
    }
 
     

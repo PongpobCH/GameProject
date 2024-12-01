@@ -115,7 +115,7 @@ public class DialogManagerDay03 : MonoBehaviour
         if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
-            UserInterface.gameObject.SetActive(false);
+            //UserInterface.gameObject.SetActive(false);
             //loadlevelscript.loadday3();
             return;
 
