@@ -1,0 +1,94 @@
+Friend 1, นี่นี่ทำการบ้านวิชาอาจารย์กานต์รึยัง ,extra_female
+Friend 2,ให้ตายสิจะสั่งอะไรเยอะนักหนา จารย์เอ็มก็มีงานต้องส่งพรุ่งนี้เหมือนกัน,extra_male
+Friend 1, เฮ้อ รีบกลับบ้านไปทำงานดีกว่า,extra_female
+Ava,เฮ้อ,ava_armcross_hmm
+Ava,....,ava_armcross_eyeclose
+Ava,อ่ะ...เผลอทำตกซะได้,ava_idle_surpise
+Ava,.....,ava_idle_hmm
+Ava,การบ้าน..,ava_idle_hmm
+Ava,..ยังไม่ตอบอีกเหรอ,ava_armcross_hmm
+Ava,...,ava_armcross_hmm
+Ava,.......,ava_armcross_eyeclose
+Ava,..........,ava_handhold_eyeclose
+Ava,...,ava_armcross_eyeclose
+Red,เอวา,red_idle_smile
+Ava,...,red_idle_smile
+Red,ตื่นได้แล้วค่ะ,red_handup_smile
+Ava,..หืม ....,ava_armcross_eyeclose
+Red,เอวาคะ ตื่นได้แล้วค่ะ,red_handup_smile
+Ava,!!!!!!,ava_idle_surpise
+Ava,อื้อ....,ava_idle_hmm
+Ava,เรด ?,ava_idle_smile
+Red,ถ้าไม่รีบไป จะสายเอานะคะ,red_think_huh
+Ava, อ่า...เอ่อ...,ava_armcross_eyeclose
+Red,...,red_idle_smile
+Red,วันนี้ก็พยายามกันอีกนะ,red_fingerup_smile
+Ava,แฮ่ก....แฮ่ก,ava_scold_hmm
+Ava,...!!!!!!,ava_idle_surpise
+Ava,อ่า...ไม่...ไม่นะ,ava_scold_eyeclose
+Red,ยังเหลือเวลาอีกสองชั่วโมงก่อนที่การเรียนของคุณจะเริ่ม และจากที่นี่ นั่งรถก็ใช้เวลาเพียงสิบนาที,red_fingerup_hmm
+Red,ฉันคิดว่านั่นคงไม่เป็นปัญหามากหรอกนะคะ,red_fingerup_smile
+Ava,อ่า..ร..เรด,ava_idle_frown
+Red,ระหว่างนั่งรอ พวกเรามาทำความรู้จักกันค่ะ,red_fingerup_smile
+Ava,......,ava_armcross_hmm
+Red,ดูอะไรอยู่หรอคะ?,red_handup_hmm
+Ava,ป-เปล่าค่ะ! ก็แค่คิดอะไรไปเรื่อย..,ava_scold_eyeclose
+Red,เธอรออะไรอยู่เหรอคะ?,red_think_huh
+Ava,!? เปล่านี่คะ..,ava_scold_hmm
+Red,ฉันเห็นคุณคอยจ้องมือถือมาตั้งแต่เมื่อวานแล้วนะคะ,red_think_huh
+Red,คุณไม่ได้รอใครจริงๆ เหรอ?,red_think_normal
+Ava,......,ava_scold_eyeclose
+Ava,ไม่ต้องไปสนใจหรอกค่ะ,ava_think_anxious
+Red,....,red_idle_smile
+Ava, ....... ,ava_think_anxious
+Ava, อ่ะ......รถมาแล้ว,ava_idle_surpise
+Ava, ........ ,ava_idle_hmm
+Friend 1, นี่เธอ ทำงานวิชาจารย์พี่เส็งยัง ,extra_male
+Friend 2,  เออๆ อันนี้เรียบร้อยแล้ว แล้วเอกสารโปรเจคล่ะ เตรียมเสร็จไหม ,extra_female
+Ava , ...... ,ava_idle_frown
+Friend 1, เอวา ,extra_male
+Friend 1 ,งานจารย์บีเราส่งกันได้รึยัง,extra_male
+Ava, อ่า ยังไม่ได้หรอก ต้องรองานจากส่วนของเบ๊บก่อนน่ะ ,ava_think_hmm
+Friend 2,  หาาา อีกแล้วเหรอ ทำไมยัยนั่นไม่รู้จักเร่งตัวเองเลยนะ ช้าตลอด ,extra_female
+Ava, ..แหะๆ ใจเย็นสิ.. ,ava_idle_smile
+Friend 2, ก็มันจริงใช่ไหมล่ะ! ชักช้าเสียเวลา ยัยนั่นมัวแต่นอนเปื่อยฟาร์มเกมทั้งวันไม่ทำอะไรเลยล่ะสิ , extra_female
+Ava , ..... ,ava_idle_smile
+Ava, (เขาอาจ....จะพยายามอยู่ก็ได้นะ) ,ava_handhold_anxious
+Friend 3, เฮ้ยทุกคน จารย์มาาาาาาาาาาาา!!!! ,extra_male
+Ava, ..... ,ava_idle_surpise
+Ava, ..ได้เวลากลับบ้านสักที...,ava_handhold_eyeclose
+Ava, ...เฮ้อ...,ava_armcross_hmm
+Ava, ต้องซ้อม.... ,ava_armcross_eyeclose
+Red, มีเรื่องให้กังวลเยอะไปหมดเลยนะคะ คุณน่ะ ,red_idle_smile
+Ava, !!! ,ava_idle_surpise
+Ava, อย่าทำให้ตกใจสิคะ! ,ava_scold_eyeclose
+Red, เฮะเฮะ ,red_fingerup_smile
+Red, ทำไมถึงแบกอะไรไว้บนบ่าไว้เยอะไปหมดเลยล่ะคะ? , red_think_huh
+Ava, ....???? ,ava_scold_hmm
+Ava, ไม่..ได้..แบกอะไรไว้สักหน่อยนี่คะ.. ,ava_scold_hmm
+Red, ... ,red_think_normal
+Red,คุณคงจะเคยได้ยินโรควิตกกังวลมาบ้างสินะ,red_think_huh
+Red,รู้รึเปล่าคะ ว่ามันคืออะไร?,red_think_normal
+Ava, .....?,ava_think_anxious
+Ava,แล้ว....มันทำไมหรอ?,ava_think_hmm
+Red,การจะเกิดเรื่องพวกนี้ได้ มันมีอยู่หลายสาเหตุนะคะ,red_fingerup_smile
+Red,การประสบกับเหตุการณ์ที่มีความตึงเครียดสูง หรือเหตุการณ์ความรุนแรง,red_think_huh
+Red,เรื่องที่ฝังใจในอดีต,red_think_huh
+Red,สารเคมีในสมองขาดสมดุล,red_think_huh
+Red,กรรมพันธุ์,red_think_huh
+Red,คุณเป็นแบบไหนกันนะคะ?,red_think_normal
+Ava,......,ava_think_hmm
+Ava,..หมายความว่ายังไงน่ะ,ava_think_anxious
+Red,คุณมีงานที่ต้องส่งแต่กลับไม่สามารถทำได้ในตอนนี้,red_handup_smile
+Red,มีใครสักคนที่รอให้ตอบกลับมา คลับคล้ายจะเป็นเรื่องสำคัญสำหรับเธอ แต่ก็ไม่มี,red_handup_smile
+Red,และเหมือนคุณจะดูเป็นที่รักของเพื่อนๆ ด้วยนะคะ,red_think_huh
+Red, คุณเข้าข่ายในข้อไหนกันนะ?,red_idle_smile
+Ava, แต่.. มันจะขนาดนั้นเลยเหรอ..,ava_think_anxious
+Ava, มัน..ก็แค่เรื่องๆทั่วๆไปไม่ใช่รึไง ,ava_think_hmm
+Red, ... ,red_idle_smile
+Red, เล่นไวโอลินให้ฟังหน่อยสิคะ,red_fingerup_hmm
+Ava, ....!!!! ,ava_idle_surpise
+Ava, ......,ava_handhold_anxious
+Red, ...,red_idle_smile
+Red, ถ้าไม่ปิดก๊อกน้ำให้สนิท ซักวันนึง น้ำหยดเล็กๆ ก็จะสะสมจนท่วมห้องได้นะ,red_handup_hmm
+Red, อย่าคิดว่ามันเป็นเรื่องเล็กเลยนะคะ,red_handup_smile
