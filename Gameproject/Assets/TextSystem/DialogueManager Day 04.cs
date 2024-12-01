@@ -138,7 +138,7 @@ public class DialogManagerDay04 : MonoBehaviour
 
 
 
-        if(GameManager2.Instance.RowData == 181) // open cutscenes23
+        if(GameManager2.Instance.RowData == 225) // open cutscenes25
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
@@ -147,7 +147,7 @@ public class DialogManagerDay04 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 189) // open cutscenes24
+       if(GameManager2.Instance.RowData == 226) // open cutscenes26
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
@@ -156,6 +156,49 @@ public class DialogManagerDay04 : MonoBehaviour
 
        }
 
+       if(GameManager2.Instance.RowData == 237) // open cutscenes27
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene03();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 238) // open cutscenes28
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene04();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+        if(GameManager2.Instance.RowData == 258) // open cutscenes29
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene05();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 259) // open cutscenes30
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene06();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
+
+       if(GameManager2.Instance.RowData == 274) // open cutscenes31
+       {
+          cutscenesblackscreen.gameObject.SetActive(true);
+          scriptcutsceneManager.Playcutscene07();
+          scriptcutscene.ActivateCutscene();
+          Invoke("EndCutscenebackground", 5);
+
+       }
 
 
      

@@ -275,3 +275,59 @@ Ava,  ... อ่ะ ,ava_think_hmm
 Ava, ..... นี่มัน,ava_think_hmm
 Musician,  ที่อยู่ของเขาน่ะครับ ฝากทักทายเผื่อผมด้วยละกันน้า,chase_handdown_smirk
 Musician,  ถ้าอย่างนั้นผมคงต้องขอตัวก่อน ไว้เจอกันใหม่นะครับ,chase_handup_smile
+Ava,พรุ่งนี้แล้ว พรุ่งนี้ก็จะต้องแสดงแล้วสินะ,ava_think_anxious
+Ava, ตื่นเต้นสุดๆไปเลย.. ฉัน..ฉันจะทำได้ใช่ไหม ใช่สิ ฉันต้องทำได้อยู่แล้ว เนอะเรด!,ava_scold_smile 
+Ava, ....เรด..?,ava_idle_surpise
+Ava,......,ava_idle_hmm
+Ava,อย่าแกล้งกันสิ!,ava_idle_frown
+Ava,เรด..เรด..เธออยู่ที่ไหน....,ava_armcross_eyeclose
+Ava,......,ava_armcross_eyeclose
+Ava, ....อย่าแกล้งกันสิ....,ava_handhold_anxious 
+Ava,  ....เจ้านั่น..,ava_armcross_hmm
+Ava,อยู่นี่เอง.....,ava_idle_hmm
+Ava, ..มัน..เป็นที่ไหนกันนะ.. ,ava_idle_hmm
+Ava, สวัสดีค่ะ..,ava_idle_frown
+Psychologist, เชิญนั่งก่อนสิครับ,therapist_eyeopen
+Ava,.....,ava_idle_frown
+Psychologist,มาครั้งแรกเหรอครับ?,therapist_eyeopen
+Ava,...ค..ค่ะ,ava_idle_surpise
+Psychologist,โอเคครับ ผมขอแนะนำตัว ผมชื่อเคท เป็นนักจิตวิทยา อยากให้ผมเรียกคุณว่าอะไรดีครับ,therapist_eyeclose
+Ava, เรียกว่าเอวาได้เลยค่ะ,ava_think_anxious 
+Psychologist,โอเคครับเอวา เอวาเรียกผมว่าพี่เคทได้เลยนะครับ,therapist_eyeopen
+Psychologist,นี่จะเป็นเซสชั่นให้คำปรึกษาทางจิตวิทยา การปรึกษาจะใช้เวลาประมาณ 45 นาที - 1 ชั่วโมง และข้อมูลทุกอย่างจะถูกเก็บเป็นความลับ ระหว่างพูดคุยหากมีคำถามไหนที่ไม่อสะดวกตอบสามารถปฎิเสธได้นะครับ ,therapist_eyeopen
+Ava,โอเคค่ะ,ava_idle_hmm
+Psychologist, แล้ววันนี้เดินทางมายังไงครับ,therapist_eyeclose 
+Ava, เอ่อ.. นั่งรถเมล์มาค่ะ,ava_idle_surpise
+Psychologist,รถติดมั้ยครับ ,therapist_eyeclose
+Ava,ไม่ติดนะคะ มาแบบสบายๆ... เลยค่ะ,ava_idle_hmm
+Psychologist,ดีเลยนะครับ ทานข้าวเช้ามาแล้วรึยังเอ่ย,therapist_eyeclose
+Ava,..ก..กินแล้ว...ค่ะ,ava_idle_surpise
+Psychologist, อ๋อ ดีเลยครับ ,therapist_eyeopen
+Psychologist,โอเคครับ แล้วช่วงนี้เอวารู้สึกยังไงบ้างครับ,therapist_eyeopen
+Ava, ....ฉ..ฉันไม่ค่อยแน่ใจว่าจะเริ่มยังไงดี..น่ะค่ะ,ava_idle_surpise
+Ava, ..ฉัน..มีงานแสดงใหญ่พรุ่งนี้แล้วค่ะ ล..แล้วก็....แล้วก็.....,ava_idle_surpise
+Psychologist,ค่อยๆพูดนะครับ เรามีเวลา,therapist_eyeclose
+Psychologist,ตอนนี้รู้สึกยังไงบ้างครับ,therapist_eyeopen
+Ava,..ดีขึ้นมากเลยค่ะ..,ava_idle_smile
+Ava, ..ขอบคุณนะคะ,ava_idle_smile
+Psychologist,ถ้าหลังจากนี้ยังต้องการคำแนะนำอยู่ล่ะก็ กลับมาหาผมได้เสมอนะครับ,therapist_eyeopen
+Psychologist,หรือจะโทรหา 1323 สายด่วนสุขภาพจิตที่เปิดตลอด 24 ชั่วโมง,therapist_eyeopen
+Psychologist,แม้แต่มหาวิทยาลัยเดี๋ยวนี้ ก็มีนักจิตวิทยาประจำมหาลัยแล้วนะครับ,therapist_eyeopen
+Psychologist,อย่าลืมดูแลสุขภาพจิตของตัวเองนะครับ,therapist_eyeclose
+Ava,.....,ava_idle_hmm
+Ava,.......,ava_idle_smile
+Red,เป็นยังไงบ้างคะ?,red_handup_smile 
+Ava, เธอหายไปไหนมา!!,XD 
+Red, ฉันไม่ได้หายไปไหนหรอกนะคะ,red_idle_smile
+Red, คุณแค่.... ไม่ได้ยินฉันเท่านั้นเอง,red_idle_hmm
+Ava, ..อ..อึก..,ava_armcross_eyeclose
+Ava, น..นั่นมันก็,ava_armcross_eyeclose 
+Ava, ถ้าเธอ.. ถ้าเธอหายไปแบบนี้อีกฉันจะทำยังไง...,ava_idle_surpise 
+Red,...,red_idle_smile 
+Red, คุณจะไม่เป็นไร เอวา,red_handup_smile
+Red, คุณน่ะ มีคนที่คอยช่วยเหลือเธออยู่เสมอเลยล่ะ,red_handup_smile 
+Red,เพราะแบบนั้น มันจะไม่เป็นไรหรอกนะ,red_idle_smile 
+Red, ต..แต่ว่า..แต่ว่า,ava_scold_eyeclose
+Red, มีพบ ก็ต้องมีจาก แต่นี่จะไม่ใช่การจากลาชั่วนิรันดร์,red_idle_smile
+Red,ฉันจะคอยเฝ้าดูคุณ ฉันจะอยู่กับคุณตราบนานเท่าที่ความทรงจำของคุณยังมีฉันอยู่,red_fingerup_smile
+Ava, เรด........ ,ava_handhold_smile
