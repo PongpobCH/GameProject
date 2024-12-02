@@ -152,6 +152,22 @@ public class LevelLoader : MonoBehaviour
         
     }
 
+     public void loadday5()
+    {
+         StartCoroutine(Loadtoday5());
+    }
+
+    IEnumerator Loadtoday5()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Day4");
+        
+    }
+
 
 
 

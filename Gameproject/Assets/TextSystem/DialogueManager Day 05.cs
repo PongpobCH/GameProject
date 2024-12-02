@@ -10,13 +10,13 @@ using System.Runtime.CompilerServices;
 using JetBrains.Annotations;
 using Unity.VisualScripting;
 
-public class DialogManagerDay02 : MonoBehaviour
+public class DialogManagerDay05 : MonoBehaviour
 {
     
     public TextAsset textAssetdata; 
     public ChangeScene scenescript;
     public LevelLoader loadlevelscript;
-    public choicemanager choicemanagerscript;
+    //public choicemanagerday4 choicemanagerscript;
     public TextMeshProUGUI Dialog; //Show dialog Line
     public TextMeshProUGUI Name; // Show name from dialog 
     public GameObject CharacterImage; // ใช้สำหรับแสดงผล Sprite
@@ -30,10 +30,9 @@ public class DialogManagerDay02 : MonoBehaviour
     public GameObject BG;
     public GameObject cutscenesblackscreen;
     public GameObject dialogUI;
-    public GameObject AnswerSet;
     public blackscreen scriptcutscene;
     //public blackscreen blackbg;
-    public CutsceneManagerDay02 scriptcutsceneManager;
+    public CutsceneManagerday5 scriptcutsceneManager;
     public int Loadtimes;
     public int LoadRow;
     public int row = 0; // ตำแหน่งของแถวปัจจุบัน
@@ -106,9 +105,8 @@ public class DialogManagerDay02 : MonoBehaviour
     {
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
-        choicemanagerscript.checkforchoice();
-        choicemanagerscript.checkforchoice02();
-
+       
+        
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
 
@@ -116,20 +114,16 @@ public class DialogManagerDay02 : MonoBehaviour
         if (GameManager2.Instance.RowData >= data.Length / 3) //Dialog จบแล้ว
         {
             Debug.Log("End of Dialog");
-            UserInterface.gameObject.SetActive(false);
-            loadlevelscript.loadday3();
+            //UserInterface.gameObject.SetActive(false);
+            //loadlevelscript.loadday3();
             return;
 
         }
 
-            dialogUI.SetActive(true);
-            Dialog.gameObject.SetActive(true);
-            Debug.Log("Next Dialog");
+            //dialogUI.SetActive(true);
+            //Dialog.gameObject.SetActive(true);
+            //Debug.Log("Next Dialog");
 
-            if(GameManager2.Instance.RowData == 150)
-            {
-               AnswerSet.SetActive(false);
-            }
             
             // แสดงชื่อและข้อความ
             Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
@@ -143,7 +137,7 @@ public class DialogManagerDay02 : MonoBehaviour
 
 
 
-        if(GameManager2.Instance.RowData == 96) // open cutscenes16
+        if(GameManager2.Instance.RowData == 281) // open cutscenes25
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
@@ -152,7 +146,7 @@ public class DialogManagerDay02 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 103) // open cutscenes17
+       if(GameManager2.Instance.RowData == 285) // open cutscenes26
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
@@ -161,7 +155,7 @@ public class DialogManagerDay02 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 114) // open cutscenes18
+       if(GameManager2.Instance.RowData == 309) // open cutscenes27
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene03();
@@ -170,9 +164,7 @@ public class DialogManagerDay02 : MonoBehaviour
 
        }
 
-       
-
-       if(GameManager2.Instance.RowData == 115) // open cutscenes19
+       if(GameManager2.Instance.RowData == 333) // open cutscenes28
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene04();
@@ -180,6 +172,12 @@ public class DialogManagerDay02 : MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
+       
+
+
+     
+
+
 
        if(GameManager2.Instance.RowData == 125) // Change to ClassRoom
       {
@@ -193,32 +191,7 @@ public class DialogManagerDay02 : MonoBehaviour
 
       }
 
-       if(GameManager2.Instance.RowData == 132) // open cutscenes20
-       {
-          cutscenesblackscreen.gameObject.SetActive(true);
-          scriptcutsceneManager.Playcutscene05();
-          scriptcutscene.ActivateCutscene();
-          Invoke("EndCutscenebackground", 5);
-
-       }
-
-        if(GameManager2.Instance.RowData == 133) // open cutscenes21
-       {
-          cutscenesblackscreen.gameObject.SetActive(true);
-          scriptcutsceneManager.Playcutscene06();
-          scriptcutscene.ActivateCutscene();
-          Invoke("EndCutscenebackground", 5);
-
-       }
-
-     if(GameManager2.Instance.RowData == 170) // open cutscenes13
-       {
-          cutscenesblackscreen.gameObject.SetActive(true);
-          scriptcutsceneManager.Playcutscene07();
-          scriptcutscene.ActivateCutscene();
-          Invoke("EndCutscenebackground", 5);
-
-       }
+      
 
     if(GameManager2.Instance.RowData == 165){
 

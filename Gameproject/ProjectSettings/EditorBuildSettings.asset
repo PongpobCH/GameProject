@@ -35,4 +35,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/gameData/Scenes/Dialogue/Day4.unity
     guid: fc2bbd1db056749d7a0d3b405c0e7b66
+  - enabled: 1
+    path: Assets/gameData/Scenes/Dialogue/Day5.unity
+    guid: f9e96acbb3cb446c5a96bfcbf8e6d87d
   m_configObjects: {}
