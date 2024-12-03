@@ -14,6 +14,20 @@ public class LevelLoader : MonoBehaviour
     public GameManager2 gamesavedvaluescript;
     public EntityChecker EntityCheckerscript;
 
+    public GameObject mainmenu;
+    public GameObject loadmenu;
+
+    public void switchToMainmenu()
+    {
+        mainmenu.SetActive(true);
+        loadmenu.SetActive(false);
+    }
+    public void switchToLoadmenu()
+    {
+        mainmenu.SetActive(false);
+        loadmenu.SetActive(true);
+    }
+
     // Update is called once per frame
 
     public void LoadtoPrologue() 
@@ -168,13 +182,26 @@ public class LevelLoader : MonoBehaviour
         
     }
 
+    public void LoadDayEP()
+    {
+        StartCoroutine(LoadtoEP());
+    }
+
+    IEnumerator LoadtoEP()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Epilogue");
+    }
 
 
 
 
-   
 
-    private void OnTriggerEnter2D(Collider2D collision) 
+        private void OnTriggerEnter2D(Collider2D collision) 
     {
         if(collision.gameObject.CompareTag("Player"))
         {

@@ -1,5 +1,14 @@
 {
   "dependencies": {
+    "com.phengine.thaitextcare": {
+      "version": "https://github.com/phanphantz/ThaiTextCare-for-Unity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.textmeshpro": ""
+      },
+      "hash": "c65f1948e4bf8320a5b9453cc37e62abfb4e1512"
+    },
     "com.unity.2d.animation": {
       "version": "9.0.4",
       "depth": 1,
