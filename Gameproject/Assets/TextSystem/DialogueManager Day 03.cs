@@ -116,7 +116,7 @@ public class DialogManagerDay03 : MonoBehaviour
         {
             Debug.Log("End of Dialog");
             //UserInterface.gameObject.SetActive(false);
-            //loadlevelscript.loadday3();
+            loadlevelscript.loadday4();
             return;
 
         }

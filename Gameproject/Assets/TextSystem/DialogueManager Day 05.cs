@@ -24,9 +24,10 @@ public class DialogManagerDay05 : MonoBehaviour
     public GameObject UserInterface;
     public GameObject ContinueButton;
     public GameObject ParkBG;
-    public GameObject EvaRoom;
+    public GameObject AvaRoom;
     public GameObject Classroom;
     //public GameObject BlackBG;
+    public GameObject Phycologitsroom;
     public GameObject BG;
     public GameObject cutscenesblackscreen;
     public GameObject dialogUI;
@@ -155,6 +156,20 @@ public class DialogManagerDay05 : MonoBehaviour
 
        }
 
+       if(GameManager2.Instance.RowData == 288){
+
+          AvaRoom.SetActive(false);
+          Phycologitsroom.SetActive(true);
+       }
+
+        if(GameManager2.Instance.RowData == 316){
+
+            AvaRoom.SetActive(true);
+            Phycologitsroom.SetActive(false);
+        }
+
+       
+
        if(GameManager2.Instance.RowData == 309) // open cutscenes27
        {
           cutscenesblackscreen.gameObject.SetActive(true);
@@ -224,12 +239,12 @@ public class DialogManagerDay05 : MonoBehaviour
     private void Changescnenetopark () 
     {
        ParkBG.SetActive(true);
-       EvaRoom.SetActive(false);
+       AvaRoom.SetActive(false);
     }
     private void Changescenetoclassroom()
     {
          ParkBG.SetActive(false);
-         EvaRoom.SetActive(false);
+         AvaRoom.SetActive(false);
          Classroom.SetActive(true);
     }
     private void changescenetoblack(){
@@ -246,10 +261,11 @@ public class DialogManagerDay05 : MonoBehaviour
     private void changescenetoAvaroom()
     {
          BG.SetActive(false);
-         EvaRoom.SetActive(true);
+         AvaRoom.SetActive(true);
          Classroom.SetActive(false);
     }
     
+   
 
     private void EndCutscenebackground()
     {
@@ -266,6 +282,7 @@ public class DialogManagerDay05 : MonoBehaviour
         string folderPath = "Sprites/Characters/";
         string keywordred = "red"; // Load Only Red Keyword
         string keywordava = "ava"; // Load Only Ava Keyword
+        string keywordpsy = "therapist"; 
        
 
 
@@ -284,6 +301,25 @@ public class DialogManagerDay05 : MonoBehaviour
             {
                 Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
             }
+
+        }
+
+        if(spriteName.Contains(keywordpsy))
+        {
+            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            CharacterImage.gameObject.SetActive(false);
+
+             // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {
+                CharacterImageRed.gameObject.SetActive(true);
+                CharacterImageRed.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
+            
         }
         
         if(spriteName.Contains(keywordava))
