@@ -95,7 +95,7 @@ public class Minigame2_Controller : MonoBehaviour
         yield return new WaitForSeconds(holdDuration);
 
         // Change the scene
-       GameManager2.Instance.RowData = 165;
+       GameManager2.Instance.RowData = 56;
        levelLoaderscript.loadday2();
 
     }

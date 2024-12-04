@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using JetBrains.Annotations;
 using UnityEditor.Rendering;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class choicemanager : MonoBehaviour
 {
@@ -26,20 +27,21 @@ public class choicemanager : MonoBehaviour
         ChoiceUI02.SetActive(false);
         
     }
+    public bool IsCurrentScene(string sceneName)
+    {
+        return SceneManager.GetActiveScene().name == sceneName;
+    }
 
     public void checkforchoice(){
-        if(GameManager2.Instance.RowData == 71 )
+        if(GameManager2.Instance.RowData == 63 && IsCurrentScene("Day2"))
         {
-            choiceUI01.SetActive(true);
-            ContinueButton.SetActive(false);
-        }
-
-        if(GameManager2.Instance.RowData == 145){
             choiceUI01.SetActive(true);
             ContinueButton.SetActive(false);
         }
     }
 
+    public void GOGOPOWERRANGER() { choiceUI01.SetActive(false); ContinueButton.SetActive(true); }
+    
     public void SelectedAnswerA(){
 
         //Debug.Log("AnswerA");
@@ -75,10 +77,10 @@ public class choicemanager : MonoBehaviour
         ContinueButton.SetActive(true);
         GameManager2.Instance.RowData = 150;
     }
-
+    
     public void checkforchoice02 (){
 
-       if(GameManager2.Instance.RowData == 85 ){
+       if(GameManager2.Instance.RowData == 85 && IsCurrentScene("Day1")){
 
             ChoiceUI02.SetActive(true);
             ContinueButton.SetActive(false);
@@ -111,7 +113,7 @@ public class choicemanager : MonoBehaviour
         ContinueButton.SetActive(true);
 
     }
-
+    
     
 
 }

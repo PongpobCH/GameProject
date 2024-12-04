@@ -9,6 +9,7 @@ public class Minigame3_Controller : MonoBehaviour
     private int correctDropsCount = 0;
 
     public GameObject UImenu;
+    public LevelLoader levelLoaderscript;
     public void startGame()
     {
         UImenu.SetActive(false);
@@ -88,7 +89,8 @@ public class Minigame3_Controller : MonoBehaviour
         yield return new WaitForSeconds(holdDuration);
 
         // Change the scene
-        SceneManager.LoadScene(sceneToLoad);
+        GameManager2.Instance.RowData = 84;
+        levelLoaderscript.loadday2();
     }
 
     public int GetCorrectDropsCount()

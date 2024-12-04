@@ -117,6 +117,21 @@ public class LevelLoader : MonoBehaviour
         SceneManager.LoadScene("Minigame_Symtom");
         
     }
+    public void loadminigameType()
+    {
+        StartCoroutine(Loadminigame3());
+    }
+
+    IEnumerator Loadminigame3()
+    {
+        //Debug.Log("Loadscene");
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitiontime);
+
+        SceneManager.LoadScene("Minigame_type");
+
+    }
 
     public void loadday2()
     {

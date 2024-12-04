@@ -30,6 +30,9 @@ EditorBuildSettings:
     path: Assets/gameData/Scenes/Minigames/Minigame_Symtom.unity
     guid: 215c313eceafc7343b93dac89672e479
   - enabled: 1
+    path: Assets/gameData/Scenes/Minigames/Minigame_type.unity
+    guid: 373a1d9405853b14eb5febd3d0fd33ae
+  - enabled: 1
     path: Assets/gameData/Scenes/Dialogue/Day3.unity
     guid: ee53427ccd99d47febcb23c1f42eb480
   - enabled: 1
