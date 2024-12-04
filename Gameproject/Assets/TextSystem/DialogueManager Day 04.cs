@@ -116,7 +116,9 @@ public class DialogManagerDay04 : MonoBehaviour
         {
             Debug.Log("End of Dialog");
             //UserInterface.gameObject.SetActive(false);
-            GameManager2.Instance.RowData = 0;
+            GameManager2.Instance.RowData = 0; GameManager2.Instance.SavedRow();
+            ContinueButton.SetActive(false);
+
             loadlevelscript.loadday5();
             return;
 

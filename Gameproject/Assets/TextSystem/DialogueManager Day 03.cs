@@ -104,7 +104,7 @@ public class DialogManagerDay03 : MonoBehaviour
 
     public void DisplaynextText() // Show Next Text
     {
-        string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
+            string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
         choicemanagerscript.checkforchoice();
         
@@ -117,6 +117,10 @@ public class DialogManagerDay03 : MonoBehaviour
             Debug.Log("End of Dialog");
             //UserInterface.gameObject.SetActive(false);
             loadlevelscript.loadday4();
+            GameManager2.Instance.RowData = 0; GameManager2.Instance.SavedRow();
+            ContinueButton.SetActive(false);
+
+
             return;
 
         }
@@ -129,9 +133,11 @@ public class DialogManagerDay03 : MonoBehaviour
             {
                AnswerSet.SetActive(false);
             }
-            
-            // แสดงชื่อและข้อความ
-            Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
+
+        if (GameManager2.Instance.RowData == 30|| GameManager2.Instance.RowData == 35) { GameManager2.Instance.SavedRow(); GameManager2.Instance.RowData++; return; }
+
+        // แสดงชื่อและข้อความ
+        Name.text = data[GameManager2.Instance.RowData * 3 + columnName];
             Dialog.text = data[GameManager2.Instance.RowData * 3 + columnDialogue];
 
             // โหลดและแสดง sprite
@@ -142,7 +148,8 @@ public class DialogManagerDay03 : MonoBehaviour
 
 
 
-        if(GameManager2.Instance.RowData == 181) // open cutscenes23
+
+        if(GameManager2.Instance.RowData == 6) // open cutscenes23
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
@@ -151,7 +158,7 @@ public class DialogManagerDay03 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 189) // open cutscenes24
+       if(GameManager2.Instance.RowData == 15) // open cutscenes24
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
@@ -161,50 +168,6 @@ public class DialogManagerDay03 : MonoBehaviour
        }
 
 
-
-     
-
-
-
-       if(GameManager2.Instance.RowData == 125) // Change to ClassRoom
-      {
-            Changescenetoclassroom();
-
-      }
-
-      if(GameManager2.Instance.RowData == 132) // Change to ClassRoom
-      {
-            changescenetoAvaroom();
-
-      }
-
-      
-
-    if(GameManager2.Instance.RowData == 165){
-
-        loadlevelscript.loadminigamesymtom();
-
-    }
-
-      
-      if(GameManager2.Instance.RowData == 58)
-      {
-         changescenetoblack();
-         Invoke("EndCutscenebackground", 5);
-         Invoke("closeclassroom", 3 ); 
-      } 
-      if(GameManager2.Instance.RowData == 60)
-      {
-         changescenetoblack();
-         Invoke("EndCutscenebackground", 5);
-         Invoke("changescenetoAvaroom", 3);
-
-      }
-
-        if(GameManager2.Instance.RowData == 61) // open cutscenes14
-       {
-         scenescript.LoadAvaRoom();
-       }
 
        
     }
@@ -258,7 +221,7 @@ public class DialogManagerDay03 : MonoBehaviour
 
         if(spriteName.Contains(keywordred))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath + spriteName).Trim());
             CharacterImage.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
@@ -275,7 +238,7 @@ public class DialogManagerDay03 : MonoBehaviour
         
         if(spriteName.Contains(keywordava))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImageRed.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
