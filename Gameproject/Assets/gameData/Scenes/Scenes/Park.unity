@@ -1341,8 +1341,8 @@ Transform:
   m_GameObject: {fileID: 706161517}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -957, y: -540.7568, z: 1.0190693}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -400.96, y: -226.74, z: 2.0982}
+  m_LocalScale: {x: 0.41930798, y: 0.41930798, z: 0.41930798}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 12846951}
@@ -3208,6 +3208,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5544243733098896147, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.4284892
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544243733098896147, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.4284892
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544243733098896147, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.4284892
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544243733098896147, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 1.6708
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544243733098896147, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.3138733
+      objectReference: {fileID: 0}
+    - target: {fileID: 5544243733098896147, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -0.00022888184
+      objectReference: {fileID: 0}
+    - target: {fileID: 7440461219539291837, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_UiScaleMode
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7475499518136968876, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -3318,16 +3346,28 @@ PrefabInstance:
       value: 25
       objectReference: {fileID: 0}
     - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.41930798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.41930798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.41930798
+      objectReference: {fileID: 0}
+    - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -960
+      value: -402.23
       objectReference: {fileID: 0}
     - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -540
+      value: -226.43
       objectReference: {fileID: 0}
     - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1.6708
       objectReference: {fileID: 0}
     - target: {fileID: 2175005767718793481, guid: 73c46c97b8aeb4a01959a2bff614bb4b, type: 3}
       propertyPath: m_LocalRotation.w
@@ -3454,8 +3494,8 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1747159789}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 4.9545097, y: 1.2120829, z: 1.2120829}
+  m_LocalPosition: {x: 0, y: 0, z: 1.6708}
+  m_LocalScale: {x: 2.0774655, y: 0.50823605, z: 0.50823605}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 841082699}
@@ -3463,7 +3503,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -713, y: 318}
+  m_AnchoredPosition: {x: -298.65, y: 133.34}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1818507180
