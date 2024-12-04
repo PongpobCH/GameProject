@@ -106,8 +106,8 @@ public class DialogManagerDay02 : MonoBehaviour
     {
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
-        choicemanagerscript.checkforchoice();
-        choicemanagerscript.checkforchoice02();
+        //choicemanagerscript.checkforchoice();
+       // choicemanagerscript.checkforchoice02();
 
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;

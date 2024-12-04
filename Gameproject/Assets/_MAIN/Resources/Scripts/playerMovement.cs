@@ -40,8 +40,8 @@ public class playerMovement : MonoBehaviour
         if (movement != Vector2.zero)
         {
             // If the player is moving, set the animation to "Run"
-            animator.SetFloat("Horizontal", movement.x);
-            animator.SetFloat("Vertical", movement.y);
+          //  animator.SetFloat("Horizontal", movement.x);
+          //  animator.SetFloat("Vertical", movement.y);
             animator.SetBool("isMoving", true);
         }
         else

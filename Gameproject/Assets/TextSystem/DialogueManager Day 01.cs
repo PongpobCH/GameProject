@@ -48,7 +48,7 @@ public class DialogManagerDay01 : MonoBehaviour
         BlackBG.SetActive(false);
         cutscenesblackscreen.gameObject.SetActive(false);
         UserInterface.gameObject.SetActive(true);   //ไว้ปิดตัว Dialog 
-
+        GameManager2.Instance.LoadAvaroomtimes = 1;
         Loadtimes = GameManager2.Instance.Loadtimes;
 
             if (Loadtimes == 0)
@@ -107,7 +107,7 @@ public class DialogManagerDay01 : MonoBehaviour
         string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
 
         choicemanagerscript.checkforchoice();
-        choicemanagerscript.checkforchoice02();
+      //  choicemanagerscript.checkforchoice02();
 
         //Debug.Log("Current Load Row = " + GameManager2.Instance.RowData);
         //LoadRow = GameManager2.Instance.RowData;
@@ -118,6 +118,8 @@ public class DialogManagerDay01 : MonoBehaviour
             Debug.Log("End of Dialog");
             //UserInterface.gameObject.SetActive(false);
             loadlevelscript.loadday2();
+            GameManager2.Instance.RowData = 0; GameManager2.Instance.SavedRow();
+            ContinueButton.SetActive(false);
             return;
 
         }
@@ -241,7 +243,7 @@ public class DialogManagerDay01 : MonoBehaviour
          scenescript.LoadAvaRoom();
        }
 
-       if(GameManager2.Instance.RowData == 90) // open cutscenes15
+       if(GameManager2.Instance.RowData == 94) // open cutscenes15
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene15();

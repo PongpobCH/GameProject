@@ -131,6 +131,8 @@ public class DialogManagerPrologue: MonoBehaviour
         {
             Debug.Log("End of Dialog");
             UserInterface.gameObject.SetActive(false);
+            GameManager2.Instance.RowData = 0; GameManager2.Instance.SavedRow();
+            ContinueButton.gameObject.SetActive(false);
             SceneManager.LoadScene("Day1"); 
             return;
 
@@ -171,7 +173,7 @@ public class DialogManagerPrologue: MonoBehaviour
 
 
 
-        if(GameManager2.Instance.RowData == 5) // open cutscenes01
+        if(GameManager2.Instance.RowData == 6) // open cutscenes01
         {
             cutscenesblackscreen.gameObject.SetActive(true);
            
@@ -183,17 +185,17 @@ public class DialogManagerPrologue: MonoBehaviour
 
         }
 
-        if(GameManager2.Instance.RowData == 6) // Load into Park
+        if(GameManager2.Instance.RowData == 7) // Load into Park
         {
-            
-            Invoke("LoadParkScene", 3);
+
+            scenescript.LoadScenePark();
 
         } 
 
         
         
         
-        if(GameManager2.Instance.RowData == 7) // open cutscenes02
+        if(GameManager2.Instance.RowData == 8) // open cutscenes02
         {
 
             cutscenesblackscreen.gameObject.SetActive(true);
@@ -205,10 +207,10 @@ public class DialogManagerPrologue: MonoBehaviour
             Invoke("Cutscene02section2" ,5);
 
         }
-        if(GameManager2.Instance.RowData == 8 ){
+        if(GameManager2.Instance.RowData == 13 ){
             scenescript.LoadAvaRoom();
         }  
-       if(GameManager2.Instance.RowData == 9) // open cutscenes05
+       if(GameManager2.Instance.RowData == 14) // open cutscenes05
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene05();
@@ -216,7 +218,7 @@ public class DialogManagerPrologue: MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
-        if(GameManager2.Instance.RowData == 12) // open cutscenes06
+        if(GameManager2.Instance.RowData == 18) // open cutscenes06
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene06();

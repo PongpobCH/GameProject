@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using JetBrains.Annotations;
+using TMPro;
 using UnityEditor.Rendering;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -38,82 +39,110 @@ public class choicemanager : MonoBehaviour
             choiceUI01.SetActive(true);
             ContinueButton.SetActive(false);
         }
+        else  if (GameManager2.Instance.RowData == 74 && IsCurrentScene("Day1")) //first choice เกิดอะไรขึ้น
+        {
+            choiceUI01.SetActive(true);
+            ContinueButton.SetActive(false);
+        }
+        else if (GameManager2.Instance.RowData == 88 && IsCurrentScene("Day1")) //first choice เกิดอะไรขึ้น
+        {
+            ChoiceUI02.SetActive(true);
+            ContinueButton.SetActive(false);
+        }
+
     }
 
     public void GOGOPOWERRANGER() { choiceUI01.SetActive(false); ContinueButton.SetActive(true); }
     
-    public void SelectedAnswerA(){
+    public void D1Q1(int index){ //รู้จักโรควิตกกังวลไหม
 
         //Debug.Log("AnswerA");
-        AnswerA.SetActive(true);
-        choiceUI01.SetActive(false);
-        DialogUI.SetActive(false);
+        if(index == 1) {
+            changeText("Ava","รู้จักสิ..มันคืออาการที่ความวิตกกังวล ความกลัว ความเครียดมีมากกจนส่งผลกระทบต่อการใช้ชีวิต เช่น กินไม่ได้/กินมากไป นอนไม่หลับ/นอนมากไป ไม่มีสมาธิจดจ่อกับเรื่องต่างๆ ที่เคยจดจ่อได้ ติดต่อกันเป็นเวลา 2 สัปดาห์ขึ้นไปไงละ", "ava_think_hmm");
+        }
+        else
+        {
+            changeText("Red",".มันคืออาการที่ความวิตกกังวล ความกลัว ความเครียดมีมากกจนส่งผลกระทบต่อการใช้ชีวิต เช่น กินไม่ได้/กินมากไป นอนไม่หลับ/นอนมากไป ไม่มีสมาธิจดจ่อกับเรื่องต่างๆ ที่เคยจดจ่อได้ ติดต่อกันเป็นเวลา 2 สัปดาห์ขึ้นไปไงละ", "red_idle_smile");
+        }
         ContinueButton.SetActive(true);
 
-        
-    }
-    public void SelectedAnswerB(){
-
-        //Debug.Log("AnswerB");
-        AnswerB.SetActive(true);
         choiceUI01.SetActive(false);
-        DialogUI.SetActive(false);
+    }
+    public void D1Q2(int index)
+    { //รู้จักโรควิตกกังวลไหม
+
+        if (index == 1)
+        {
+            changeText("Ava", "สารเคมีในสมองขาดสมดุลงั้นเหรอ...?", "ava_think_hmm");
+        }
+        else if(index == 2)
+        {
+            changeText("Ava", "แม่ของฉันกดดันฉันบ่อยๆ หรือว่าบางที..?", "ava_think_hmm");
+        }
+        else
+        {
+            changeText("Ava", "กรรมพันธุ์งั้นเหรอ? แม่ของฉันก็หงุดหงิดง่ายเหมือนกัน...", "ava_think_hmm");
+
+        }
         ContinueButton.SetActive(true);
+
+        ChoiceUI02.SetActive(false);
     }
 
-    public void SelectedAnswerA1(){
+    public TextMeshProUGUI Dialog; //Show dialog Line
+    public TextMeshProUGUI Name; // Show name from dialog 
+    public GameObject CharacterImage;
+    public GameObject CharacterImageRed;
 
-        AnswerA.SetActive(true);
-        choiceUI01.SetActive(false);
-        DialogUI.SetActive(false);
-        ContinueButton.SetActive(true);
-        GameManager2.Instance.RowData = 150;
-    }
-    public void SelectedAnswerB1(){
-
-        AnswerB.SetActive(true);
-        choiceUI01.SetActive(false);
-        DialogUI.SetActive(false);
-        ContinueButton.SetActive(true);
-        GameManager2.Instance.RowData = 150;
-    }
-    
-    public void checkforchoice02 (){
-
-       if(GameManager2.Instance.RowData == 85 && IsCurrentScene("Day1")){
-
-            ChoiceUI02.SetActive(true);
-            ContinueButton.SetActive(false);
-
-       }
-    }
-    public void selectedAnswerA2()
+    private void changeText(string name,string textthisline, string spritename)
     {
-        //Debug.Log("A2");
-        //AnswerA2.SetActive(true);
-        ChoiceUI02.SetActive(false);
-        //DialogUI.SetActive(false);
-        ContinueButton.SetActive(true);
+        Name.text = "Ava";
+        Dialog.text = textthisline;
 
+        // โหลดและแสดง sprite
+
+        LoadAndDisplaySprite(spritename);
     }
-    public void selectedAnswerB2(){
-        //Debug.Log("B2"); 
-         //AnswerB2.SetActive(true);
-        ChoiceUI02.SetActive(false);
-        //DialogUI.SetActive(false);
-        ContinueButton.SetActive(true);
+    private void LoadAndDisplaySprite(string spriteName)
+    {
+        string folderPath = "Sprites/Characters/";
+        string keywordava = "ava"; // Load Only Ava Keyword
+        string keywordred = "red"; // Load Only Ava Keyword
 
+        if (spriteName.Contains(keywordava))
+        {
+            Sprite sprite = Resources.Load<Sprite>((folderPath + spriteName).Trim());
+            CharacterImage.gameObject.SetActive(false);
+
+            // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {
+                CharacterImage.gameObject.SetActive(true);
+                CharacterImage.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
+
+        }
+        if (spriteName.Contains(keywordred) || spriteName.Contains("extra"))
+        {
+            Sprite sprite = Resources.Load<Sprite>((folderPath + spriteName).Trim());
+            CharacterImageRed.gameObject.SetActive(false);
+
+            // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
+            if (sprite != null)
+            {
+                CharacterImageRed.gameObject.SetActive(true);
+                CharacterImageRed.GetComponent<SpriteRenderer>().sprite = sprite;
+            }
+            else
+            {
+                Debug.LogWarning("Sprite not found: " + folderPath + spriteName);
+            }
+        }
     }
 
-    public void selectedAnswerC2(){
-        //Debug.Log("C2"); 
-        //AnswerC2.SetActive(true);
-        ChoiceUI02.SetActive(false);
-        //DialogUI.SetActive(false);
-        ContinueButton.SetActive(true);
-
-    }
-    
-    
 
 }
