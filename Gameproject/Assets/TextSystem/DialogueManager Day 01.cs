@@ -291,7 +291,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
         if(spriteName.Contains(keywordred))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImage.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
@@ -308,7 +308,7 @@ public class DialogManagerDay01 : MonoBehaviour
         
         if(spriteName.Contains(keywordava))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImageRed.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด

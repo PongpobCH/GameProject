@@ -116,7 +116,7 @@ public class DialogManagerDay05 : MonoBehaviour
         {
             Debug.Log("End of Dialog");
             //UserInterface.gameObject.SetActive(false);
-            //loadlevelscript.loadday3();
+            loadlevelscript.LoadDayEP();
             return;
 
         }
@@ -138,7 +138,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
 
 
-        if(GameManager2.Instance.RowData == 281) // open cutscenes25
+        if(GameManager2.Instance.RowData == 5) // open cutscenes25
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
@@ -147,7 +147,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 285) // open cutscenes26
+       if(GameManager2.Instance.RowData == 12) // open cutscenes26
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
@@ -156,13 +156,13 @@ public class DialogManagerDay05 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 288){
+       if(GameManager2.Instance.RowData == 15){
 
           AvaRoom.SetActive(false);
           Phycologitsroom.SetActive(true);
        }
 
-        if(GameManager2.Instance.RowData == 316){
+        if(GameManager2.Instance.RowData == 46){
 
             AvaRoom.SetActive(true);
             Phycologitsroom.SetActive(false);
@@ -170,7 +170,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
        
 
-       if(GameManager2.Instance.RowData == 309) // open cutscenes27
+       if(GameManager2.Instance.RowData == 37) // open cutscenes27
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene03();
@@ -179,7 +179,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 333) // open cutscenes28
+       if(GameManager2.Instance.RowData == 65) // open cutscenes28
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene04();
@@ -189,50 +189,6 @@ public class DialogManagerDay05 : MonoBehaviour
        }
        
 
-
-     
-
-
-
-       if(GameManager2.Instance.RowData == 125) // Change to ClassRoom
-      {
-            Changescenetoclassroom();
-
-      }
-
-      if(GameManager2.Instance.RowData == 132) // Change to ClassRoom
-      {
-            changescenetoAvaroom();
-
-      }
-
-      
-
-    if(GameManager2.Instance.RowData == 165){
-
-        loadlevelscript.loadminigamesymtom();
-
-    }
-
-      
-      if(GameManager2.Instance.RowData == 58)
-      {
-         changescenetoblack();
-         Invoke("EndCutscenebackground", 5);
-         Invoke("closeclassroom", 3 ); 
-      } 
-      if(GameManager2.Instance.RowData == 60)
-      {
-         changescenetoblack();
-         Invoke("EndCutscenebackground", 5);
-         Invoke("changescenetoAvaroom", 3);
-
-      }
-
-        if(GameManager2.Instance.RowData == 61) // open cutscenes14
-       {
-         scenescript.LoadAvaRoom();
-       }
 
        
     }
@@ -288,7 +244,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
         if(spriteName.Contains(keywordred))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImage.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
@@ -306,7 +262,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
         if(spriteName.Contains(keywordpsy))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImage.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
@@ -324,7 +280,7 @@ public class DialogManagerDay05 : MonoBehaviour
         
         if(spriteName.Contains(keywordava))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImageRed.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
