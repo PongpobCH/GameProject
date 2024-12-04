@@ -57,7 +57,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
                 GameManager2.Instance.Loadtimes++;
 
-                LoadRow = GameManager2.Instance.RowData;
+                LoadRow = 0;
                 //Debug.Log("LoadRow" + LoadRow);
 
                 //Debug.Log("LoadSavedRow = " + GameManager2.Instance.RowData);
@@ -81,7 +81,7 @@ public class DialogManagerDay05 : MonoBehaviour
 
                 GameManager2.Instance.Loadtimes++;
 
-                LoadRow = GameManager2.Instance.RowData - 1;
+                LoadRow = 0;
                 
                 string[] data = textAssetdata.text.Split(new string[] { ",", "\n" }, System.StringSplitOptions.None);
                 

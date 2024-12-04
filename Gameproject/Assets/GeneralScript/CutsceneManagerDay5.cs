@@ -40,8 +40,9 @@ public class CutsceneManagerday5: MonoBehaviour
     public void CheckRow()
 
     {
-        RowCheckingValue = GameManager2.Instance.RowData;
-        Debug.Log("Row Checked from Server " + RowCheckingValue);
+       /* RowCheckingValue = GameManager2.Instance.RowData;
+        Debug.Log("Row Checked from Server " + RowCheckingValue);*/
+       RowCheckingValue = 0;
     }
 
     public void Playcutscene01()

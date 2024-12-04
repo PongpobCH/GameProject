@@ -1,228 +1,9 @@
-Friend 1, นี่นี่ทำการบ้านวิชาอาจารย์กานต์รึยัง ,extra_female
-Friend 2,ให้ตายสิจะสั่งอะไรเยอะนักหนา จารย์เอ็มก็มีงานต้องส่งพรุ่งนี้เหมือนกัน,extra_male
-Friend 1, เฮ้อ รีบกลับบ้านไปทำงานดีกว่า,extra_female
-Ava,เฮ้อ,ava_armcross_hmm
-Ava,....,ava_armcross_eyeclose
-Ava,อ่ะ...เผลอทำตกซะได้,ava_idle_surpise
-Ava,.....,ava_idle_hmm
-Ava,การบ้าน..,ava_idle_hmm
-Ava,..ยังไม่ตอบอีกเหรอ,ava_armcross_hmm
-Ava,...,ava_armcross_hmm
-Ava,.......,ava_armcross_eyeclose
-Ava,..........,ava_handhold_eyeclose
-Ava,...,ava_armcross_eyeclose
-Red,เอวา,red_idle_smile
-Ava,...,red_idle_smile
-Red,ตื่นได้แล้วค่ะ,red_handup_smile
-Ava,..หืม ....,ava_armcross_eyeclose
-Red,เอวาคะ ตื่นได้แล้วค่ะ,red_handup_smile
-Ava,!!!!!!,ava_idle_surpise
-Ava,อื้อ....,ava_idle_hmm
-Ava,เรด ?,ava_idle_smile
-Red,ถ้าไม่รีบไป จะสายเอานะคะ,red_think_huh
-Ava, อ่า...เอ่อ...,ava_armcross_eyeclose
-Red,...,red_idle_smile
-Red,วันนี้ก็พยายามกันอีกนะ,red_fingerup_smile
-Ava,แฮ่ก....แฮ่ก,ava_scold_hmm
-Ava,...!!!!!!,ava_idle_surpise
-Ava,อ่า...ไม่...ไม่นะ,ava_scold_eyeclose
-Red,ยังเหลือเวลาอีกสองชั่วโมงก่อนที่การเรียนของคุณจะเริ่ม และจากที่นี่ นั่งรถก็ใช้เวลาเพียงสิบนาที,red_fingerup_hmm
-Red,ฉันคิดว่านั่นคงไม่เป็นปัญหามากหรอกนะคะ,red_fingerup_smile
-Ava,อ่า..ร..เรด,ava_idle_frown
-Red,ระหว่างนั่งรอ พวกเรามาทำความรู้จักกันค่ะ,red_fingerup_smile
-Ava,......,ava_armcross_hmm
-Red,ดูอะไรอยู่หรอคะ?,red_handup_hmm
-Ava,ป-เปล่าค่ะ! ก็แค่คิดอะไรไปเรื่อย..,ava_scold_eyeclose
-Red,เธอรออะไรอยู่เหรอคะ?,red_think_huh
-Ava,!? เปล่านี่คะ..,ava_scold_hmm
-Red,ฉันเห็นคุณคอยจ้องมือถือมาตั้งแต่เมื่อวานแล้วนะคะ,red_think_huh
-Red,คุณไม่ได้รอใครจริงๆ เหรอ?,red_think_normal
-Ava,......,ava_scold_eyeclose
-Ava,ไม่ต้องไปสนใจหรอกค่ะ,ava_think_anxious
-Red,....,red_idle_smile
-Ava, ....... ,ava_think_anxious
-Ava, อ่ะ......รถมาแล้ว,ava_idle_surpise
-Ava, ........ ,ava_idle_hmm
-Friend 1, นี่เธอ ทำงานวิชาจารย์พี่เส็งยัง ,extra_male
-Friend 2,  เออๆ อันนี้เรียบร้อยแล้ว แล้วเอกสารโปรเจคล่ะ เตรียมเสร็จไหม ,extra_female
-Ava , ...... ,ava_idle_frown
-Friend 1, เอวา ,extra_male
-Friend 1 ,งานจารย์บีเราส่งกันได้รึยัง,extra_male
-Ava, อ่า ยังไม่ได้หรอก ต้องรองานจากส่วนของเบ๊บก่อนน่ะ ,ava_think_hmm
-Friend 2,  หาาา อีกแล้วเหรอ ทำไมยัยนั่นไม่รู้จักเร่งตัวเองเลยนะ ช้าตลอด ,extra_female
-Ava, ..แหะๆ ใจเย็นสิ.. ,ava_idle_smile
-Friend 2, ก็มันจริงใช่ไหมล่ะ! ชักช้าเสียเวลา ยัยนั่นมัวแต่นอนเปื่อยฟาร์มเกมทั้งวันไม่ทำอะไรเลยล่ะสิ , extra_female
-Ava , ..... ,ava_idle_smile
-Ava, (เขาอาจ....จะพยายามอยู่ก็ได้นะ) ,ava_handhold_anxious
-Friend 3, เฮ้ยทุกคน จารย์มาาาาาาาาาาาา!!!! ,extra_male
-Ava, ..... ,ava_idle_surpise
-Ava, ..ได้เวลากลับบ้านสักที...,ava_handhold_eyeclose
-Ava, ...เฮ้อ...,ava_armcross_hmm
-Ava, ต้องซ้อม.... ,ava_armcross_eyeclose
-Red, มีเรื่องให้กังวลเยอะไปหมดเลยนะคะ คุณน่ะ ,red_idle_smile
-Ava, !!! ,ava_idle_surpise
-Ava, อย่าทำให้ตกใจสิคะ! ,ava_scold_eyeclose
-Red, เฮะเฮะ ,red_fingerup_smile
-Red, ทำไมถึงแบกอะไรไว้บนบ่าไว้เยอะไปหมดเลยล่ะคะ? , red_think_huh
-Ava, ....???? ,ava_scold_hmm
-Ava, ไม่..ได้..แบกอะไรไว้สักหน่อยนี่คะ.. ,ava_scold_hmm
-Red, ... ,red_think_normal
-Red,คุณคงจะเคยได้ยินโรควิตกกังวลมาบ้างสินะ,red_think_huh
-Red,รู้รึเปล่าคะ ว่ามันคืออะไร?,red_think_normal
-Ava, .....?,ava_think_anxious
-Ava,แล้ว....มันทำไมหรอ?,ava_think_hmm
-Red,การจะเกิดเรื่องพวกนี้ได้ มันมีอยู่หลายสาเหตุนะคะ,red_fingerup_smile
-Red,การประสบกับเหตุการณ์ที่มีความตึงเครียดสูง หรือเหตุการณ์ความรุนแรง,red_think_huh
-Red,เรื่องที่ฝังใจในอดีต,red_think_huh
-Red,สารเคมีในสมองขาดสมดุล,red_think_huh
-Red,กรรมพันธุ์,red_think_huh
-Red,คุณเป็นแบบไหนกันนะคะ?,red_think_normal
-Ava,......,ava_think_hmm
-Ava,..หมายความว่ายังไงน่ะ,ava_think_anxious
-Red,คุณมีงานที่ต้องส่งแต่กลับไม่สามารถทำได้ในตอนนี้,red_handup_smile
-Red,มีใครสักคนที่รอให้ตอบกลับมา คลับคล้ายจะเป็นเรื่องสำคัญสำหรับเธอ แต่ก็ไม่มี,red_handup_smile
-Red,และเหมือนคุณจะดูเป็นที่รักของเพื่อนๆ ด้วยนะคะ,red_think_huh
-Red, คุณเข้าข่ายในข้อไหนกันนะ?,red_idle_smile
-Ava, แต่.. มันจะขนาดนั้นเลยเหรอ..,ava_think_anxious
-Ava, มัน..ก็แค่เรื่องๆทั่วๆไปไม่ใช่รึไง ,ava_think_hmm
-Red, ... ,red_idle_smile
-Red, เล่นไวโอลินให้ฟังหน่อยสิคะ,red_fingerup_hmm
-Ava, ....!!!! ,ava_idle_surpise
-Ava, ......,ava_handhold_anxious
-Red, ...,red_idle_smile
-Red, ถ้าไม่ปิดก๊อกน้ำให้สนิท ซักวันนึง น้ำหยดเล็กๆ ก็จะสะสมจนท่วมห้องได้นะ,red_handup_hmm
-Red, อย่าคิดว่ามันเป็นเรื่องเล็กเลยนะคะ,red_handup_smile
-Ava, .... , red_handup_smile
-Red, เล่นไวโอลินให้ฟังหน่อยสิคะ,red_fingerup_hmm
-Ava, ....!!!! ,ava_idle_surpise
-Ava, ......,ava_handhold_anxious
-Red, ...,red_idle_smile
-Red, ถ้าไม่ปิดก๊อกน้ำให้สนิท ซักวันนึง น้ำหยดเล็กๆ ก็จะสะสมจนท่วมห้องได้นะ,red_handup_hmm
-Red, อย่าคิดว่ามันเป็นเรื่องเล็กเลยนะคะ,red_handup_smile
-Ava, ...... ,red_idle_hmm
-Ava, ....เฮ้อ..,ava_idle_frown
-Ava, ......,ava_idle_frown
-Red, .....,red_idle_hmm
-Ava,.....,ava_idle_frown
-Ava, เรด.. , ava_armcross_hmm
-Red, คะ?เอวา?, red_think_huh
-Ava, .....,ava_armcross_hmm
-Ava, ไม่มีอะไร,ava_idle_hmm
-Red, ..., red_idle_smile
-Red, เมื่อวานคุณไม่ได้นอนทั้งคืนเลยนะคะ,red_handup_hmm
-Red, ไหวรึเปล่าเอ่ย?,red_handup_hmm
-Ava, .....ฉันไม่เป็นไร,ava_idle_surpise
-Ava,.....นี่ค่ะ,ava_idle_hmm
-กระเป๋า, หือ ,extra_shadow
-กระเป๋า, เธอ! นี่มันยังให้ไม่ครบนะ เธอจะโกงฉันเหรอ!,extra_shadow
-Ava, .....!!!!! , ava_idle_surpise
-Ava, ต..แต่ ,ava_idle_surpise
-กระเป๋า, อย่ามาเถียง ก็ลองนับดูสิ!,extra_shadow
-กระเป๋า, เนี่ย ก็เห็นอยู่ว่ามันไม่คร.....!!! ,extra_shadow
-กระเป๋า, .... ,extra_shadow
-กระเป๋า , ..อ้อ ครบแล้ว.. (เดินออกไป) , extra_shadow
-Ava, ...... , ava_idle_surpise
-Ava, ..... , ava_handhold_anxious
-Friend, เอวาๆๆๆๆ เธอได้ทำการบ้านวิชาของจารย์ยืนรึยัง! ,extra_female
-Ava, ...อาจารย์ยืน..? ,ava_idle_surpise
-Friend,  ใช่แล้ว! รายงานยี่สิบหน้าที่ต้องส่งบ่ายนี้น่ะ! โอ้ยย ใครมันจะไปทำทั้นนน ,extra_female
-Ava, เอวา: ..ยี่สิบหน้า? ,ava_idle_surpise
-Friend, นี่อย่าบอกนะว่าเธอลืมน่ะ!! ไปไป โดดคาบเช้าไปใช้คอมที่ห้องสมุดเลย ไม่งั้นไม่ทันแน่! ,extra_female
-Friend, ถ้าเธอไม่เข้าใจตรงไหนรีบบอกฉันนะ เร็วเข้า! ,extra_female
-Ava, ...!!!! ,ava_idle_surpise
-Ava,..... ,ava_idle_frown
-Mom, งานประกวดไวโอลินวันเสาร์นี้น่ะ จะพลาดไม่ได้เด็ดขาดเลยนะ,extra_shadow
-Mom,ลูกเตรียมพร้อมรึยัง ไม่ได้โดดซ้อมใช่ไหม?,extra_shadow
-Ava,.......,ava_idle_frown
-Ava,..........,ava_armcross_hmm
-Ava,  เออ!! ก็รู้แล้วล่ะน่าว่ามันต้องซ้อมทุกวันน่ะ!!!!!! ,ava_scold_eyeclose
-Red, ..เ..ว...,red_idle_hmm
-Ava, ..... ,ava_armcross_hmm
-Red, ...เอ...า...,red_idle_hmm
-Ava, ..........,ava_armcross_hmm
-Red, คุณเอวาคะ ได้ยินฉันไหม,red_idle_hmm
-Ava, !!!!!....เ.รด!?,ava_idle_surpise
-Red,บอกฉันสิว่าตอนนี้คุณรู้สึกยังไง,red_handup_hmm
-Ava,..........,ava_idle_surpise
-Ava,ฉันกลัว,ava_handhold_eyeclose
-Ava,ฉันกังวล,ava_handhold_eyeclose
-Ava,..ฉันกลัว...กลัวว่าจะทำทุกอย่างไม่ได้....,ava_think_anxious
-Ava,...อื้อ..ฉัน..กังวลมากเลย..,ava_think_anxious
-Ava,หัวใจของฉันมัน..เต้นแรงมาก,ava_armcross_eyeclose
-Red,เมื่อคืนเธอก็ไม่ได้นอนด้วยสินะคะ,red_fingerup_hmm
-Ava, ..อื้อ,ava_handhold_eyeclose
-Ava,..แล้วก็ ฉัน..ฉันทำงานไม่ได้เลย....,ava_armcross_eyeclose
-Ava,เหมือนกับ..หัวฉันมันคิดอะไรไม่ออก..,ava_armcross_eyeclose
-Red, เมื่อกี้ตอนที่คุณได้รับข้อความ คุณโมโหขึ้นมาด้วยใช่ไหมล่ะคะ?,red_fingerup_hmm 
-Ava,!!!!!,ava_idle_surpise
-Ava,..ฉัน..โมโหเหรอ,ava_idle_surpise 
-Red,ใช่ค่ะ อยู่ๆ คุณก็ตะโกนขึ้นมาเสียงดังเลย,red_handup_hmm
-Ava,........,ava_idle_surpise  
-Ava,...ฉันก็คงจะแค่แพนิคไปเองล่ะมั้ง..,ava_armcross_eyeclose
-Red,ใช้คำว่า ‘แพนิค’ ก็ไม่ถูกไปซะหมดหรอกนะคะ,red_idle_smile 
-Ava,....???? หมายความว่ายังไง,ava_scold_hmm
-Red,ความวิตกกังวลน่ะ มันมีประเภทของมันนะคะ ,red_think_huh
-Red,ในหกอย่างนี้ Generalized Anxiety Disorders (GAD) เป็นประเภทที่พบได้เยอะที่สุด,red_think_normal
-Red,ฉันคิดว่าคุณเข้าข่ายประเภทนี้มากกว่าจะเป็นแพนิคค่ะ,red_think_normal 
-Red,แต่ฉันก็ยืนยันให้คุณไม่ได้หรอก เพราะฉันไม่ใช่ผู้เชี่ยวชาญเฉพาะทางอย่างเช่นคุณหมอหรือนักจิตวิทยา,red_idle_smile
-Ava,.......,ava_armcross_hmm
-Red,รายงานคุณเสร็จแล้วนี่คะ,red_think_normal
-Ava,เอ๊ะ,ava_idle_surpise
-Ava,..ต..ตอนไหนกัน,ava_idle_surpise
-Red, ... ,red_idle_smile
-Red, เสร็จไปเรื่องนึงแล้ว~ ,red_fingerup_smile
-Red, ยินดีด้วยนะคะ! ,red_fingerup_smile
-Ava,......,ava_think_anxious
-Ava,.....,ava_think_anxious
-Ava, ....อื้อ.. ,ava_idle_smile
-Ava,......,XD 
-Ava,....,XD
-Red,เป็นยังไงบ้างคะ?,XD 
-Ava, ..อื้อ..ทำตามที่เธอบอกแล้ว,XD 
-Ava, ทำไมอยู่ๆถึงอยากให้ฉันจดบันทึกล่ะ?,XD 
-Red, ....(ยิ้ม),XD 
-Red, สิ่งนี้จะเป็นตัวช่วยให้เธอได้ค่ะ,XD 
-Red, .....ในวันที่...ฉันไม่อยู่แล้ว,XD
-Ava,เธอหมายความว่ายังไงน่ะ!,XD 
-Red,ใจเย็นๆ สิคะ,XD 
-Red,เรามาทวนกันดีกว่าว่าคุณเขียนอะไรไปแล้วบ้าง,XD
-Ava,......,XD 
-Ava,เธอให้ฉันตอบคำถามพวกนี้,XD 
-Ava, ข้อแรก “เกิดอะไรขึ้น”,XD
-Red,คุณตอบว่าอะไรคะ?,XD 
-Ava,........,XD
-Red,แล้วยังไงต่อคะ?,XD 
-Ava,..คำถามต่อไป..ฉันรู้สึกยังไง,XD
-Red, แล้ว… หลังจากนั้นฉันถามคุณว่าอะไรต่อ? , XD
-Ava, ..เพราะอะไรฉันถึงคิดแบบนั้น,XD 
-Red,แล้วจากนั้นก็มีคำถามข้อต่อไป.....,XD
-Ava,.. มีอะไรที่ค้านว่าสิ่งที่ฉันคิดอยู่มันไม่จริงบ้างไหม,XD 
-Red, เก่งมากค่ะ,XD 
-Red,พอรู้แบบนี้แล้ว คำถามต่อมาก็เลยเป็น....,XD 
-Ava,ลองคิดดูใหม่ ตามความเป็นจริงที่เกิดขึ้นตามปกติแล้วฉัน..,XD 
-Red,.. (ยิ้ม),XD 
-Red,แล้วเราก็มากันที่คำถามสุดท้าย,XD 
-Red,  ตอนนี้คุณรู้สึกอย่างไร? ,XD
-Ava, ตอนนี้งั้นเหรอ.. ,XD 
-Ava, ถึงจะไม่ได้วางใจมาก แต่..,XD 
-Ava, ฉันว่าฉันรู้สึกโล่งขึ้นนิดหน่อยแล้วล่ะ,XD 
-Red,อย่างนั้นเหรอคะ?,XD 
-Red,อยากจะลองพูดถึงสถานการณ์อื่นบ้างไหม,XD
-Ava,ไม่คิดเลยนะว่าการถามคำถามพวกนี้จะช่วยเรื่องความกังวลได้น่ะ..,XD 
-Red,คุณเก่งแล้วค่ะ,XD 
-Ava,..แต่.. ถ้าฉันจำคำถามพวกนี้ไม่ได้ล่ะ...,XD
-Red,คุณไม่จำเป็นจะต้องจำมันให้ครบถ้วนเป็นข้อหรอกค่ะ แค่จำลำดับได้ก็พอแล้ว,XD
-Red, เรามาทวนกันอีกสักรอบนะ,XD
-Ava,อื้อ,XD 
-Red,อันดับแรก เกิดอะไรขึ้น,XD 
-Ava,อย่างต่อมา ความรู้สึกกับความคิดในตอนนั้นเป็นยังไง,XD
-Red,จากนั้น วิเคราะห์ว่าสิ่งที่คุณคิดอยู่มันจริงแค่ไหน มีอะไรที่สนับสนุนความคิดเหล่านั้นไหม,XD
-Ava,แล้วก็.. หลังจากที่วิเคราะห์ทุกอย่างดูแล้ว มองเหตุการณ์เดิมเป็นแบบไหน,XD
-Red, ..ต่อให้ผลไม่ต่างจากเดิมก็ไม่เป็นไร อย่างน้อยเราก็ได้ทบทวนตัวเองแล้ว,XD
-Red,สิ่งนี้น่ะ มีชื่อว่า “Thought record”,XD
-Red,ถ้าคุณเจอสิ่งที่ทำให้เธอกังวลใจขึ้นอีก ลองนำวิธีนี้ไปใช้ดูก็ได้นะคะ,XD
+,Day 4,
 Ava, .....เสียงดนตรี?,ava_think_hmm
+,.....,
 Ava, ..เพราะจัง เขาเล่นเก่งมากเลย..,ava_think_smile
+,.....,
+,.....,
 Musician, โอ๊ะ! ระวังหน่อยนะครับ,chase_handup_smile
 Ava,ข-ขอโทษค่ะ... ฉันซุ่มซ่ามไปเอง..,ava_handhold_eyeclose
 Musician,ไม่เป็นไรเลยครับ^^ ,chase_handup_smile
@@ -234,8 +15,10 @@ Ava, พอได้เห็นฝีมือของคุณแล้วก
 Musician, .....,chase_handdown_smirk
 Musician,  ลองเล่นให้ผมฟังหน่อยได้ไหมครับ,chase_handup_smirk
 Ava,เอ้- จ..จะดีเหรอคะ แต่ฉันไม่ได้เอาไวโอลินมาด้วยนะคะ..,ava_idle_surpise
-Musician,ไม่เป็นไรครับ ผมให้ยืมเจ้านี่ก่อนนะ,chase_handup_smile 
+Musician,ไม่เป็นไรครับ ผมให้ยืมเจ้านี่ก่อนนะ,chase_handup_smile
+,.....,
 Ava,........,ava_idle_hmm 
+,.....,
 Ava,....,ava_idle_hmm 
 Musician,....,chase_handdown_smirk
 Musician,  การแข่งขันนี่น่ากลัวมากเลยนะครับ ,chase_handup_smile
@@ -256,8 +39,10 @@ Ava, เอ้..ได้สิคะ,ava_idle_surpise
 Musician,อ่ะ แต่มีเงื่อนไขอย่างนึงนะครับ,chase_handup_smirk
 Musician,ให้นึกถึงวันแรกที่คุณเล่นเพลงนี้ไปด้วยนะ,chase_handup_smirk
 Ava, ...ค..ค่ะ ,ava_idle_surpise
+,.....,
 Musician,.....,chase_handdown_smirk
 Musician,ไพเราะมากครับ,chase_handdown_smile
+,.....,
 Ava,........,ava_idle_hmm
 Ava, ......,ava_idle_smile 
 Musician, แล้วก็ คุณรู้ตัวไหมครับว่า คุณกดโน้ตเพี้ยนไปนิดนึงด้วยนะ,chase_handup_smile
@@ -268,10 +53,12 @@ Musician,ถ้าว่ากันตามจริง มันเพี้�
 Musician,แต่โดยรวมแล้ว ท่าทางในการเล่นของคุณเป็นธรรมชาติมากกว่าตอนแรกอีกนะครับ,chase_handdown_smile
 Musician, ถึงจะผิดพลาดไปบ้าง แต่ความผิดพลาดเป็นสัญลักษณ์ของความเป็นมนุษย์นะครับ ถ้าไม่ผิดพลาดเลยนั่นหนะแปลก,chase_handdown_smile
 Ava,.......,ava_idle_surpise
-Musician,มนุษย์เราก็ไม่ได้เกิดมาเพื่อที่จะสมบูรณ์แบบใช่ไหมล่ะครับ, chase_handdown_smile
+Musician,มนุษย์เราก็ไม่ได้เกิดมาเพื่อที่จะสมบูรณ์แบบใช่ไหมล่ะครับ,chase_handdown_smile
 Ava, .... ขอบคุณ..มากเลยนะคะ..,ava_idle_smile
 Musician,เรื่องความกังวลของคุณ ถ้าเกิดอยากได้คำแนะนำล่ะก็ ลองไปหาคนๆนี้ดูนะครับ,chase_handup_smirk
 Ava,  ... อ่ะ ,ava_think_hmm
+,.....,
 Ava, ..... นี่มัน,ava_think_hmm
 Musician,  ที่อยู่ของเขาน่ะครับ ฝากทักทายเผื่อผมด้วยละกันน้า,chase_handdown_smirk
 Musician,  ถ้าอย่างนั้นผมคงต้องขอตัวก่อน ไว้เจอกันใหม่นะครับ,chase_handup_smile
+,.....,
