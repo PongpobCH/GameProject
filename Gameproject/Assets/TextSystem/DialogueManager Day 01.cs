@@ -137,11 +137,18 @@ public class DialogManagerDay01 : MonoBehaviour
 
             LoadAndDisplaySprite(data[GameManager2.Instance.RowData * 3 + columnSprite]);
 
-            GameManager2.Instance.SavedRow();   
+            GameManager2.Instance.SavedRow();
 
+        if (GameManager2.Instance.RowData == 2) // open cutscenes07
+        {
+            cutscenesblackscreen.gameObject.SetActive(true);
+            scriptcutsceneManager.Playcutscene06();
+            scriptcutscene.ActivateCutscene();
+            Invoke("EndCutscenebackground", 5);
 
+        }
 
-        if(GameManager2.Instance.RowData == 14) // open cutscenes07
+        if (GameManager2.Instance.RowData == 11) // open cutscenes07
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene07();
@@ -150,7 +157,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 20) // open cutscenes08
+       if(GameManager2.Instance.RowData == 13) // open cutscenes08
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene08();
@@ -159,7 +166,12 @@ public class DialogManagerDay01 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 22) // open cutscenes09
+        if (GameManager2.Instance.RowData == 19) // change scene to park
+        {
+            Changescnenetopark();
+        }
+
+        if (GameManager2.Instance.RowData == 21) // open cutscenes09
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene09();
@@ -167,13 +179,9 @@ public class DialogManagerDay01 : MonoBehaviour
           Invoke("EndCutscenebackground", 5);
 
        }
+       
 
-       if(GameManager2.Instance.RowData == 26) // change scene to park
-       {
-         Changescnenetopark();
-       }
-
-       if(GameManager2.Instance.RowData == 27) // open cutscenes10
+       if(GameManager2.Instance.RowData == 23) // open cutscenes10
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene10();
@@ -182,7 +190,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
        }
 
-       if(GameManager2.Instance.RowData == 28) // open cutscenes11
+       if(GameManager2.Instance.RowData == 26) // open cutscenes11
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene11();
@@ -200,7 +208,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
        }
 
-     if(GameManager2.Instance.RowData == 33) // open cutscenes13
+     if(GameManager2.Instance.RowData == 41) // open cutscenes13
        {
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene13();
@@ -209,7 +217,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
        }
 
-      if(GameManager2.Instance.RowData == 45) // Change to ClassRoom
+      if(GameManager2.Instance.RowData == 43) // Change to ClassRoom
       {
             Changescenetoclassroom();
 
@@ -228,7 +236,7 @@ public class DialogManagerDay01 : MonoBehaviour
 
       }
 
-        if(GameManager2.Instance.RowData == 61) // open cutscenes14
+        if(GameManager2.Instance.RowData == 63) // open cutscenes14
        {
          scenescript.LoadAvaRoom();
        }
@@ -289,7 +297,7 @@ public class DialogManagerDay01 : MonoBehaviour
        
 
 
-        if(spriteName.Contains(keywordred))
+        if(spriteName.Contains(keywordred)|| spriteName.Contains("extra"))
         {
             Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImage.gameObject.SetActive(false);

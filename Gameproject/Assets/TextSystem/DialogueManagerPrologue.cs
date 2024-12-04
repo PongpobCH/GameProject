@@ -291,7 +291,7 @@ public class DialogManagerPrologue: MonoBehaviour
         
         if(spriteName.Contains(keywordeve))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath + spriteName).Trim());
             CharacterImageRed.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด
@@ -310,7 +310,7 @@ public class DialogManagerPrologue: MonoBehaviour
 
         if(spriteName.Contains(keywordextra))
         {
-            Sprite sprite = Resources.Load<Sprite>(folderPath+spriteName);
+            Sprite sprite = Resources.Load<Sprite>((folderPath+spriteName).Trim());
             CharacterImageRed.gameObject.SetActive(false);
 
              // ถ้าพบ sprite ที่มีชื่อตรงกัน จะแสดงผลใน Image ที่กำหนด

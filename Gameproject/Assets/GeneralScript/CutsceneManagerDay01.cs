@@ -8,7 +8,7 @@ using UnityEngine.UIElements;
 
 public class CutsceneManagerDay01 : MonoBehaviour
 {
-    
+    public Animator AnimationForCutscene06;
     public Animator AnimationForCutscene07;
     public Animator AnimationForCutscene08;
     public Animator AnimationForCutscene09;
@@ -18,6 +18,7 @@ public class CutsceneManagerDay01 : MonoBehaviour
     public Animator AnimationForCutscene13;
     public Animator AnimationForCutscene14;
     public Animator AnimationForCutscene15;
+    public GameObject Cutscene06;
     public GameObject Cutscene07;
     public GameObject Cutscene08;
     public GameObject Cutscene09;
@@ -41,7 +42,7 @@ public class CutsceneManagerDay01 : MonoBehaviour
 
     public void SetAllcutsceneNotActive()
     {
-        
+        Cutscene06.SetActive(false);
         Cutscene07.SetActive(false);
         Cutscene08.SetActive(false);
         Cutscene09.SetActive(false);
@@ -59,7 +60,35 @@ public class CutsceneManagerDay01 : MonoBehaviour
         RowCheckingValue = GameManager2.Instance.RowData;
         Debug.Log("Row Checked from Server " + RowCheckingValue);
     }
+    public void Playcutscene06()
+    {
+        Cutscene06.SetActive(true);
+        ClickNextTextbutton.SetActive(false);
+        StartCoroutine(StartCutscene06());
+    }
 
+    public void DeactivateCutscene06()
+    {
+        StartCoroutine(EndCutscene06());
+    }
+
+    private IEnumerator StartCutscene06()
+    {
+        // Debug.Log("start Cutscene");
+        AnimationForCutscene06.SetTrigger("Start");
+        yield return new WaitForSeconds(transitiontime + 3f);
+        //Debug.Log("CutSceneEnded");
+        DeactivateCutscene06();
+    }
+
+    private IEnumerator EndCutscene06()
+    {
+        //Debug.Log("CutSceneEnded");
+        AnimationForCutscene06.SetTrigger("End");
+        yield return new WaitForSeconds(transitiontime);
+        ClickNextTextbutton.SetActive(true);
+
+    }
 
     public void Playcutscene07()
     {
