@@ -141,7 +141,9 @@ public class DialogManagerDay05 : MonoBehaviour
 
         if(GameManager2.Instance.RowData == 5) // open cutscenes25
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -150,7 +152,9 @@ public class DialogManagerDay05 : MonoBehaviour
 
        if(GameManager2.Instance.RowData == 12) // open cutscenes26
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -173,7 +177,9 @@ public class DialogManagerDay05 : MonoBehaviour
 
        if(GameManager2.Instance.RowData == 37) // open cutscenes27
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene03();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -182,7 +188,9 @@ public class DialogManagerDay05 : MonoBehaviour
 
        if(GameManager2.Instance.RowData == 65) // open cutscenes28
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene04();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -226,7 +234,8 @@ public class DialogManagerDay05 : MonoBehaviour
 
     private void EndCutscenebackground()
     {
-        
+        ContinueButton.SetActive(true);
+
         cutscenesblackscreen.gameObject.SetActive(false);
         //BlackBG.gameObject.SetActive(false);
     }

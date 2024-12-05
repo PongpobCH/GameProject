@@ -150,25 +150,27 @@ public class DialogManagerDay03 : MonoBehaviour
 
         if(GameManager2.Instance.RowData == 6) // open cutscenes23
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
 
-       }
+        }
 
-       if(GameManager2.Instance.RowData == 15) // open cutscenes24
+        if (GameManager2.Instance.RowData == 15) // open cutscenes24
        {
+          ContinueButton.SetActive(false);
           cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
 
-       }
+        }
 
 
 
-       
+
     }
     private void Changescnenetopark () 
     {
@@ -205,9 +207,11 @@ public class DialogManagerDay03 : MonoBehaviour
         
         cutscenesblackscreen.gameObject.SetActive(false);
         //BlackBG.gameObject.SetActive(false);
+        ContinueButton.SetActive(true);
+
     }
 
-    
+
 
     private void LoadAndDisplaySprite(string spriteName)
     {

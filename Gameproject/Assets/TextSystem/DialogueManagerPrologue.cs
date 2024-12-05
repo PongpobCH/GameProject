@@ -174,6 +174,8 @@ public class DialogManagerPrologue: MonoBehaviour
 
         if(GameManager2.Instance.RowData == 6) // open cutscenes01
         {
+            ContinueButton.SetActive(false);
+
             cutscenesblackscreen.gameObject.SetActive(true);
            
             scriptcutsceneManager.Playcutscene01();
@@ -196,6 +198,8 @@ public class DialogManagerPrologue: MonoBehaviour
         
         if(GameManager2.Instance.RowData == 8) // open cutscenes02
         {
+            ContinueButton.SetActive(false);
+
 
             cutscenesblackscreen.gameObject.SetActive(true);
            
@@ -211,7 +215,9 @@ public class DialogManagerPrologue: MonoBehaviour
         }  
        if(GameManager2.Instance.RowData == 14) // open cutscenes05
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene05();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -219,7 +225,9 @@ public class DialogManagerPrologue: MonoBehaviour
        }
         if(GameManager2.Instance.RowData == 18) // open cutscenes06
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene06();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -259,9 +267,11 @@ public class DialogManagerPrologue: MonoBehaviour
     {
         
         cutscenesblackscreen.gameObject.SetActive(false);
+        ContinueButton.SetActive(true);
+
     }
 
-    
+
 
     private void LoadAndDisplaySprite(string spriteName)
     {

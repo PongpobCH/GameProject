@@ -146,7 +146,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
         if(GameManager2.Instance.RowData == 4) // open cutscenes16
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene01();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -161,7 +163,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
         if (GameManager2.Instance.RowData == 13) // open cutscenes17
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene02();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -170,7 +174,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
        if(GameManager2.Instance.RowData == 26) // open cutscenes18
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene03();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -181,7 +187,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
        if(GameManager2.Instance.RowData == 28) // open cutscenes19
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene04();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -196,7 +204,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
        if(GameManager2.Instance.RowData == 47) // open cutscenes20
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene05();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -205,7 +215,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
         if(GameManager2.Instance.RowData == 49) // open cutscenes21
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene06();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -221,7 +233,9 @@ public class DialogManagerDay02 : MonoBehaviour
 
         if (GameManager2.Instance.RowData == 90) // open cutscenes13
        {
-          cutscenesblackscreen.gameObject.SetActive(true);
+            ContinueButton.SetActive(false);
+
+            cutscenesblackscreen.gameObject.SetActive(true);
           scriptcutsceneManager.Playcutscene07();
           scriptcutscene.ActivateCutscene();
           Invoke("EndCutscenebackground", 5);
@@ -268,7 +282,8 @@ public class DialogManagerDay02 : MonoBehaviour
 
     private void EndCutscenebackground()
     {
-        
+        ContinueButton.SetActive(true);
+
         cutscenesblackscreen.gameObject.SetActive(false);
         //BlackBG.gameObject.SetActive(false);
     }
