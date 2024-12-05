@@ -2549,6 +2549,17 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1236871344}
   m_CullTransparentMesh: 1
+--- !u!114 &1246935559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 799666139320844422, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+  m_PrefabInstance: {fileID: 1732505435}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5df515e72ded7a149a63bcbd82586e89, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1304233143
 GameObject:
   m_ObjectHideFlags: 0
@@ -2835,7 +2846,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1488831447
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2940,7 +2951,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1488831449}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1246935559}
+        m_TargetAssemblyTypeName: THISISTHEVOICE, Assembly-CSharp
+        m_MethodName: openOption
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!222 &1488831451
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3104,6 +3127,18 @@ PrefabInstance:
       propertyPath: audioClip
       value: 
       objectReference: {fileID: 8300000, guid: f1943392a5f5f3048b010f96375ae888, type: 3}
+    - target: {fileID: 1253456229073718180, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1253456229073718180, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1892282994250510071, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3823092226997754086, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 728.41327
@@ -3144,9 +3179,33 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4275142430909353759, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_text
+      value: Close
+      objectReference: {fileID: 0}
     - target: {fileID: 6563070794350488523, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
       propertyPath: m_Name
       value: THISISTHEVOICE
+      objectReference: {fileID: 0}
+    - target: {fileID: 7001608271674257670, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641582982849531832, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641582982849531832, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7641582982849531832, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8494354785411492335, guid: c8c958beb0509434b84596f42a6ac93f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
