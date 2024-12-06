@@ -33,16 +33,39 @@ public class boxSpawner : MonoBehaviour
         }
     }
 
+    private int consecutivePrefab2Count = 0; // Tracks consecutive prefab2 spawns
+
     private void SpawnPrefab()
     {
-        // Randomly select between the two prefabs
-        GameObject prefabToSpawn = (Random.value < 0.5f) ? prefab1 : prefab2;
+        GameObject prefabToSpawn;
+
+        // Check if prefab2 has been spawned more than twice in a row
+        if (consecutivePrefab2Count >= 2)
+        {
+            prefabToSpawn = prefab1; // Force spawn prefab1
+            consecutivePrefab2Count = 0; // Reset the counter
+        }
+        else
+        {
+            // Randomly select between prefab1 and prefab2
+            prefabToSpawn = (Random.value < 0.5f) ? prefab1 : prefab2;
+
+            // Update the consecutive prefab2 counter
+            if (prefabToSpawn == prefab2)
+            {
+                consecutivePrefab2Count++;
+            }
+            else
+            {
+                consecutivePrefab2Count = 0; // Reset the counter if prefab1 is spawned
+            }
+        }
 
         // Determine which text list to use based on the selected prefab
         List<string> selectedTextList = (prefabToSpawn == prefab1) ? prefab1TextList : prefab2TextList;
 
         // Calculate a random X position within the canvas
-        float randomX = Random.Range(-canvasRectTransform.rect.width / 2, canvasRectTransform.rect.width / 2);
+        float randomX = Random.Range((-canvasRectTransform.rect.width / 3)-10, (canvasRectTransform.rect.width / 3)+10);
         Vector2 spawnPosition = new Vector2(randomX, canvasRectTransform.rect.height / 2);
 
         // Instantiate the selected prefab under the Canvas
@@ -59,6 +82,7 @@ public class boxSpawner : MonoBehaviour
         // Start the falling and destruction coroutine
         StartCoroutine(FallAndDestroy(instanceRectTransform));
     }
+
 
     private IEnumerator FallAndDestroy(RectTransform instanceRectTransform)
     {
